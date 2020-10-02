@@ -7,7 +7,7 @@ export const COPY = {
 			},
 		},
 	],
-	pages: ['About', ' Musicians', 'Listen', 'Agenda', 'Gallery', 'Contact'],
+	headerLinks: ['About', 'Musicians', 'Listen', 'Agenda', 'Gallery', 'Contact'],
 	bio: {
 		ensemble: '',
 		patron: '',
