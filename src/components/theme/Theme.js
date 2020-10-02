@@ -8,6 +8,21 @@ export const Theme = {
 		light: '#fff',
 		hover: '',
 	},
+	margin: {
+		auto: 'auto',
+		XS: '10px',
+		S: '15px',
+		M: '30px',
+		L: '50px',
+		XL: '80px',
+	},
+	padding: {
+		XS: '10px',
+		S: '15px',
+		M: '30px',
+		L: '50px',
+		XL: '80px',
+	},
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -19,31 +34,31 @@ export const GlobalStyle = createGlobalStyle`
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-*,
-*::after,
-*::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: inherit;
-  /* overflow-x: hidden; */
-  -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
-	-webkit-tap-highlight-color: transparent;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-  :hover {
-    cursor: pointer;
   }
-}
 
-::placeholder {
-  text-align: center;
-}
+  *,
+  *::after,
+  *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    /* overflow-x: hidden; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  ::placeholder {
+    text-align: center;
+  }
 
 `
