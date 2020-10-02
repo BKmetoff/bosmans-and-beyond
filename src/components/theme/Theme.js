@@ -2,10 +2,11 @@ import { createGlobalStyle } from 'styled-components'
 
 export const Theme = {
 	borderRadius: '3px',
-	shadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
+	shadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
 	colors: {
 		primary: '#1e2548',
 		light: '#fff',
+		background: '#ededed5e',
 		hover: '',
 	},
 	margin: {
@@ -27,6 +28,7 @@ export const Theme = {
 
 export const GlobalStyle = createGlobalStyle`
   body {
+  background-color: ${Theme.colors.background};
   margin: 0;
   font-weight: 400;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

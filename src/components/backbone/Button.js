@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components'
-import { Theme } from './theme/Theme'
+import { Theme } from '../theme/Theme'
 
 const BaseButton = styled.button`
-	min-width: 25px;
+	font-size: 16px;
+	min-width: 80px;
 	outline: none;
 	border: none;
 	:hover {
 		cursor: pointer;
-		opacity: 0.9;
+		opacity: 0.8;
 	}
 `
 
@@ -21,7 +22,7 @@ const types = {
 		height: 100%;
 		color: ${Theme.colors.light};
 		background-color: ${Theme.colors.primary};
-		border-bottom: 5px solid ${Theme.colors.light};
+		font-size: 18px;
 	`,
 
 	inverted: css`
