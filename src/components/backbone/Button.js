@@ -23,6 +23,7 @@ const types = {
 		color: ${Theme.colors.light};
 		background-color: ${Theme.colors.primary};
 		font-size: 18px;
+		margin-left: ${Theme.margin.S};
 	`,
 
 	inverted: css`
