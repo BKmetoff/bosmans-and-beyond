@@ -12,8 +12,9 @@ const BaseFooter = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: ${Theme.colors.primary};
+	background-color: ${Theme.colors.dark};
 	color: ${Theme.colors.light};
+	opacity: ${Theme.opacity};
 `
 
 export default function Footer() {
