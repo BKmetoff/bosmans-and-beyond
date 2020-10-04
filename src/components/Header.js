@@ -35,15 +35,11 @@ export default function Header(props) {
 		<BaseHeader>
 			<Text>logo be here</Text>
 			<HeaderLinksWrapper>
-				{console.log(props)}
-
 				{headerLinks.map((link) => {
 					return (
-						<Link key={link} to={`/${link.toLowerCase()}`}>
-							<Button name={link} type='headerLink'>
-								{link}
-							</Button>
-						</Link>
+						<Button key={link} name={link} type='headerLink'>
+							<Link to={`/${link.toLowerCase()}`}>{link}</Link>
+						</Button>
 					)
 				})}
 			</HeaderLinksWrapper>

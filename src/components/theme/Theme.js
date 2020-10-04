@@ -1,5 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
+import OpenSans from '../../fonts/OpenSans.woff'
+import OpenSans2 from '../../fonts/OpenSans.woff2'
+
+// <div>Font made from <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a>is licensed by CC BY 3.0</div>
+
 export const Theme = {
 	borderRadius: '3px',
 	shadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
@@ -27,13 +32,23 @@ export const Theme = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), local('OpenSans')
+    url(${OpenSans}), format('woff'),
+    url(${OpenSans2}), format('woff2');
+    font-weight: 400;
+  }
+  
   body {
   background-color: ${Theme.colors.background};
   margin: 0;
-  font-weight: 400;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Open Sans', 'sans-serif';
+  letter-spacing: 1px;
+  
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   }
@@ -52,6 +67,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    font-family: 'Open Sans';
+	letter-spacing: 1px;
     text-decoration: none;
     color: white;
     :hover {

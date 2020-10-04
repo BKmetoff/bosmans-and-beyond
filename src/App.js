@@ -14,18 +14,18 @@ import MainWrapper from './components/backbone/Wrapper'
 function App() {
 	return (
 		<div className='App'>
-			<MainWrapper>
-				<Router>
-					<Layout headerLinks={COPY.headerLinks}>
+			<Router>
+				<Layout headerLinks={COPY.headerLinks}>
+					<MainWrapper>
 						<Switch>
 							<Route path='/listen' render={(props) => <Listen />} />
 							<Route path='/agenda' render={(props) => <Agenda />} />
 							<Route path='/gallery' render={(props) => <Gallery />} />
 							<Route path='/' exact render={(props) => <Home />} />
 						</Switch>
-					</Layout>
-				</Router>
-			</MainWrapper>
+					</MainWrapper>
+				</Layout>
+			</Router>
 		</div>
 	)
 }
