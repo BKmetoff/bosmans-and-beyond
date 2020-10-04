@@ -10,6 +10,7 @@ export const Theme = {
 	shadow: {
 		S: '0 4px 10px rgba(0, 0, 0, 0.2)',
 		M: '0 4px 20px rgba(0, 0, 0, 0.2)',
+		inverted: '0 -4px 20px rgba(0, 0, 0, 0.2)',
 	},
 
 	colors: {
