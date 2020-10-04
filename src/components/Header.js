@@ -16,8 +16,8 @@ const BaseHeader = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	color: ${Theme.colors.light};
-	background-color: ${Theme.colors.primary};
-	box-shadow: ${Theme.shadow};
+	background-color: ${Theme.colors.dark};
+	box-shadow: ${Theme.shadow.S};
 `
 
 const HeaderLinksWrapper = styled.div`

@@ -7,17 +7,24 @@ import OpenSans2 from '../../fonts/OpenSans.woff2'
 
 export const Theme = {
 	borderRadius: '3px',
-	shadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+	shadow: {
+		S: '0 4px 10px rgba(0, 0, 0, 0.2)',
+		M: '0 4px 20px rgba(0, 0, 0, 0.2)',
+	},
+
 	colors: {
-		primary: '#1e2548',
-		light: '#fff',
-		background: '#ededed5e',
-		hover: '',
+		// primary: '#1e2548',
+		primary: '#5075a6',
+		light: '#e2e2e2',
+		dark: '#363b3e',
+		background: '#d2d8d5',
+		accent: '#fcd088',
+		// transparent: 'rgba(0, 0, 0, 0.5)',
 	},
 	margin: {
 		auto: 'auto',
-		XS: '10px',
-		S: '15px',
+		XS: '8px',
+		S: '12px',
 		M: '30px',
 		L: '50px',
 		XL: '80px',
@@ -29,6 +36,7 @@ export const Theme = {
 		L: '50px',
 		XL: '80px',
 	},
+	opacity: 0.9,
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -68,9 +76,10 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     font-family: 'Open Sans';
-	letter-spacing: 1px;
+	  letter-spacing: 1px;
     text-decoration: none;
-    color: white;
+    color: inherit;
+    background-color: inherit;
     :hover {
       cursor: pointer;
     }

@@ -18,7 +18,7 @@ export const COPY = {
 
 export const MEDIA = {
 	// urls
-	cover: '',
+	cover: '../../assets/home.jpg',
 	photos: [
 		{
 			title: '',
