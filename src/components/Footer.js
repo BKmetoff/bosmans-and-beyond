@@ -15,6 +15,7 @@ const BaseFooter = styled.div`
 	background-color: ${Theme.colors.dark};
 	color: ${Theme.colors.light};
 	opacity: ${Theme.opacity};
+	box-shadow: ${Theme.shadow.inverted};
 `
 
 export default function Footer() {

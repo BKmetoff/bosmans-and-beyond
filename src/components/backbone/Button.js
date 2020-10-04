@@ -24,7 +24,6 @@ const types = {
 		font-size: 18px;
 		padding-left: ${Theme.margin.XS};
 		padding-right: ${Theme.margin.XS};
-		margin-left: ${Theme.margin.S};
 		transition: 0.1s;
 		transition-delay: 0.1s;
 		:hover {
