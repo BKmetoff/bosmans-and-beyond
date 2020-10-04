@@ -7,13 +7,17 @@ import OpenSans2 from '../../fonts/OpenSans.woff2'
 
 export const Theme = {
 	borderRadius: '3px',
-	shadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+	shadow: {
+		S: '0 4px 10px rgba(0, 0, 0, 0.2)',
+		M: '0 4px 20px rgba(0, 0, 0, 0.2)',
+	},
+
 	colors: {
 		// primary: '#1e2548',
 		primary: '#5075a6',
 		light: '#e2e2e2',
 		dark: '#363b3e',
-		background: '#ededed5e',
+		background: '#d2d8d5',
 		accent: '#fcd088',
 		// transparent: 'rgba(0, 0, 0, 0.5)',
 	},
