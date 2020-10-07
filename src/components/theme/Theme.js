@@ -6,6 +6,7 @@ import OpenSans2 from '../../fonts/OpenSans.woff2'
 // <div>Font made from <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a>is licensed by CC BY 3.0</div>
 
 export const Theme = {
+	opacity: 0.9,
 	borderRadius: '3px',
 	shadow: {
 		S: '0 4px 10px rgba(0, 0, 0, 0.2)',
@@ -14,11 +15,10 @@ export const Theme = {
 	},
 
 	colors: {
-		// primary: '#1e2548',
-		primary: '#5075a6',
+		primary: '#597aa7',
 		light: '#e2e2e2',
 		dark: '#363b3e',
-		background: '#d2d8d5',
+		background: '#e0e4e3',
 		accent: '#fcd088',
 		// transparent: 'rgba(0, 0, 0, 0.5)',
 	},
@@ -37,7 +37,6 @@ export const Theme = {
 		L: '50px',
 		XL: '80px',
 	},
-	opacity: 0.9,
 }
 
 export const GlobalStyle = createGlobalStyle`

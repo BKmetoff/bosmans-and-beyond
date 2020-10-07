@@ -6,6 +6,8 @@ import styled from 'styled-components'
 import { Theme } from './theme/Theme'
 import Button from './backbone/Button'
 
+import LogoHeaderDesktop from '../assets/LogoHeaderDesktop.png'
+
 const BaseHeader = styled.div`
 	top: 0;
 	position: fixed;
@@ -26,11 +28,16 @@ const HeaderLinksWrapper = styled.div`
 	height: 100%;
 `
 
+const HeaderLogo = styled.img`
+	background-image: url(${LogoHeaderDesktop});
+`
+
 export default function Header(props) {
 	const { headerLinks } = { ...props }
 
 	return (
 		<BaseHeader>
+			<HeaderLogo />
 			<HeaderLinksWrapper>
 				{headerLinks.map((link) => {
 					return (
