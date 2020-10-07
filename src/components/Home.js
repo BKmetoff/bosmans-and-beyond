@@ -14,6 +14,7 @@ const HomeWrapper = styled.div`
 	background-position: center top;
 	background-repeat: no-repeat;
 	box-shadow: ${Theme.shadow.M};
+	border-radius: ${Theme.borderRadius};
 	/* display: flex;
 	justify-content: center;
 	align-items: center; */
