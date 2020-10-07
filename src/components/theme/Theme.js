@@ -18,7 +18,7 @@ export const Theme = {
 		primary: '#5075a6',
 		light: '#e2e2e2',
 		dark: '#363b3e',
-		background: '#d2d8d5',
+		background: '#e0e4e3',
 		accent: '#fcd088',
 		// transparent: 'rgba(0, 0, 0, 0.5)',
 	},
