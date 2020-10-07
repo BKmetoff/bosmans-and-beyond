@@ -74,16 +74,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-tap-highlight-color: transparent;
   }
 
-  a {
-    font-family: 'Open Sans';
-	  letter-spacing: 1px;
-    text-decoration: none;
-    color: inherit;
-    background-color: inherit;
-    :hover {
-      cursor: pointer;
-    }
-  }
+  
 
   ::placeholder {
     text-align: center;

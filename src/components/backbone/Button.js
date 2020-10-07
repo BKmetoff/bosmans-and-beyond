@@ -9,6 +9,14 @@ const BaseButton = styled.button`
 	:hover {
 		cursor: pointer;
 	}
+
+	a {
+		font-family: 'Open Sans', 'sans-serif';
+		letter-spacing: 1px;
+		text-decoration: none;
+		color: inherit;
+		background-color: inherit;
+	}
 `
 
 const types = {
