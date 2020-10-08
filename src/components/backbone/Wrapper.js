@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Theme } from '../theme/Theme'
 
 export const MainWrapper = styled.div`
 	/* padding-top: 60px; */
@@ -15,4 +16,10 @@ export const ContentWrapper = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+`
+
+export const SectionWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	margin-top: ${Theme.margin.L};
 `
