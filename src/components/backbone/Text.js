@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Theme } from '../theme/Theme'
 
 export const Text = styled.p`
-	font-size: 14px;
+	font-size: 15px;
 	text-align: justify;
 	padding: ${Theme.padding.S};
 `
