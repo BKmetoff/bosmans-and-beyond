@@ -24,8 +24,9 @@ function App() {
 										patron={COPY.text.patron}
 									/>
 								</Route>
-
-								<Route path='/about' render={(props) => <About />} />
+								<Route path='/about'>
+									<About people={COPY.people} />
+								</Route>
 								<Route path='/' exact render={(props) => <Home />} />
 							</Switch>
 						</ContentWrapper>

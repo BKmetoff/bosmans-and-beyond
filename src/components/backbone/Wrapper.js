@@ -2,12 +2,12 @@ import styled from 'styled-components'
 import { Theme } from '../theme/Theme'
 
 export const MainWrapper = styled.div`
-	/* padding-top: 60px; */
+	margin-top: ${Theme.margin.L};
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	/* justify-content: center; */
 `
 
 export const ContentWrapper = styled.div`
@@ -16,6 +16,8 @@ export const ContentWrapper = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-top: ${Theme.margin.XL};
+	margin-bottom: ${Theme.margin.XL};
 `
 
 export const SectionWrapper = styled.div`
