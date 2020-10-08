@@ -53,6 +53,7 @@ export const GlobalStyle = createGlobalStyle`
   margin: 0;
   font-family: 'Open Sans', 'sans-serif';
   letter-spacing: 1px;
+  line-height: 1.9;
   
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -74,16 +75,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-tap-highlight-color: transparent;
   }
 
-  a {
-    font-family: 'Open Sans';
-	  letter-spacing: 1px;
-    text-decoration: none;
-    color: inherit;
-    background-color: inherit;
-    :hover {
-      cursor: pointer;
-    }
-  }
+  
 
   ::placeholder {
     text-align: center;
