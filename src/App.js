@@ -5,9 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { COPY } from './components/resources/Resources'
 
 import Home from './components/Home'
-import Listen from './components/Listen'
-import Agenda from './components/Agenda'
-import Gallery from './components/Gallery'
+import Mission from './components/Mission'
+import About from './components/About'
 
 import { MainWrapper, ContentWrapper } from './components/backbone/Wrapper'
 
@@ -19,9 +18,14 @@ function App() {
 					<MainWrapper>
 						<ContentWrapper>
 							<Switch>
-								<Route path='/listen' render={(props) => <Listen />} />
-								<Route path='/agenda' render={(props) => <Agenda />} />
-								<Route path='/gallery' render={(props) => <Gallery />} />
+								<Route path='/mission'>
+									<Mission
+										mission={COPY.text.mission}
+										patron={COPY.text.patron}
+									/>
+								</Route>
+
+								<Route path='/about' render={(props) => <About />} />
 								<Route path='/' exact render={(props) => <Home />} />
 							</Switch>
 						</ContentWrapper>
