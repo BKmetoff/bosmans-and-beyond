@@ -25,19 +25,24 @@ const Image = styled.img.attrs((props) => ({
 		`}
 
 	${(props) => 
-		props.header !== undefined && 
+		props.headerTitle !== undefined && 
 		css`
 			margin-left: ${Theme.padding.S};
 			padding-top: ${Theme.padding.XXS};
 			padding-bottom: ${Theme.padding.XXS};
-			border-bottom: 1px solid ${Theme.colors.accent}
+			border-bottom: 1px solid ${Theme.colors.accent};
+
+			@media (max-width: 768px) {
+					display: none;
+				}
 		`}
 
-		${(props) => 
-		props.noBorder  !== undefined && 
+	${(props) => 
+		props.headerRound  !== undefined && 
 		css`
-			border: none;
 			padding: 0;
+			border: none;
+			margin-left: ${Theme.padding.S};
 		`}
 
 	
@@ -47,7 +52,6 @@ const Image = styled.img.attrs((props) => ({
 			margin-left: ${Theme.margin.L};
 			margin-right: ${Theme.margin.L};
 			border-radius: ${Theme.borderRadius};
-		
 		`}
 `
 

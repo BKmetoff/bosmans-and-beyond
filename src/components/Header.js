@@ -7,8 +7,8 @@ import { Theme } from './theme/Theme'
 import Button from './backbone/Button'
 import Image from './backbone/Image'
 
-import MainBosmans from '../assets/logo/MainBosmans.png'
-import MainCroppedInvertedTransparent from '../assets/logo/MainCroppedInvertedTransparent.png'
+import HeaderRound from '../assets/logo/HeaderRound.png'
+import HeaderTitle from '../assets/logo/HeaderTitle.png'
 
 const BaseHeader = styled.div`
 	top: 0;
@@ -22,6 +22,11 @@ const BaseHeader = styled.div`
 	background-color: ${Theme.colors.dark};
 	box-shadow: ${Theme.shadow.S};
 	opacity: 0.95;
+
+	@media (max-width: 425px) {
+		height: 50px;
+	}
+
 `
 
 const HeaderLinksWrapper = styled.div`
@@ -45,8 +50,8 @@ export default function Header(props) {
 		<BaseHeader>
 			
 			<HeaderLogosWrapper to='/'>
-				<Image header noBorder src={MainBosmans} height='75%' width='fit-content' />
-				<Image header src={MainCroppedInvertedTransparent} height='30%' width='fit-content' />
+				<Image headerRound src={HeaderRound} height='75%' width='fit-content' />
+				<Image headerTitle src={HeaderTitle} height='30%' width='fit-content' />
 			</HeaderLogosWrapper>
 
 			<HeaderLinksWrapper>

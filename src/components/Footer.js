@@ -16,12 +16,16 @@ const BaseFooter = styled.div`
 	color: ${Theme.colors.light};
 	opacity: ${Theme.opacity};
 	box-shadow: ${Theme.shadow.inverted};
+
+	@media (max-width: 425px) {
+		height: 30px;
+	}
 `
 
 export default function Footer() {
 	return (
 		<BaseFooter>
-			<Text>&#169; Bosmans & Beyond, 2020</Text>
+			<Text footer>&#169; Bosmans & Beyond, 2020</Text>
 		</BaseFooter>
 	)
 }
