@@ -15,10 +15,11 @@ export const Theme = {
 	},
 
 	colors: {
-		primary: '#597aa7',
+		primary: '#6083ad',
 		light: '#e2e2e2',
 		dark: '#363b3e',
-		background: '#e0e4e3',
+		backgroundFrom: '#dce0df',
+    backgroundTo: '#e0e4e3',
 		accent: '#fcd088',
 		// transparent: 'rgba(0, 0, 0, 0.5)',
 	},
@@ -31,7 +32,8 @@ export const Theme = {
 		XL: '80px',
 	},
 	padding: {
-		XS: '10px',
+		XXS: '5px',
+    XS: '10px',
 		S: '15px',
 		M: '30px',
 		L: '50px',
@@ -49,7 +51,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   body {
-  background-color: ${Theme.colors.background};
+  background: linear-gradient(to right, ${Theme.colors.backgroundFrom} 0%, ${Theme.colors.backgroundTo} 100%); ;
   margin: 0;
   font-family: 'Open Sans', 'sans-serif';
   letter-spacing: 1px;
