@@ -23,13 +23,15 @@ const Image = styled.img.attrs((props) => ({
 			padding: ${Theme.padding.S};
 		`}
 
-		${(props) => {
-		props.header !== undefined &&
-			css`
-				width: 100%;
-				height: 150px;
-			`
-	}}
+	${(props) => 
+		props.header !== undefined && 
+		css`
+			margin-left: ${Theme.padding.S};
+			padding-top: ${Theme.padding.XXS};
+			padding-bottom: ${Theme.padding.XS};
+			border-bottom: 2px solid ${Theme.colors.accent};
+
+		`}
 `
 
 export default Image

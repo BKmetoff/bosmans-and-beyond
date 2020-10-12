@@ -5,20 +5,21 @@ import styled from 'styled-components'
 
 import { Theme } from './theme/Theme'
 import Button from './backbone/Button'
+import Image from './backbone/Image'
 
-import LogoHeaderDesktop from '../assets/LogoHeaderDesktop.png'
+import LogoHeader from '../assets/logo/Header.png'
 
 const BaseHeader = styled.div`
 	top: 0;
 	position: fixed;
 	width: 100%;
-	height: 60px;
+	height: 100px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	color: ${Theme.colors.light};
-	background-color: ${Theme.colors.dark};
+	background-color: ${Theme.colors.primary};
 	box-shadow: ${Theme.shadow.S};
+	opacity: 0.95;
 `
 
 const HeaderLinksWrapper = styled.div`
@@ -28,16 +29,13 @@ const HeaderLinksWrapper = styled.div`
 	height: 100%;
 `
 
-const HeaderLogo = styled.img`
-	background-image: url(${LogoHeaderDesktop});
-`
 
 export default function Header(props) {
 	const { headerLinks } = { ...props }
 
 	return (
 		<BaseHeader>
-			<HeaderLogo />
+			<Image header src={LogoHeader} height='85%' width='fit-content' />
 			<HeaderLinksWrapper>
 				{headerLinks.map((link) => {
 					return (
