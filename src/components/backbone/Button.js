@@ -28,7 +28,7 @@ const types = {
 	headerLink: css`
 		height: 100%;
 		color: ${Theme.colors.light};
-		background-color: ${Theme.colors.primary};
+		background-color: ${Theme.colors.dark};
 		font-size: 18px;
 		padding-left: ${Theme.margin.XS};
 		padding-right: ${Theme.margin.XS};
