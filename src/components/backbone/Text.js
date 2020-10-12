@@ -1,10 +1,18 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Theme } from '../theme/Theme'
 
 export const Text = styled.p`
 	font-size: 15px;
 	text-align: justify;
 	padding: ${Theme.padding.S};
+
+	${(props) =>
+			props.footer !== undefined &&
+			css`
+				@media (max-width: 425px) {
+					font-size: 12px;
+				}
+			`}
 `
 
 export const Title = styled.h1`

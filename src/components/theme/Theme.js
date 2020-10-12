@@ -76,11 +76,4 @@ export const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
   }
-
-  
-
-  ::placeholder {
-    text-align: center;
-  }
-
 `

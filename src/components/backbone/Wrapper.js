@@ -8,16 +8,21 @@ export const MainWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 `
 
 export const ContentWrapper = styled.div`
-	max-width: 1024px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	margin-top: ${Theme.margin.XL};
 	margin-bottom: ${Theme.margin.XL};
+
+	@media (min-width: 1024px) {
+		width: 1000px;
+	}
+
 `
 
 export const SectionWrapper = styled.div`
