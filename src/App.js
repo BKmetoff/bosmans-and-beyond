@@ -27,7 +27,9 @@ function App() {
 								<Route path='/about'>
 									<About people={COPY.people} />
 								</Route>
-								<Route path='/' exact render={(props) => <Home />} />
+								<Route path='/' exact>
+									<Home/>
+								</Route>
 							</Switch>
 						</ContentWrapper>
 					</MainWrapper>

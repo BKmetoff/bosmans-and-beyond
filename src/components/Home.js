@@ -1,25 +1,29 @@
 import React from 'react'
-
 import styled from 'styled-components'
-import backgroundImage from '../assets/rsz_home.png'
+
 import { Theme } from './theme/Theme'
+import Image from './backbone/Image'
+
+import MainText from '../assets/logo/MainText.png'
+import HomePhoto from '../assets/photos/Home.png'
 
 const HomeWrapper = styled.div`
-	background-image: url(${backgroundImage});
-	height: 100vh;
-	width: 100vw;
-	max-height: 1024px;
-	max-width: 1280px;
-	background-size: cover;
-	background-position: center top;
-	background-repeat: no-repeat;
-	box-shadow: ${Theme.shadow.M};
-	border-radius: ${Theme.borderRadius};
-	/* display: flex;
-	justify-content: center;
-	align-items: center; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: ${Theme.margin.L};
+	margin-bottom: ${Theme.margin.L};
 `
 
-export default function Home(props) {
-	return <HomeWrapper>some text on home</HomeWrapper>
+export default function Home() {
+
+
+	return (
+		<HomeWrapper>
+			<Image main src={MainText} width='60%' height='fit-content' />
+			<Image main src={HomePhoto} width='80%' height='fit-content' />
+
+		</HomeWrapper>
+
+	)
 }
