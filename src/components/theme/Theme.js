@@ -19,7 +19,7 @@ export const Theme = {
 		light: '#e2e2e2',
 		dark: '#363b3e',
 		backgroundFrom: '#dce0df',
-    backgroundTo: '#e0e4e3',
+		backgroundTo: '#e0e4e3',
 		accent: '#fcd088',
 		// transparent: 'rgba(0, 0, 0, 0.5)',
 	},
@@ -33,11 +33,23 @@ export const Theme = {
 	},
 	padding: {
 		XXS: '5px',
-    XS: '10px',
+		XS: '10px',
 		S: '15px',
 		M: '30px',
 		L: '50px',
 		XL: '80px',
+	},
+	pageTransitions: {
+		variants: {
+			initial: { opacity: 0, y: '-10vh' },
+			in: { opacity: 1, y: 0 },
+			out: { opacity: 0, y: '10vh' },
+		},
+		transitions: {
+			type: 'tween',
+			ease: 'linear',
+			duration: 0.25,
+		},
 	},
 }
 

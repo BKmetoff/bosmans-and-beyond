@@ -1,6 +1,8 @@
 import React from 'react'
 import Layout from './components/backbone/Layout'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
+
+import { AnimatePresence } from 'framer-motion'
 
 import { COPY } from './components/resources/Resources'
 
@@ -12,13 +14,15 @@ import Video from './components/Video'
 import { MainWrapper, ContentWrapper } from './components/backbone/Wrapper'
 
 function App() {
+	const location = useLocation()
 	return (
 		<div className='App'>
-			<Router>
-				<Layout headerLinks={COPY.headerLinks}>
-					<MainWrapper>
-						<ContentWrapper>
-							<Switch>
+			{console.log(location.pathname)}
+			<Layout headerLinks={COPY.headerLinks}>
+				<MainWrapper>
+					<ContentWrapper>
+						<AnimatePresence exitBeforeEnter>
+							<Switch location={location} key={location.pathname}>
 								<Route path='/mission'>
 									<Mission
 										mission={COPY.text.mission}
@@ -29,16 +33,16 @@ function App() {
 									<About people={COPY.people} />
 								</Route>
 								<Route path='/video'>
-									<Video videos={COPY.video}/>
+									<Video videos={COPY.video} />
 								</Route>
 								<Route path='/' exact>
-									<Home/>
+									<Home />
 								</Route>
 							</Switch>
-						</ContentWrapper>
-					</MainWrapper>
-				</Layout>
-			</Router>
+						</AnimatePresence>
+					</ContentWrapper>
+				</MainWrapper>
+			</Layout>
 		</div>
 	)
 }

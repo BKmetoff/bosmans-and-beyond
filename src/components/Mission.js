@@ -2,14 +2,14 @@ import React from 'react'
 
 import patronImage from '../assets/Patron.png'
 
-import { SectionWrapper } from './backbone/Wrapper'
+import { SectionWrapper, MotionWrapper } from './backbone/Wrapper'
 import Sheet from './backbone/Sheet'
 import { Text, Title } from './backbone/Text'
 import Image from './backbone/Image'
 
 export default function Mission(props) {
 	return (
-		<React.Fragment>
+		<MotionWrapper>
 			<SectionWrapper>
 				<Title>Our Mission</Title>
 				<Sheet>
@@ -23,6 +23,6 @@ export default function Mission(props) {
 					<Text>{props.patron}</Text>
 				</Sheet>
 			</SectionWrapper>
-		</React.Fragment>
+		</MotionWrapper>
 	)
 }
