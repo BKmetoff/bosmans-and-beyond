@@ -7,6 +7,7 @@ import { COPY } from './components/resources/Resources'
 import Home from './components/Home'
 import Mission from './components/Mission'
 import About from './components/About'
+import Video from './components/Video'
 
 import { MainWrapper, ContentWrapper } from './components/backbone/Wrapper'
 
@@ -26,6 +27,9 @@ function App() {
 								</Route>
 								<Route path='/about'>
 									<About people={COPY.people} />
+								</Route>
+								<Route path='/video'>
+									<Video videos={COPY.video}/>
 								</Route>
 								<Route path='/' exact>
 									<Home/>
