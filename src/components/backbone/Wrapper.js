@@ -1,9 +1,13 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+
 import styled from 'styled-components'
 import { Theme } from '../theme/Theme'
 
 export const MainWrapper = styled.div`
 	top: ${Theme.margin.L};
-	/* position: absolute; */
+	position: relative;
+	overflow-x: hidden;
 	/* height: 100vh; */
 	display: flex;
 	flex-direction: column;
@@ -22,7 +26,6 @@ export const ContentWrapper = styled.div`
 	@media (min-width: 1024px) {
 		width: 1000px;
 	}
-
 `
 
 export const SectionWrapper = styled.div`
@@ -31,3 +34,17 @@ export const SectionWrapper = styled.div`
 	margin-top: ${Theme.margin.L};
 	margin-bottom: ${Theme.margin.L};
 `
+
+export const MotionWrapper = (props) => {
+	return (
+		<motion.div
+			initial='initial'
+			animate='in'
+			exit='out'
+			variants={Theme.pageTransitions.variants}
+			transition={Theme.pageTransitions.transitions}
+		>
+			{props.children}
+		</motion.div>
+	)
+}
