@@ -17,7 +17,7 @@ const BaseFooter = styled.div`
 	opacity: ${Theme.opacity};
 	box-shadow: ${Theme.shadow.inverted};
 
-	@media (max-width: 425px) {
+	@media (max-width: 768px) {
 		height: 30px;
 	}
 `

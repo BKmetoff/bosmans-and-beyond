@@ -15,14 +15,17 @@ const HomeWrapper = styled.div`
 	margin-bottom: ${Theme.margin.L};
 `
 
+const MainPhoto = styled(Image)`
+	margin-top: ${Theme.margin.L};
+`
+
 export default function Home() {
 
 
 	return (
 		<HomeWrapper>
 			<Image main src={MainText} width='60%' height='fit-content' />
-			<Image main src={HomePhoto} width='80%' height='fit-content' />
-
+			<MainPhoto main shadow src={HomePhoto} width='80%' height='fit-content' />
 		</HomeWrapper>
 
 	)

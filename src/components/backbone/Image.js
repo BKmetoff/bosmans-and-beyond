@@ -53,6 +53,11 @@ const Image = styled.img.attrs((props) => ({
 			margin-right: ${Theme.margin.L};
 			border-radius: ${Theme.borderRadius};
 		`}
+
+	${(props) => props.shadow !== undefined && 
+		css`
+			box-shadow: ${Theme.shadow.M}
+		`}
 `
 
 export default Image

@@ -23,7 +23,7 @@ const BaseHeader = styled.div`
 	box-shadow: ${Theme.shadow.S};
 	opacity: 0.95;
 
-	@media (max-width: 425px) {
+	@media (max-width: 768px) {
 		height: 50px;
 	}
 
