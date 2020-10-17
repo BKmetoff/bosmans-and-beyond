@@ -19,7 +19,7 @@ export default function Mission(props) {
 			<SectionWrapper>
 				<Title>Our Patron</Title>
 				<Sheet>
-					<Image round src={patronImage} width='300px' height='300px' />
+					<Image round shadow src={patronImage} width='300px' height='300px' />
 					<Text>{props.patron}</Text>
 				</Sheet>
 			</SectionWrapper>

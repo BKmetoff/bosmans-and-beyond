@@ -19,17 +19,23 @@ export default function About({ people }) {
 			<SectionWrapper>
 				<Title>About us</Title>
 				<Sheet>
-					<Image round width='300px' height='300px' src={ElisavetaImage} />
+					<Image
+						round
+						shadow
+						width='300px'
+						height='300px'
+						src={ElisavetaImage}
+					/>
 					<Text>{elisaveta.bio}</Text>
 				</Sheet>
 				<Divider />
 				<Sheet reversed>
-					<Image round width='300px' height='300px' src={NataliaImage} />
+					<Image round shadow width='300px' height='300px' src={NataliaImage} />
 					<Text>{natalia.bio}</Text>
 				</Sheet>
 				<Divider />
 				<Sheet>
-					<Image round width='300px' height='300px' src={DimitriImage} />
+					<Image round shadow width='300px' height='300px' src={DimitriImage} />
 					<Text>{dimitri.bio}</Text>
 				</Sheet>
 			</SectionWrapper>
