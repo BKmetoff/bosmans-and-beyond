@@ -24,6 +24,7 @@ export const Theme = {
 		backgroundFrom: '#dce0df',
 		backgroundTo: '#e0e4e3',
 		accent: '#fcd088',
+		transparent: '#000000b3',
 	},
 
 	margin: {

@@ -34,6 +34,10 @@ const HeaderLinksWrapper = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
+
+	@media (max-width: 768px) {
+		display: none;
+	}
 `
 
 const HeaderLogosWrapper = styled(Link)`
@@ -41,6 +45,14 @@ const HeaderLogosWrapper = styled(Link)`
 	align-items: center;
 	height: 100%;
 	margin-left: ${Theme.margin.XS};
+`
+
+const ResponsiveMenuWrapper = styled.div`
+	display: none;
+	@media (max-width: 768px) {
+		display: block;
+		margin-right: ${Theme.margin.S};
+	}
 `
 
 export default function Header(props) {
@@ -55,14 +67,16 @@ export default function Header(props) {
 				<Image headerTitle src={HeaderTitle} height='30%' width='fit-content' />
 			</HeaderLogosWrapper>
 
-			<HeaderLinksWrapper>
+			<ResponsiveMenuWrapper>
 				<Button onClick={() => setIsOpen(true)}>open</Button>
 				<ResponsiveMenu
 					open={isOpen}
 					onClose={() => setIsOpen(false)}
 					headerLinks={headerLinks}
 				/>
+			</ResponsiveMenuWrapper>
 
+			<HeaderLinksWrapper>
 				{headerLinks.map((link) => {
 					return (
 						<Button key={link} name={link} type='headerLink'>

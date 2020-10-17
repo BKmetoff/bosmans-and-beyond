@@ -1,25 +1,28 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import styled from 'styled-components'
 
+import { Theme } from './theme/Theme'
 import Button from './backbone/Button'
 
-const modalStyles = {
-	position: 'fixed',
-	top: 0,
-	right: 0,
-	zIndex: 1000,
-	background: '#999',
-}
+const Modal = styled.div`
+	position: fixed;
+	top: 50px;
+	right: 0;
+	z-index: 1000;
+	color: ${Theme.colors.light};
+	background-color: ${Theme.colors.dark};
+`
 
-const overlayStyles = {
-	position: 'fixed',
-	top: 0,
-	left: 0,
-	right: 0,
-	bottom: 0,
-	backgroundColor: 'rgba(0, 0, 0, .7)',
-	zIndex: 1000,
-}
+const Overlay = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: ${Theme.colors.transparent};
+	z-index: 1000;
+`
 
 export default function ResponsiveMenu(props) {
 	const { open, onClose, headerLinks } = props
@@ -29,13 +32,14 @@ export default function ResponsiveMenu(props) {
 	}
 
 	return ReactDom.createPortal(
-		<div style={overlayStyles}>
+		<React.Fragment>
+			<Overlay onClick={onClose} />
 			{console.log(headerLinks)}
-			<div style={modalStyles}>
+			<Modal>
 				<Button onClick={onClose}>close</Button>
 				{headerLinks}
-			</div>
-		</div>,
+			</Modal>
+		</React.Fragment>,
 		document.getElementById('portal')
 	)
 }
