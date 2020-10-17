@@ -8,8 +8,10 @@ import OpenSans2 from '../../fonts/OpenSans.woff2'
 export const Theme = {
 	opacity: 0.9,
 	borderRadius: '3px',
+	borderRadiusM: '5px',
+	hoverScale: 'scale(1.05)',
 	shadow: {
-		S: '0 4px 10px rgba(0, 0, 0, 0.2)',
+		S: '0 1px 10px rgba(0, 0, 0, 0.2)',
 		M: '0 4px 20px rgba(0, 0, 0, 0.2)',
 		inverted: '0 -4px 20px rgba(0, 0, 0, 0.2)',
 	},
@@ -17,12 +19,13 @@ export const Theme = {
 	colors: {
 		primary: '#6083ad',
 		light: '#e2e2e2',
+		lightTest: '#f2f2f4',
 		dark: '#363b3e',
 		backgroundFrom: '#dce0df',
 		backgroundTo: '#e0e4e3',
 		accent: '#fcd088',
-		// transparent: 'rgba(0, 0, 0, 0.5)',
 	},
+
 	margin: {
 		auto: 'auto',
 		XS: '8px',
@@ -31,6 +34,7 @@ export const Theme = {
 		L: '50px',
 		XL: '80px',
 	},
+
 	padding: {
 		XXS: '5px',
 		XS: '10px',
@@ -39,6 +43,7 @@ export const Theme = {
 		L: '50px',
 		XL: '80px',
 	},
+
 	pageTransitions: {
 		variants: {
 			initial: { opacity: 0, y: '-10vh' },

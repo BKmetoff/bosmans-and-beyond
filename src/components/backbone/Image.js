@@ -20,12 +20,12 @@ const Image = styled.img.attrs((props) => ({
 		props.round !== undefined &&
 		css`
 			border-radius: 50%;
-			padding: ${Theme.padding.S};
+			margin: ${Theme.padding.S};
 			flex-shrink: 0;
 		`}
 
-	${(props) => 
-		props.headerTitle !== undefined && 
+	${(props) =>
+		props.headerTitle !== undefined &&
 		css`
 			margin-left: ${Theme.padding.S};
 			padding-top: ${Theme.padding.XXS};
@@ -33,12 +33,12 @@ const Image = styled.img.attrs((props) => ({
 			border-bottom: 1px solid ${Theme.colors.accent};
 
 			@media (max-width: 768px) {
-					display: none;
-				}
+				display: none;
+			}
 		`}
 
-	${(props) => 
-		props.headerRound  !== undefined && 
+	${(props) =>
+		props.headerRound !== undefined &&
 		css`
 			padding: 0;
 			border: none;
@@ -46,7 +46,7 @@ const Image = styled.img.attrs((props) => ({
 		`}
 
 	
-	${(props) => 
+	${(props) =>
 		props.main !== undefined &&
 		css`
 			margin-left: ${Theme.margin.L};
@@ -54,9 +54,10 @@ const Image = styled.img.attrs((props) => ({
 			border-radius: ${Theme.borderRadius};
 		`}
 
-	${(props) => props.shadow !== undefined && 
+	${(props) =>
+		props.shadow !== undefined &&
 		css`
-			box-shadow: ${Theme.shadow.M}
+			box-shadow: ${Theme.shadow.S};
 		`}
 `
 

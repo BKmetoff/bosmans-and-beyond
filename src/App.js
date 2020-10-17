@@ -10,6 +10,7 @@ import Home from './components/Home'
 import Mission from './components/Mission'
 import About from './components/About'
 import Video from './components/Video'
+import NotFound from './components/NotFound'
 
 import { MainWrapper, ContentWrapper } from './components/backbone/Wrapper'
 
@@ -38,6 +39,7 @@ function App() {
 								<Route path='/' exact>
 									<Home />
 								</Route>
+								<Route component={NotFound}></Route>
 							</Switch>
 						</AnimatePresence>
 					</ContentWrapper>
