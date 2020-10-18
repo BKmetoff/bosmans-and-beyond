@@ -10,6 +10,7 @@ import Image from './backbone/Image'
 
 import HeaderRound from '../assets/logo/HeaderRound.png'
 import HeaderTitle from '../assets/logo/HeaderTitle.png'
+import Chevron from '../assets/icons/Chevron.png'
 
 const BaseHeader = styled.div`
 	top: 0;
@@ -22,7 +23,7 @@ const BaseHeader = styled.div`
 	align-items: center;
 	background-color: ${Theme.colors.dark};
 	box-shadow: ${Theme.shadow.S};
-	opacity: 0.95;
+	opacity: ${Theme.opacity};
 
 	@media (max-width: 768px) {
 		height: 50px;
@@ -51,14 +52,24 @@ const ResponsiveMenuWrapper = styled.div`
 	display: none;
 	@media (max-width: 768px) {
 		display: block;
-		margin-right: ${Theme.margin.S};
+		margin-left: auto;
+		margin-right: ${Theme.margin.M};
 	}
 `
 
-export default function Header(props) {
-	const { headerLinks } = { ...props }
+const ChevronContainer = styled.div`
+	transform: rotate(0deg);
+	transition: all 0.3s ease-out;
+	overflow: hidden;
+	transform: ${({ menuOpen }) => (menuOpen ? `rotate(180deg)` : '')};
+	display: flex;
+`
+export default function Header({ headerLinks }) {
+	const [state, setState] = useState({ isOpen: false })
 
-	const [isOpen, setIsOpen] = useState(false)
+	const handleClick = () => {
+		setState((prevState) => ({ isOpen: !prevState.isOpen }))
+	}
 
 	return (
 		<BaseHeader>
@@ -68,10 +79,13 @@ export default function Header(props) {
 			</HeaderLogosWrapper>
 
 			<ResponsiveMenuWrapper>
-				<Button onClick={() => setIsOpen(true)}>open</Button>
+				<ChevronContainer menuOpen={state.isOpen} onClick={handleClick}>
+					<Image height='20px' width='20px' src={Chevron} />
+				</ChevronContainer>
+
 				<ResponsiveMenu
-					open={isOpen}
-					onClose={() => setIsOpen(false)}
+					open={state.isOpen}
+					onClose={() => setState({ isOpen: false })}
 					headerLinks={headerLinks}
 				/>
 			</ResponsiveMenuWrapper>
