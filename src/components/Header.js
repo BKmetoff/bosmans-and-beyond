@@ -15,7 +15,7 @@ import Chevron from '../assets/icons/Chevron.png'
 const BaseHeader = styled.div`
 	top: 0;
 	position: fixed;
-	z-index: 1000;
+	z-index: 1100;
 	width: 100%;
 	height: 70px;
 	display: flex;
@@ -64,6 +64,7 @@ const ChevronContainer = styled.div`
 	transform: ${({ menuOpen }) => (menuOpen ? `rotate(180deg)` : '')};
 	display: flex;
 `
+
 export default function Header({ headerLinks }) {
 	const [state, setState] = useState({ isOpen: false })
 
