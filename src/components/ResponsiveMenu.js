@@ -14,15 +14,17 @@ const Modal = styled.div`
 	z-index: 1000;
 	width: 100%;
 	display: flex;
+	align-items: flex-end;
 	justify-content: center;
 	flex-direction: column;
 	color: ${Theme.colors.light};
 	opacity: ${Theme.opacity};
+	background-color: ${Theme.colors.dark};
 `
 
 const Overlay = styled.div`
 	position: fixed;
-	top: 50px;
+	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -30,9 +32,7 @@ const Overlay = styled.div`
 	z-index: 1000;
 `
 
-export default function ResponsiveMenu(props) {
-	const { open, onClose, headerLinks } = props
-
+export default function ResponsiveMenu({ open, onClose, headerLinks }) {
 	if (!open) {
 		return null
 	}
@@ -40,8 +40,9 @@ export default function ResponsiveMenu(props) {
 	return ReactDom.createPortal(
 		<React.Fragment>
 			<Overlay onClick={onClose} />
+
 			<Modal>
-				<Button onClick={onClose} type='menuLink'>
+				<Button onClick={onClose} name='Home' type='menuLink'>
 					<Link to='/'>Home</Link>
 				</Button>
 
