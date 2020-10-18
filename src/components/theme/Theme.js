@@ -6,7 +6,7 @@ import OpenSans2 from '../../fonts/OpenSans.woff2'
 // <div>Font made from <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a>is licensed by CC BY 3.0</div>
 
 export const Theme = {
-	opacity: 0.9,
+	opacity: 0.95,
 	borderRadius: '3px',
 	borderRadiusM: '5px',
 	hoverScale: 'scale(1.05)',
@@ -24,6 +24,7 @@ export const Theme = {
 		backgroundFrom: '#dce0df',
 		backgroundTo: '#e0e4e3',
 		accent: '#fcd088',
+		transparent: '#000000b3',
 	},
 
 	margin: {

@@ -53,6 +53,14 @@ const types = {
 			-moz-box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
 		}
 	`,
+
+	menuLink: css`
+		width: 100%;
+		height: 70px;
+		color: ${Theme.colors.light};
+		background-color: ${Theme.colors.dark};
+		border-bottom: 1px solid ${Theme.colors.light};
+	`,
 }
 
 const Button = styled(BaseButton)`
