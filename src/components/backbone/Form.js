@@ -16,7 +16,7 @@ const BaseForm = styled.form`
 export default function Form() {
 	console.log('form')
 	return (
-		<BaseForm action='/' name='contact' method='post'>
+		<BaseForm action='/contact' name='contact' method='post'>
 			<input type='hidden' name='form-name' value='contact' />
 			<BaseInput name='email' type='email' placeholder='email' />
 			<BaseInput name='name' type='text' placeholder='name' />
