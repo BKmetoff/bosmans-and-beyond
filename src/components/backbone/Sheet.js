@@ -8,8 +8,8 @@ const Sheet = styled.div`
 	justify-content: center;
 	margin-top: ${Theme.margin.L};
 	padding: ${Theme.padding.S};
-	background-color: ${Theme.colors.lightTest};
-	box-shadow: ${Theme.shadow.S};
+	/* background-color: ${Theme.colors.lightTest}; */
+	/* box-shadow: ${Theme.shadow.S}; */
 	border-radius: 0;
 
 	@media (min-width: 768px) {

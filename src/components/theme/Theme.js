@@ -24,6 +24,7 @@ export const Theme = {
 		backgroundFrom: '#dce0df',
 		backgroundTo: '#e0e4e3',
 		accent: '#fcd088',
+		background: '#fff1a930',
 		transparent: '#000000b3',
 	},
 
@@ -69,7 +70,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   body {
-  background: linear-gradient(to right, ${Theme.colors.backgroundFrom} 0%, ${Theme.colors.backgroundTo} 100%); ;
+  background: ${Theme.colors.background};
+	/* background: linear-gradient(to right, ${Theme.colors.backgroundFrom} 0%, ${Theme.colors.backgroundTo} 100%); ; */
   margin: 0;
   font-family: 'Open Sans', 'sans-serif';
   letter-spacing: 1px;
