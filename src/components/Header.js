@@ -94,7 +94,7 @@ export default function Header({ headerLinks }) {
 			<HeaderLinksWrapper>
 				{headerLinks.map((link) => {
 					return (
-						<Button key={link} name={link} type='headerLink'>
+						<Button key={link} name={link} kind='headerLink'>
 							<Link to={`/${link.toLowerCase()}`}>{link}</Link>
 						</Button>
 					)

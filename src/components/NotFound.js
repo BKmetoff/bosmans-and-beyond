@@ -22,7 +22,7 @@ export default function NotFound() {
 				<NotFoundTitle>
 					Oops, we couldn't find what you were looking for!
 				</NotFoundTitle>
-				<Button type='primary'>
+				<Button kind='primary'>
 					<Link to='/'>Go home </Link>
 				</Button>
 			</SectionWrapper>
