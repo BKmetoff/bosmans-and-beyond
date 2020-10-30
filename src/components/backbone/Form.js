@@ -16,7 +16,7 @@ const BaseForm = styled.form`
 export default function Form() {
 	console.log('form')
 	return (
-		<BaseForm data-netlify='true' method='POST'>
+		<BaseForm data-netlify='true' method='POST' name='contact'>
 			<BaseInput name='email' type='email' placeholder='email' />
 			<BaseInput name='name' type='text' placeholder='name' />
 			<BaseInput name='message' type='text' placeholder='message' />
