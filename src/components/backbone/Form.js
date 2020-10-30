@@ -16,11 +16,15 @@ const BaseForm = styled.form`
 export default function Form() {
 	console.log('form')
 	return (
-		<BaseForm data-netlify='true' method='POST' name='contact'>
+		<BaseForm
+			data-netlify='true'
+			method='POST'
+			name='contact'
+			data-netlify-recaptcha='true'
+		>
 			<BaseInput name='email' type='email' placeholder='email' />
 			<BaseInput name='name' type='text' placeholder='name' />
 			<BaseInput name='message' type='text' placeholder='message' />
-			<div data-netlify-recaptcha='true' />
 			<Button type='submit'>Submit</Button>
 		</BaseForm>
 		// <form name='contact' method='POST' data-netlify='true' action='/success'>
