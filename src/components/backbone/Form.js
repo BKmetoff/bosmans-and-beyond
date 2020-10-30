@@ -22,6 +22,7 @@ export default function Form() {
 			name='contact'
 			data-netlify-recaptcha='true'
 		>
+			<input type='hidden' name='form-name' value='contact' />
 			<BaseInput name='email' type='email' placeholder='email' />
 			<BaseInput name='name' type='text' placeholder='name' />
 			<BaseInput name='message' type='text' placeholder='message' />
