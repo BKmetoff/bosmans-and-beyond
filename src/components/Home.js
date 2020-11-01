@@ -11,7 +11,9 @@ import {
 import Sheet from './backbone/Sheet'
 import { Text, Title } from './backbone/Text'
 
-import HomePhotoDesktop from '../assets/photos/rsz_home.png'
+import HomePhotoDesktop from '../assets/photos/HomeDesktop.png'
+import HomePhotoMobile2 from '../assets/photos/HomeMobile.png'
+import HomePhotoMobile from '../assets/photos/HomeMobile2.jpeg'
 import HomeLogoMobile from '../assets/logo/MainText.png'
 
 import patronImage from '../assets/Patron.png'
@@ -22,7 +24,7 @@ const HomeImageWrapper = styled.div`
 	align-items: center;
 `
 
-const MainPhoto = styled(Image)`
+const DesktopPhoto = styled(Image)`
 	width: 100vw;
 	margin-bottom: ${Theme.margin.L};
 	@media (max-width: 768px) {
@@ -30,7 +32,7 @@ const MainPhoto = styled(Image)`
 	}
 `
 
-const MainLogo = styled(Image)`
+const MobileLogo = styled(Image)`
 	width: 70vw;
 	margin-top: ${Theme.margin.XL};
 	margin-bottom: ${Theme.margin.S};
@@ -38,6 +40,17 @@ const MainLogo = styled(Image)`
 	padding-left: ${Theme.padding.XS};
 	padding-right: ${Theme.padding.SX};
 	padding-bottom: ${Theme.padding.S};
+
+	@media (min-width: 769px) {
+		display: none;
+	}
+`
+
+const MobilePhoto = styled(Image)`
+	width: 100vw;
+	margin-top: ${Theme.margin.M};
+	margin-bottom: ${Theme.margin.S};
+
 	@media (min-width: 769px) {
 		display: none;
 	}
@@ -47,8 +60,9 @@ export default function Home({ mission, patron }) {
 	return (
 		<MotionWrapper>
 			<HomeImageWrapper>
-				<MainPhoto main shadow src={HomePhotoDesktop} />
-				<MainLogo main src={HomeLogoMobile} />
+				<DesktopPhoto main shadow src={HomePhotoDesktop} />
+				<MobileLogo main src={HomeLogoMobile} />
+				<MobilePhoto main shadow src={HomePhotoMobile} />
 			</HomeImageWrapper>
 
 			<ContentWrapper>
@@ -58,6 +72,8 @@ export default function Home({ mission, patron }) {
 						<Text>{mission}</Text>
 					</Sheet>
 				</SectionWrapper>
+
+				<MobilePhoto main shadow src={HomePhotoMobile2} />
 
 				<SectionWrapper>
 					<Title>Our Patron</Title>
