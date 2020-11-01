@@ -45,7 +45,7 @@ function App() {
 									<Success />
 								</Route>
 								<Route path='/' exact>
-									<Home />
+									<Home mission={COPY.text.mission} patron={COPY.text.patron} />
 								</Route>
 								<Route component={NotFound}></Route>
 							</Switch>

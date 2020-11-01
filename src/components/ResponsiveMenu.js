@@ -42,13 +42,13 @@ export default function ResponsiveMenu({ open, onClose, headerLinks }) {
 			<Overlay onClick={onClose} />
 
 			<Modal>
-				<Button onClick={onClose} name='Home' type='menuLink'>
+				<Button onClick={onClose} name='Home' kind='menuLink'>
 					<Link to='/'>Home</Link>
 				</Button>
 
 				{headerLinks.map((link) => {
 					return (
-						<Button key={link} name={link} type='menuLink' onClick={onClose}>
+						<Button key={link} name={link} kind='menuLink' onClick={onClose}>
 							<Link to={`/${link.toLowerCase()}`}>{link}</Link>
 						</Button>
 					)

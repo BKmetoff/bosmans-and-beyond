@@ -6,14 +6,12 @@ const Sheet = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-top: ${Theme.margin.L};
+	margin-top: ${Theme.margin.S};
 	padding: ${Theme.padding.S};
-	/* background-color: ${Theme.colors.lightTest}; */
-	/* box-shadow: ${Theme.shadow.S}; */
 	border-radius: 0;
 
-	@media (min-width: 768px) {
-		border-radius: ${Theme.borderRadius};
+	@media (min-width: 769px) {
+		align-items: flex-start;
 		flex-direction: row;
 
 		${(props) =>
