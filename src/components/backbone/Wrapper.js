@@ -32,8 +32,8 @@ export const ContentWrapper = styled.div`
 export const SectionWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-top: ${Theme.margin.L};
-	margin-bottom: ${Theme.margin.L};
+	margin-top: ${Theme.margin.M};
+	margin-bottom: ${Theme.margin.M};
 `
 
 export const MotionWrapper = (props) => {

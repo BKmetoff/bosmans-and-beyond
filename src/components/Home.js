@@ -3,7 +3,11 @@ import styled from 'styled-components'
 
 import { Theme } from './theme/Theme'
 import Image from './backbone/Image'
-import { MotionWrapper, ContentWrapper } from './backbone/Wrapper'
+import {
+	MotionWrapper,
+	ContentWrapper,
+	SectionWrapper,
+} from './backbone/Wrapper'
 import Sheet from './backbone/Sheet'
 import { Text, Title } from './backbone/Text'
 
@@ -25,6 +29,7 @@ const MainPhoto = styled(Image)`
 		display: none;
 	}
 `
+
 const MainLogo = styled(Image)`
 	width: 70vw;
 	margin-top: ${Theme.margin.XL};
@@ -47,16 +52,26 @@ export default function Home({ mission, patron }) {
 			</HomeImageWrapper>
 
 			<ContentWrapper>
-				<Title>Our Mission</Title>
-				<Sheet>
-					<Text>{mission}</Text>
-				</Sheet>
+				<SectionWrapper>
+					<Title>Our Mission</Title>
+					<Sheet>
+						<Text>{mission}</Text>
+					</Sheet>
+				</SectionWrapper>
 
-				<Title>Our Patron</Title>
-				<Sheet>
-					<Image round shadow src={patronImage} width='300px' height='300px' />
-					<Text>{patron}</Text>
-				</Sheet>
+				<SectionWrapper>
+					<Title>Our Patron</Title>
+					<Sheet>
+						<Image
+							round
+							shadow
+							src={patronImage}
+							width='300px'
+							height='300px'
+						/>
+						<Text>{patron}</Text>
+					</Sheet>
+				</SectionWrapper>
 			</ContentWrapper>
 		</MotionWrapper>
 	)
