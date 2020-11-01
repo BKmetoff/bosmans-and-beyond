@@ -19,7 +19,7 @@ const BaseButton = styled.button`
 	}
 `
 
-const types = {
+const kinds = {
 	primary: css`
 		/* width: 100px;
 		height: 30px; */
@@ -68,7 +68,7 @@ const types = {
 }
 
 const Button = styled(BaseButton)`
-	${({ type }) => types[type]}
+	${({ kind }) => kinds[kind]}
 `
 
 export default Button

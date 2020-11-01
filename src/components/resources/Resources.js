@@ -6,22 +6,22 @@ export const COPY = {
 			kindlyLight: {
 				author: 'Henriëtte Bosmans',
 				title: 'Lead, kindly light',
-				musicians: [ 'Elizaveta Agrafenina, soprano', 'Satomi Chihara, piano' ],
-			url: 'https://www.youtube.com/watch?v=AVB2cjtmAKE'
+				musicians: ['Elizaveta Agrafenina, soprano', 'Satomi Chihara, piano'],
+				url: 'https://www.youtube.com/watch?v=AVB2cjtmAKE',
 			},
 			concertstuk: {
 				author: 'Henriëtte Bosmans',
 				title: 'Concertstuk (excerpts)',
-				musicians: [ 'Natalia Szmydt, violin', 'Dimitri Malignan, piano' ],
-				url: 'https://www.youtube.com/watch?v=8dT7HavtE1w'
+				musicians: ['Natalia Szmydt, violin', 'Dimitri Malignan, piano'],
+				url: 'https://www.youtube.com/watch?v=8dT7HavtE1w',
 			},
 			serenataTicinese: {
 				author: 'Elisabeth Kuyper',
 				title: 'Serenata Ticinese',
-				musicians: [ 'Satomi Chihara, piano' ],
-				url: 'https://www.youtube.com/watch?v=wGBuyjSqF5s'
-			}
-		}
+				musicians: ['Satomi Chihara, piano'],
+				url: 'https://www.youtube.com/watch?v=wGBuyjSqF5s',
+			},
+		},
 	},
 	people: {
 		natalia: {

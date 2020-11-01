@@ -11,6 +11,8 @@ import Mission from './components/Mission'
 import About from './components/About'
 import Video from './components/Video'
 import NotFound from './components/NotFound'
+import Contact from './components/Contact'
+import Success from './components/Success'
 
 import { MainWrapper, ContentWrapper } from './components/backbone/Wrapper'
 
@@ -35,6 +37,12 @@ function App() {
 								</Route>
 								<Route path='/video'>
 									<Video videos={COPY.video} />
+								</Route>
+								<Route path='/contact'>
+									<Contact />
+								</Route>
+								<Route path='/success'>
+									<Success />
 								</Route>
 								<Route path='/' exact>
 									<Home />
