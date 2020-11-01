@@ -1,5 +1,5 @@
 export const COPY = {
-	headerLinks: ['Mission', 'About', 'Video', 'Contact'],
+	headerLinks: ['Mission', 'About', 'Video'],
 	video: {
 		channel: 'https://www.youtube.com/channel/UCDmtuNR6rWMsMwmSh8kSfHg',
 		clips: {
