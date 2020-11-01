@@ -4,10 +4,9 @@ import { Switch, Route, useLocation } from 'react-router-dom'
 
 import { AnimatePresence } from 'framer-motion'
 
-import { COPY } from './components/resources/Resources'
+import { COPY, VIDEOS } from './components/resources/Resources'
 
 import Home from './components/Home'
-import Mission from './components/Mission'
 import About from './components/About'
 import Video from './components/Video'
 import NotFound from './components/NotFound'
@@ -26,17 +25,11 @@ function App() {
 					<ContentWrapper>
 						<AnimatePresence exitBeforeEnter>
 							<Switch location={location} key={location.pathname}>
-								<Route path='/mission'>
-									<Mission
-										mission={COPY.text.mission}
-										patron={COPY.text.patron}
-									/>
-								</Route>
 								<Route path='/about'>
 									<About people={COPY.people} />
 								</Route>
 								<Route path='/video'>
-									<Video videos={COPY.video} />
+									<Video videos={VIDEOS} />
 								</Route>
 								<Route path='/contact'>
 									<Contact />
