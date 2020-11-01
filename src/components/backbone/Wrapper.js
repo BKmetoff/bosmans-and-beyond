@@ -23,6 +23,10 @@ export const ContentWrapper = styled.div`
 	@media (min-width: 1366px) {
 		width: 1366px;
 	}
+
+	@media (max-width: 769px) {
+		margin-top: ${Theme.margin.M};
+	}
 `
 
 export const SectionWrapper = styled.div`

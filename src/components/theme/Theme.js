@@ -18,12 +18,13 @@ export const Theme = {
 
 	colors: {
 		primary: '#6083ad',
+		accent: '#fcd088',
+		accentBorder: '#fcd0884f',
 		light: '#e2e2e2',
 		lightTest: '#f2f2f4',
 		dark: '#363b3e',
 		backgroundFrom: '#dce0df',
 		backgroundTo: '#e0e4e3',
-		accent: '#fcd088',
 		background: '#fff1a930',
 		transparent: '#000000b3',
 	},

@@ -10,8 +10,8 @@ const Sheet = styled.div`
 	padding: ${Theme.padding.S};
 	border-radius: 0;
 
-	@media (min-width: 768px) {
-		border-radius: ${Theme.borderRadius};
+	@media (min-width: 769px) {
+		align-items: flex-start;
 		flex-direction: row;
 
 		${(props) =>

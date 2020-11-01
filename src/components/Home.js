@@ -16,21 +16,23 @@ const HomeImageWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: ${Theme.margin.L};
 `
 
 const MainPhoto = styled(Image)`
 	width: 100vw;
+	margin-bottom: ${Theme.margin.L};
 	@media (max-width: 768px) {
 		display: none;
 	}
 `
 const MainLogo = styled(Image)`
 	width: 70vw;
-	border-bottom: 1px solid #fcd0884f;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-bottom: 15px;
+	margin-top: ${Theme.margin.XL};
+	margin-bottom: ${Theme.margin.S};
+	border-bottom: 1px solid ${Theme.colors.accentBorder};
+	padding-left: ${Theme.padding.XS};
+	padding-right: ${Theme.padding.SX};
+	padding-bottom: ${Theme.padding.S};
 	@media (min-width: 769px) {
 		display: none;
 	}
