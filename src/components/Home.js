@@ -3,38 +3,42 @@ import styled from 'styled-components'
 
 import { Theme } from './theme/Theme'
 import Image from './backbone/Image'
-import { MotionWrapper } from './backbone/Wrapper'
+import { MotionWrapper, ContentWrapper } from './backbone/Wrapper'
+import Sheet from './backbone/Sheet'
+import { Text, Title } from './backbone/Text'
 
-import MainText from '../assets/logo/MainText.png'
 import HomePhoto from '../assets/photos/rsz_home.png'
+import patronImage from '../assets/Patron.png'
 
-const HomeWrapper = styled.div`
+const HomeImageWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* margin-top: ${Theme.margin.L}; */
 	margin-bottom: ${Theme.margin.L};
 `
 
 const MainPhoto = styled(Image)`
 	width: 100vw;
-	/* opacity: 0.8; */
-	filter: brightness(90%);
 `
 
-export default function Home() {
+export default function Home({ mission, patron }) {
 	return (
 		<MotionWrapper>
-			<HomeWrapper>
-				{/* <Image main src={MainText} width='60%' height='fit-content' /> */}
-				<MainPhoto
-					main
-					shadow
-					src={HomePhoto}
-					// width='80%'
-					height='fit-content'
-				/>
-			</HomeWrapper>
+			<HomeImageWrapper>
+				<MainPhoto main shadow src={HomePhoto} />
+			</HomeImageWrapper>
+			<ContentWrapper>
+				<Title>Our Mission</Title>
+				<Sheet>
+					<Text>{mission}</Text>
+				</Sheet>
+
+				<Title>Our Patron</Title>
+				<Sheet>
+					<Image round shadow src={patronImage} width='300px' height='300px' />
+					<Text>{patron}</Text>
+				</Sheet>
+			</ContentWrapper>
 		</MotionWrapper>
 	)
 }
