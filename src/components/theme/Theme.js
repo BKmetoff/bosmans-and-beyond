@@ -34,7 +34,7 @@ export const Theme = {
 		S: '12px',
 		M: '30px',
 		L: '50px',
-		XL: '80px',
+		XL: '70px',
 	},
 
 	padding: {
