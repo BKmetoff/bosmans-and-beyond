@@ -7,7 +7,9 @@ import { MotionWrapper, ContentWrapper } from './backbone/Wrapper'
 import Sheet from './backbone/Sheet'
 import { Text, Title } from './backbone/Text'
 
-import HomePhoto from '../assets/photos/rsz_home.png'
+import HomePhotoDesktop from '../assets/photos/rsz_home.png'
+import HomeLogoMobile from '../assets/logo/MainText.png'
+
 import patronImage from '../assets/Patron.png'
 
 const HomeImageWrapper = styled.div`
@@ -19,14 +21,29 @@ const HomeImageWrapper = styled.div`
 
 const MainPhoto = styled(Image)`
 	width: 100vw;
+	@media (max-width: 768px) {
+		display: none;
+	}
+`
+const MainLogo = styled(Image)`
+	width: 70vw;
+	border-bottom: 1px solid #fcd0884f;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	@media (min-width: 769px) {
+		display: none;
+	}
 `
 
 export default function Home({ mission, patron }) {
 	return (
 		<MotionWrapper>
 			<HomeImageWrapper>
-				<MainPhoto main shadow src={HomePhoto} />
+				<MainPhoto main shadow src={HomePhotoDesktop} />
+				<MainLogo main src={HomeLogoMobile} />
 			</HomeImageWrapper>
+
 			<ContentWrapper>
 				<Title>Our Mission</Title>
 				<Sheet>

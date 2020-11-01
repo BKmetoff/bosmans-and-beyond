@@ -49,14 +49,10 @@ const Image = styled.img.attrs((props) => ({
 	${(props) =>
 		props.main !== undefined &&
 		css`
-			/* margin-left: ${Theme.margin.L};
-			margin-right: ${Theme.margin.L};
-			border-radius: ${Theme.borderRadius}; */
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
 			background-size: cover;
-			width: 100%;
 			background-attachment: fixed;
 		`}
 

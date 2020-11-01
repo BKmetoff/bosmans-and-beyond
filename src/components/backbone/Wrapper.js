@@ -19,8 +19,6 @@ export const ContentWrapper = styled.div`
 	justify-content: center;
 	margin-top: ${Theme.margin.XL};
 	margin-bottom: ${Theme.margin.M};
-	margin-left: ${Theme.margin.M};
-	margin-right: ${Theme.margin.M};
 
 	@media (min-width: 1366px) {
 		width: 1366px;
