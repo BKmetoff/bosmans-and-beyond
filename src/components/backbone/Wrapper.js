@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Theme } from '../theme/Theme'
 
 export const MainWrapper = styled.div`
@@ -23,6 +23,14 @@ export const ContentWrapper = styled.div`
 	@media (min-width: 1366px) {
 		width: 1366px;
 	}
+
+	${({ width }) =>
+		width !== undefined &&
+		css`
+			width: 65vw !important;
+			margin-left: auto;
+			margin-right: auto;
+		`}
 
 	@media (max-width: 769px) {
 		margin-top: ${Theme.margin.M};
