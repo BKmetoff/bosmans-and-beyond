@@ -1,20 +1,42 @@
 import React, { useState, useEffect } from 'react'
 import ReactPlayer from 'react-player'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-import { SectionWrapper, MotionWrapper } from './backbone/Wrapper'
 import { Theme } from './theme/Theme'
+import { ContentWrapper, MotionWrapper } from './backbone/Wrapper'
+import { Title } from './backbone/Text'
 
 const _ = require('lodash')
 
 const VideoWrapper = styled.div`
 	align-self: center;
-	background: ${Theme.colors.accentBorder};
-	padding: ${({ windowWidth }) =>
-		windowWidth > 768 ? Theme.padding.S : Theme.padding.XS};
-	border-radius: ${Theme.borderRadiusM};
 	margin-bottom: ${Theme.margin.M};
-	box-shadow: ${Theme.shadow.S};
+	box-shadow: ${Theme.shadow.L};
+`
+
+const MusiciansWrapper = styled.div`
+	text-align: end;
+	font-weight: 300;
+	font-size: ${({ windowWidth }) => windowWidth < 768 && '13px'};
+	margin-right: ${Theme.margin.S};
+	margin-top: ${Theme.margin.XS};
+	margin-bottom: ${Theme.margin.S};
+`
+
+const VideoTitle = styled(Title)`
+	margin-top: ${Theme.margin.M};
+	margin-right: ${Theme.margin.S};
+
+	${({ windowWidth }) =>
+		windowWidth < 768
+			? css`
+					font-size: 22px;
+					width: 230px;
+			  `
+			: css`
+					font-size: 26px;
+					width: 270px;
+			  `}
 `
 
 // the method below is from
@@ -52,20 +74,28 @@ export default function Video({ videos }) {
 
 	return (
 		<MotionWrapper>
-			<SectionWrapper>
+			<ContentWrapper width={width + 'px'}>
 				{_.map(videos.clips, (clip) => {
 					return (
-						<VideoWrapper key={clip.title} windowWidth={width}>
-							<ReactPlayer
-								url={clip.url}
-								controls={true}
-								width={calculatedWidth + 'px'}
-								height={calculatedHeight + 'px'}
-							/>
-						</VideoWrapper>
+						<React.Fragment key={clip.title}>
+							<VideoTitle windowWidth={width}>{clip.title}</VideoTitle>
+							<MusiciansWrapper windowWidth={width}>
+								{_.map(clip.musicians, (musician) => {
+									return <p key={musician}>{musician}</p>
+								})}
+							</MusiciansWrapper>
+							<VideoWrapper windowWidth={width}>
+								<ReactPlayer
+									url={clip.url}
+									controls={true}
+									width={calculatedWidth + 'px'}
+									height={calculatedHeight + 'px'}
+								/>
+							</VideoWrapper>
+						</React.Fragment>
 					)
 				})}
-			</SectionWrapper>
+			</ContentWrapper>
 		</MotionWrapper>
 	)
 }
