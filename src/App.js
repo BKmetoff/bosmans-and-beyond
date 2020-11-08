@@ -19,7 +19,6 @@ function App() {
 	const location = useLocation()
 	return (
 		<div className='App'>
-			{console.log(location.pathname)}
 			<Layout headerLinks={COPY.headerLinks}>
 				<MainWrapper>
 					<ContentWrapper>
@@ -32,7 +31,7 @@ function App() {
 									<Video videos={VIDEOS} />
 								</Route>
 								<Route path='/contact'>
-									<Contact />
+									<Contact contact={COPY.text.contact} />
 								</Route>
 								<Route path='/success'>
 									<Success />

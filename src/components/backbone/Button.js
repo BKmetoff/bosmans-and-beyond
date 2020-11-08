@@ -21,14 +21,12 @@ const BaseButton = styled.button`
 
 const kinds = {
 	primary: css`
-		/* width: 100px;
-		height: 30px; */
 		align-self: center;
-		color: ${Theme.colors.primary};
-		background-color: ${Theme.colors.light};
+		color: ${Theme.colors.dark};
+		background-color: ${Theme.colors.accent};
 
 		border-radius: ${Theme.borderRadius};
-		border: 1px solid ${Theme.colors.primary};
+		border: 1px solid ${Theme.colors.dark};
 		margin-top: ${Theme.margin.M};
 		padding: ${Theme.margin.XS} ${Theme.margin.S} ${Theme.margin.XS}
 			${Theme.margin.S};

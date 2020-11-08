@@ -75,13 +75,12 @@ export const GlobalStyle = createGlobalStyle`
   background: ${Theme.colors.background};
 	/* background: linear-gradient(to right, ${Theme.colors.backgroundFrom} 0%, ${Theme.colors.backgroundTo} 100%); ; */
   margin: 0;
-  font-family: 'Open Sans', 'sans-serif';
+  font-family: 'Open Sans', 'sans-serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   letter-spacing: 1px;
   line-height: 1.9;
-  
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   }
@@ -98,4 +97,10 @@ export const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
   }
+
+	::placeholder {
+		font-family: 'Open Sans', 'sans-serif';
+		letter-spacing: 1px;
+		line-height: 1.9;
+	}
 `
