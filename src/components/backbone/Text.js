@@ -12,8 +12,9 @@ export const Text = styled.p`
 			padding-bottom: ${Theme.padding.XXS};
 			padding-top: 0;
 			font-size: 14px;
-			@media (max-width: 425px) {
+			@media (max-width: 768px) {
 				font-size: 12px;
+				padding-bottom: 0;
 			}
 		`}
 `

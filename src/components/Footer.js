@@ -39,6 +39,10 @@ const FooterIconsWrapper = styled.div`
 	a {
 		display: flex;
 	}
+
+	@media (max-width: 768px) {
+		padding-bottom: 0;
+	}
 `
 
 export default function Footer() {
