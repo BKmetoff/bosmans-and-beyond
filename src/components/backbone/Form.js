@@ -1,36 +1,14 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { Theme } from '../theme/Theme'
 import Button from './Button'
+import Input from './Input'
 
 const SubmitButton = styled(Button)`
 	align-self: auto;
 	margin-left: ${Theme.margin.XS};
 	margin-right: ${Theme.margin.XS};
-`
-
-const BaseInput = styled.input`
-	width: 200px;
-	height: 40px;
-	padding-left: ${Theme.padding.S};
-	padding-right: ${Theme.padding.S};
-	border: none;
-	border-radius: ${Theme.borderRadiusM};
-	margin-bottom: ${Theme.margin.XS};
-	margin-top: ${Theme.margin.S};
-	margin-left: ${Theme.margin.XS};
-	margin-right: ${Theme.margin.XS};
-	box-shadow: ${Theme.shadow.S};
-
-	${({ message }) =>
-		message !== undefined &&
-		css`
-			height: 200px;
-			@media (min-width: 769px) {
-				width: 90%;
-			}
-		`}
 `
 
 const BaseForm = styled.form`
@@ -54,10 +32,10 @@ export default function Form() {
 		<BaseForm action='/contact' name='contact' method='post'>
 			<input type='hidden' name='form-name' value='contact' />
 			<NameEmailWrapper>
-				<BaseInput name='email' type='email' placeholder='Email' required />
-				<BaseInput name='name' type='text' placeholder='Name' required />
+				<Input name='email' type='email' placeholder='Email' required />
+				<Input name='name' type='text' placeholder='Name' required />
 			</NameEmailWrapper>
-			<BaseInput
+			<Input
 				message
 				name='message'
 				type='text'
