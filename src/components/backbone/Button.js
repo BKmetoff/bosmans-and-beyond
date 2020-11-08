@@ -23,15 +23,17 @@ const kinds = {
 	primary: css`
 		align-self: center;
 		color: ${Theme.colors.dark};
-		background-color: ${Theme.colors.accent};
-
-		border-radius: ${Theme.borderRadius};
-		border: 1px solid ${Theme.colors.dark};
-		margin-top: ${Theme.margin.M};
+		background-color: ${Theme.colors.background};
+		border-radius: ${Theme.borderRadiusM};
+		border: 1px solid ${Theme.colors.background};
+		margin-top: ${Theme.margin.S};
+		box-shadow: ${Theme.shadow.button};
 		padding: ${Theme.margin.XS} ${Theme.margin.S} ${Theme.margin.XS}
 			${Theme.margin.S};
 		:hover {
 			transform: ${Theme.hoverScale};
+			background-color: ${Theme.colors.accent};
+			box-shadow: ${Theme.shadow.M};
 		}
 	`,
 

@@ -4,14 +4,24 @@ import styled, { css } from 'styled-components'
 import { Theme } from '../theme/Theme'
 import Button from './Button'
 
+const SubmitButton = styled(Button)`
+	align-self: auto;
+	margin-left: ${Theme.margin.XS};
+	margin-right: ${Theme.margin.XS};
+`
+
 const BaseInput = styled.input`
 	width: 200px;
 	height: 40px;
 	padding-left: ${Theme.padding.S};
 	padding-right: ${Theme.padding.S};
-	margin-bottom: ${Theme.margin.S};
+	border: none;
+	border-radius: ${Theme.borderRadiusM};
+	margin-bottom: ${Theme.margin.XS};
+	margin-top: ${Theme.margin.S};
 	margin-left: ${Theme.margin.XS};
 	margin-right: ${Theme.margin.XS};
+	box-shadow: ${Theme.shadow.S};
 
 	${({ message }) =>
 		message !== undefined &&
@@ -54,9 +64,9 @@ export default function Form() {
 				placeholder='Message'
 				required
 			/>
-			<Button type='submit' kind='primary'>
+			<SubmitButton type='submit' kind='primary'>
 				Submit
-			</Button>
+			</SubmitButton>
 		</BaseForm>
 	)
 }
