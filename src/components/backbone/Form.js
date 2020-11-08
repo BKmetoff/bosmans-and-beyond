@@ -5,17 +5,17 @@ import { Theme } from '../theme/Theme'
 import Button from './Button'
 import Input from './Input'
 
-const SubmitButton = styled(Button)`
-	align-self: auto;
-	margin-left: ${Theme.margin.XS};
-	margin-right: ${Theme.margin.XS};
-`
-
 const BaseForm = styled.form`
 	display: flex;
 	flex-direction: column;
 	margin-left: ${Theme.margin.M};
 	margin-right: ${Theme.margin.S};
+`
+
+const SubmitButton = styled(Button)`
+	align-self: auto;
+	margin-left: ${Theme.margin.XS};
+	margin-right: ${Theme.margin.XS};
 `
 
 const NameEmailWrapper = styled.div`
