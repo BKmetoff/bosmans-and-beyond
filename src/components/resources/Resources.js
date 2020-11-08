@@ -1,5 +1,5 @@
 export const COPY = {
-	headerLinks: ['About', 'Video'],
+	headerLinks: ['About', 'Video', 'Contact'],
 
 	people: {
 		natalia: {

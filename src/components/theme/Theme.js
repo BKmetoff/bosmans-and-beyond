@@ -99,9 +99,14 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-tap-highlight-color: transparent;
   }
 
+	textarea,
+	input,
 	::placeholder {
-		font-family: 'Open Sans', 'sans-serif';
+		font-size:14px;
 		letter-spacing: 1px;
 		line-height: 1.9;
+		font-family: 'Open Sans', 'sans-serif', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
 	}
 `

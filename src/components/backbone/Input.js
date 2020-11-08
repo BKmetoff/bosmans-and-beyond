@@ -14,13 +14,13 @@ const Input = styled.input`
 	margin-right: ${Theme.margin.XS};
 	box-shadow: ${Theme.shadow.S};
 
-	${({ message }) =>
+	/* ${({ message }) =>
 		message !== undefined &&
 		css`
 			height: 200px;
 			@media (min-width: 769px) {
 				width: 90%;
 			}
-		`}
+		`} */
 `
 export default Input

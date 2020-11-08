@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Theme } from '../theme/Theme'
 import Button from './Button'
 import Input from './Input'
+import Textarea from './Textarea'
 
 const BaseForm = styled.form`
 	display: flex;
@@ -32,14 +33,26 @@ export default function Form() {
 		<BaseForm action='/contact' name='contact' method='post'>
 			<input type='hidden' name='form-name' value='contact' />
 			<NameEmailWrapper>
-				<Input name='email' type='email' placeholder='Email' required />
-				<Input name='name' type='text' placeholder='Name' required />
+				<Input
+					name='email'
+					type='email'
+					placeholder='Email'
+					label='email'
+					required
+				/>
+				<Input
+					name='name'
+					type='text'
+					placeholder='Name'
+					label='name'
+					required
+				/>
 			</NameEmailWrapper>
-			<Input
-				message
+			<Textarea
 				name='message'
-				type='text'
+				rows='10'
 				placeholder='Message'
+				label='message'
 				required
 			/>
 			<SubmitButton type='submit' kind='primary'>
