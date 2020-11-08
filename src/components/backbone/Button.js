@@ -3,6 +3,7 @@ import { Theme } from '../theme/Theme'
 
 const BaseButton = styled.button`
 	font-size: 16px;
+	font-family: sans-serif;
 	min-width: 80px;
 	outline: none;
 	border: none;
@@ -11,7 +12,7 @@ const BaseButton = styled.button`
 	}
 
 	a {
-		font-family: 'Open Sans', 'sans-serif';
+		font-family: sans-serif;
 		letter-spacing: 1px;
 		text-decoration: none;
 		color: inherit;
@@ -31,7 +32,6 @@ const kinds = {
 		padding: ${Theme.margin.XS} ${Theme.margin.S} ${Theme.margin.XS}
 			${Theme.margin.S};
 		:hover {
-			transform: ${Theme.hoverScale};
 			background-color: ${Theme.colors.accent};
 			box-shadow: ${Theme.shadow.M};
 		}

@@ -74,9 +74,8 @@ export const GlobalStyle = createGlobalStyle`
   
   body {
   background: ${Theme.colors.background};
-	/* background: linear-gradient(to right, ${Theme.colors.backgroundFrom} 0%, ${Theme.colors.backgroundTo} 100%); ; */
   margin: 0;
-  font-family: 'Open Sans', 'sans-serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Open Sans', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   letter-spacing: 1px;

@@ -37,10 +37,14 @@ export const COPY = {
 			quote: 'Where words fail, music speaks.',
 		},
 	},
+	socialMediaURLs: {
+		FaceBook: 'https://www.facebook.com/BosmansBeyond/',
+		Instagram: 'https://www.instagram.com/bosmansbeyond/',
+		YouTube: 'https://www.youtube.com/channel/UCDmtuNR6rWMsMwmSh8kSfHg',
+	},
 }
 
 export const VIDEOS = {
-	channel: 'https://www.youtube.com/channel/UCDmtuNR6rWMsMwmSh8kSfHg',
 	clips: {
 		kindlyLight: {
 			author: 'Henriëtte Bosmans',

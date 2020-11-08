@@ -4,28 +4,28 @@ import { Theme } from '../theme/Theme'
 const Image = styled.img.attrs((props) => ({
 	src: props.src,
 }))`
-	${(props) =>
-		props.height !== undefined &&
+	${({ height }) =>
+		height !== undefined &&
 		css`
 			height: props.height;
 		`}
 
-	${(props) =>
-		props.width !== undefined &&
+	${({ width }) =>
+		width !== undefined &&
 		css`
 			width: props.width;
 		`}
 
-	${(props) =>
-		props.round !== undefined &&
+	${({ round }) =>
+		round !== undefined &&
 		css`
 			border-radius: 50%;
 			margin: ${Theme.padding.S};
 			flex-shrink: 0;
 		`}
 
-	${(props) =>
-		props.headerTitle !== undefined &&
+	${({ headerTitle }) =>
+		headerTitle !== undefined &&
 		css`
 			margin-left: ${Theme.padding.S};
 			padding-top: ${Theme.padding.XXS};
@@ -37,8 +37,8 @@ const Image = styled.img.attrs((props) => ({
 			}
 		`}
 
-	${(props) =>
-		props.headerRound !== undefined &&
+	${({ headerRound }) =>
+		headerRound !== undefined &&
 		css`
 			padding: 0;
 			border: none;
@@ -46,8 +46,8 @@ const Image = styled.img.attrs((props) => ({
 		`}
 
 	
-	${(props) =>
-		props.main !== undefined &&
+	${({ main }) =>
+		main !== undefined &&
 		css`
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
@@ -56,10 +56,18 @@ const Image = styled.img.attrs((props) => ({
 			background-attachment: fixed;
 		`}
 
-	${(props) =>
-		props.shadow !== undefined &&
+	${({ shadow }) =>
+		shadow !== undefined &&
 		css`
 			box-shadow: ${Theme.shadow.S};
+		`}
+
+	${({ footerIcon }) =>
+		footerIcon !== undefined &&
+		css`
+			height: 22px;
+			width: 22px;
+			margin-right: ${Theme.margin.S};
 		`}
 `
 

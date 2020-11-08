@@ -18,7 +18,7 @@ export const ContentWrapper = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	margin-top: ${Theme.margin.XL};
-	margin-bottom: ${Theme.margin.M};
+	margin-bottom: ${Theme.margin.L};
 
 	@media (min-width: 1366px) {
 		width: 1366px;
