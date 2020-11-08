@@ -7,12 +7,15 @@ export const Text = styled.p`
 	padding: ${Theme.padding.S};
 
 	${(props) =>
-			props.footer !== undefined &&
-			css`
-				@media (max-width: 425px) {
-					font-size: 12px;
-				}
-			`}
+		props.footer !== undefined &&
+		css`
+			padding-bottom: ${Theme.padding.XXS};
+			padding-top: 0;
+			font-size: 14px;
+			@media (max-width: 425px) {
+				font-size: 12px;
+			}
+		`}
 `
 
 export const Title = styled.h1`

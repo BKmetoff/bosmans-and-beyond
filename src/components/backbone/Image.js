@@ -61,6 +61,14 @@ const Image = styled.img.attrs((props) => ({
 		css`
 			box-shadow: ${Theme.shadow.S};
 		`}
+
+	${({ footerIcon }) =>
+		footerIcon !== undefined &&
+		css`
+			height: 22px;
+			width: 22px;
+			margin-right: ${Theme.margin.S};
+		`}
 `
 
 export default Image
