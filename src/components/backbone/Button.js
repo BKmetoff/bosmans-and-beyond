@@ -21,19 +21,19 @@ const BaseButton = styled.button`
 
 const kinds = {
 	primary: css`
-		/* width: 100px;
-		height: 30px; */
 		align-self: center;
-		color: ${Theme.colors.primary};
-		background-color: ${Theme.colors.light};
-
-		border-radius: ${Theme.borderRadius};
-		border: 1px solid ${Theme.colors.primary};
-		margin-top: ${Theme.margin.M};
+		color: ${Theme.colors.dark};
+		background-color: ${Theme.colors.background};
+		border-radius: ${Theme.borderRadiusM};
+		border: 1px solid ${Theme.colors.background};
+		margin-top: ${Theme.margin.S};
+		box-shadow: ${Theme.shadow.button};
 		padding: ${Theme.margin.XS} ${Theme.margin.S} ${Theme.margin.XS}
 			${Theme.margin.S};
 		:hover {
 			transform: ${Theme.hoverScale};
+			background-color: ${Theme.colors.accent};
+			box-shadow: ${Theme.shadow.M};
 		}
 	`,
 

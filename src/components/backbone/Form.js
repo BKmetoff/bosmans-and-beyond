@@ -1,27 +1,63 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { Theme } from '../theme/Theme'
 import Button from './Button'
-
-const BaseInput = styled.input`
-	width: 200px;
-	height: 40px;
-`
+import Input from './Input'
+import Textarea from './Textarea'
 
 const BaseForm = styled.form`
 	display: flex;
 	flex-direction: column;
+	margin-left: ${Theme.margin.M};
+	margin-right: ${Theme.margin.S};
+`
+
+const SubmitButton = styled(Button)`
+	align-self: auto;
+	margin-left: ${Theme.margin.XS};
+	margin-right: ${Theme.margin.XS};
+`
+
+const NameEmailWrapper = styled.div`
+	margin-top: ${Theme.margin.S};
+	display: flex;
+	flex-direction: column;
+	@media (min-width: 769px) {
+		flex-direction: row;
+	}
 `
 
 export default function Form() {
-	console.log('form')
 	return (
 		<BaseForm action='/contact' name='contact' method='post'>
 			<input type='hidden' name='form-name' value='contact' />
-			<BaseInput name='email' type='email' placeholder='email' />
-			<BaseInput name='name' type='text' placeholder='name' />
-			<BaseInput name='message' type='text' placeholder='message' />
-			<Button type='submit'>Submit</Button>
+			<NameEmailWrapper>
+				<Input
+					name='email'
+					type='email'
+					placeholder='Email'
+					label='email'
+					required
+				/>
+				<Input
+					name='name'
+					type='text'
+					placeholder='Name'
+					label='name'
+					required
+				/>
+			</NameEmailWrapper>
+			<Textarea
+				name='message'
+				rows='10'
+				placeholder='Message'
+				label='message'
+				required
+			/>
+			<SubmitButton type='submit' kind='primary'>
+				Submit
+			</SubmitButton>
 		</BaseForm>
 	)
 }

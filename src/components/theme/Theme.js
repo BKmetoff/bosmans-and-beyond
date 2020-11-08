@@ -14,6 +14,7 @@ export const Theme = {
 		S: '0 1px 10px rgba(0, 0, 0, 0.2)',
 		M: '0 4px 20px rgba(0, 0, 0, 0.2)',
 		L: '0 10px 15px rgba(0,0,0,0.2)',
+		button: '0 5px 10px rgba(0,0,0,0.2)',
 		inverted: '0 -4px 20px rgba(0, 0, 0, 0.2)',
 	},
 
@@ -75,13 +76,12 @@ export const GlobalStyle = createGlobalStyle`
   background: ${Theme.colors.background};
 	/* background: linear-gradient(to right, ${Theme.colors.backgroundFrom} 0%, ${Theme.colors.backgroundTo} 100%); ; */
   margin: 0;
-  font-family: 'Open Sans', 'sans-serif';
+  font-family: 'Open Sans', 'sans-serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   letter-spacing: 1px;
   line-height: 1.9;
-  
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   }
@@ -98,4 +98,15 @@ export const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
   }
+
+	textarea,
+	input,
+	::placeholder {
+		font-size:14px;
+		letter-spacing: 1px;
+		line-height: 1.9;
+		font-family: 'Open Sans', 'sans-serif', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	}
 `
