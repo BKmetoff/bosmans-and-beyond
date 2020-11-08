@@ -15,6 +15,7 @@ const BaseForm = styled.form`
 
 const SubmitButton = styled(Button)`
 	align-self: auto;
+	font-family: inherit;
 	margin-left: ${Theme.margin.XS};
 	margin-right: ${Theme.margin.XS};
 `
