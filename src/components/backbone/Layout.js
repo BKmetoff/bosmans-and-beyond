@@ -11,10 +11,6 @@ const Layout = (props) => {
 	const [headerIsShown, setHeaderIsShown] = useState(false)
 	let currentPage = useHistory().location.pathname
 
-	useEffect(() => {
-		setDisplayHeader()
-	}, [])
-
 	const setDisplayHeader = () => {
 		if (currentPage !== '/') {
 			setHeaderIsShown(true)
@@ -23,6 +19,10 @@ const Layout = (props) => {
 
 		window.scrollY > 170 ? setHeaderIsShown(true) : setHeaderIsShown(false)
 	}
+
+	useEffect(() => {
+		setDisplayHeader()
+	}, [])
 
 	document.addEventListener('scroll', setDisplayHeader)
 	return (
