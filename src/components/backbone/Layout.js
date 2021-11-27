@@ -22,7 +22,7 @@ const Layout = (props) => {
 
 	useEffect(() => {
 		setDisplayHeader()
-	}, [])
+	})
 
 	document.addEventListener('scroll', setDisplayHeader)
 	return (
