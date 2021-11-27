@@ -6,7 +6,7 @@ export const Divider = styled.div`
 	height: 1px;
 	width: 40%;
 	align-self: center;
-	border-top: 1px solid ${Theme.colors.primary};
+	border-top: 1px solid ${Theme.colors.accent};
 	box-shadow: ${Theme.shadow.M};
 
 	@media (min-width: 768px) {

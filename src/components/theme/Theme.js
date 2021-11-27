@@ -63,6 +63,8 @@ export const Theme = {
 			duration: 0.25,
 		},
 	},
+
+	bioImageSize: '300px',
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -99,6 +101,11 @@ export const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
   }
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
 
 	textarea,
 	input,

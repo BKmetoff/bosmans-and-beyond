@@ -20,8 +20,8 @@ const Sheet = styled.div`
 		align-items: flex-start;
 		flex-direction: row;
 
-		${(props) =>
-			props.reversed !== undefined &&
+		${({ reversed }) =>
+			reversed &&
 			css`
 				flex-direction: row-reverse;
 			`}
