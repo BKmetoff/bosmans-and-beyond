@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { Theme } from './theme/Theme'
 import ResponsiveMenu from './ResponsiveMenu'
@@ -13,20 +13,29 @@ import HeaderTitle from '../assets/logo/HeaderTitle.png'
 import Chevron from '../assets/icons/Chevron.png'
 
 const BaseHeader = styled.div`
-	top: 0;
+	top: 0px;
 	position: fixed;
 	z-index: 1100;
 	width: 100%;
 	height: 70px;
-	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background-color: ${Theme.colors.dark};
 	box-shadow: ${Theme.shadow.S};
 	opacity: ${Theme.opacity};
 
+	${({ headerIsShown }) =>
+		headerIsShown
+			? css`
+					display: flex;
+			  `
+			: css`
+					display: none;
+			  `}
+
 	@media (max-width: 768px) {
 		height: 50px;
+		display: flex;
 	}
 `
 
@@ -65,7 +74,7 @@ const ChevronContainer = styled.div`
 	display: flex;
 `
 
-export default function Header({ headerLinks }) {
+export default function Header({ headerLinks, headerIsShown }) {
 	const [state, setState] = useState({ isOpen: false })
 
 	const handleClick = () => {
@@ -73,7 +82,7 @@ export default function Header({ headerLinks }) {
 	}
 
 	return (
-		<BaseHeader>
+		<BaseHeader headerIsShown={headerIsShown}>
 			<HeaderLogosWrapper to='/'>
 				<Image headerRound src={HeaderRound} height='75%' width='fit-content' />
 				<Image headerTitle src={HeaderTitle} height='30%' width='fit-content' />
