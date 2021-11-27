@@ -16,6 +16,7 @@ export const Theme = {
 		L: '0 10px 15px rgba(0,0,0,0.2)',
 		button: '0 5px 10px rgba(0,0,0,0.2)',
 		inverted: '0 -4px 20px rgba(0, 0, 0, 0.2)',
+		mPrimary: '0 4px 20px #6083ad52',
 	},
 
 	colors: {

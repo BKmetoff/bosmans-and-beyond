@@ -10,7 +10,7 @@ export const Text = styled.p`
 		footer !== undefined &&
 		css`
 			padding: 0;
-			padding-left: ${Theme.padding.XS};
+			padding-left: ${Theme.padding.M};
 			font-size: 14px;
 			@media (max-width: 768px) {
 				font-size: 12px;
@@ -42,5 +42,19 @@ export const Title = styled.h1`
 	text-align: end;
 	align-self: flex-end;
 	margin-right: ${Theme.margin.M};
-	border-bottom: 1px solid ${Theme.colors.dark};
+	border-bottom: 1px solid ${Theme.colors.primary};
+
+	${({ listTitle }) =>
+		listTitle !== undefined &&
+		css`
+			font-size: 26px;
+			width: 300px;
+			margin-left: ${Theme.margin.auto};
+
+			@media (max-width: 768px) {
+				font-size: 28px;
+				text-align: left;
+				margin-left: 5px;
+			}
+		`}
 `
