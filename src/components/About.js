@@ -1,4 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
+
+import { Theme } from './theme/Theme'
 
 import ElisavetaImage from '../assets/musicians/Elizaveta.jpg'
 import NataliaImage from '../assets/musicians/Natalia.jpg'
@@ -11,12 +14,16 @@ import { Divider } from './backbone/Divider'
 
 import Image from './backbone/Image'
 
+const PageWrapper = styled(SectionWrapper)`
+	margin-top: ${Theme.margin.XXL};
+`
+
 export default function About({ people }) {
 	const { elisaveta, natalia, dimitri } = { ...people }
 
 	return (
 		<MotionWrapper>
-			<SectionWrapper>
+			<PageWrapper>
 				<Title>About us</Title>
 				<Sheet>
 					<Image
@@ -38,7 +45,7 @@ export default function About({ people }) {
 					<Image round shadow width='300px' height='300px' src={DimitriImage} />
 					<Text>{dimitri.bio}</Text>
 				</Sheet>
-			</SectionWrapper>
+			</PageWrapper>
 		</MotionWrapper>
 	)
 }

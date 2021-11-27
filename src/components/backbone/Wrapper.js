@@ -5,7 +5,6 @@ import styled, { css } from 'styled-components'
 import { Theme } from '../theme/Theme'
 
 export const MainWrapper = styled.div`
-	position: relative;
 	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
@@ -17,11 +16,10 @@ export const ContentWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-top: ${Theme.margin.XL};
 	margin-bottom: ${Theme.margin.L};
 
-	@media (min-width: 1366px) {
-		width: 1366px;
+	@media (min-width: 1024px) {
+		width: 1024px;
 	}
 
 	${({ width }) =>
@@ -40,8 +38,14 @@ export const ContentWrapper = styled.div`
 export const SectionWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-top: ${Theme.margin.M};
+	margin-top: ${Theme.margin.XL};
 	margin-bottom: ${Theme.margin.M};
+
+	${({ extraMargin }) =>
+		extraMargin !== undefined &&
+		css`
+			margin-top: ${Theme.margin.XL};
+		`}
 `
 
 export const MotionWrapper = (props) => {
