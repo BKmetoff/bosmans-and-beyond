@@ -59,7 +59,7 @@ const Image = styled.img.attrs((props) => ({
 	${({ shadow }) =>
 		shadow !== undefined &&
 		css`
-			box-shadow: ${Theme.shadow.S};
+			box-shadow: ${Theme.shadow.L};
 		`}
 
 	${({ footerIcon }) =>

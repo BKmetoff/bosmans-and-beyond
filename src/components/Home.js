@@ -14,7 +14,7 @@ import { Text, Title } from './backbone/Text'
 import HomePhotoDesktop from '../assets/photos/HomeDesktop.png'
 import HomePhotoMobile2 from '../assets/photos/HomeMobile.png'
 import HomePhotoMobile from '../assets/photos/HomeMobile2.jpeg'
-import HomeLogoMobile from '../assets/logo/MainText.png'
+import HomeLogo from '../assets/logo/MainText.png'
 
 import patronImage from '../assets/Patron.png'
 
@@ -32,6 +32,18 @@ const DesktopPhoto = styled(Image)`
 	}
 `
 
+const DesktopLogo = styled(Image)`
+	position: absolute;
+	max-width: 40%;
+	top: 60px;
+	left: -30px;
+	z-index: 100;
+	margin-left: ${Theme.margin.L};
+
+	@media (max-width: 769px) {
+		display: none;
+	}
+`
 const MobileLogo = styled(Image)`
 	width: 70vw;
 	margin-top: ${Theme.margin.XL};
@@ -61,7 +73,8 @@ export default function Home({ mission, patron }) {
 		<MotionWrapper>
 			<HomeImageWrapper>
 				<DesktopPhoto main shadow src={HomePhotoDesktop} />
-				<MobileLogo main src={HomeLogoMobile} />
+				<DesktopLogo main src={HomeLogo} />
+				<MobileLogo main src={HomeLogo} />
 				<MobilePhoto main shadow src={HomePhotoMobile} />
 			</HomeImageWrapper>
 

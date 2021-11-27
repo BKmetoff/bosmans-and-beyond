@@ -4,7 +4,7 @@ import { Switch, Route, useLocation } from 'react-router-dom'
 
 import { AnimatePresence } from 'framer-motion'
 
-import { COPY, VIDEOS } from './components/resources/Resources'
+import { COPY, VIDEOS, REPERTOIRE } from './components/resources/Resources'
 
 import Home from './components/Home'
 import About from './components/About'
@@ -12,6 +12,7 @@ import Video from './components/Video'
 import NotFound from './components/NotFound'
 import Contact from './components/Contact'
 import Success from './components/Success'
+import Repertoire from './components/Repertoire'
 
 import { MainWrapper, ContentWrapper } from './components/backbone/Wrapper'
 
@@ -32,6 +33,9 @@ function App() {
 								</Route>
 								<Route path='/contact'>
 									<Contact contact={COPY.text.contact} />
+								</Route>
+								<Route path='/repertoire'>
+									<Repertoire repertoire={REPERTOIRE} />
 								</Route>
 								<Route path='/success'>
 									<Success />

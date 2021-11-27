@@ -11,24 +11,18 @@ import YouTubeLogo from '../assets/icons/youtube.svg'
 import { COPY } from './resources/Resources'
 
 const BaseFooter = styled.div`
-	bottom: 0;
+	bottom: 0px;
 	position: fixed;
 	width: 100%;
-	height: 65px;
+	height: 32px;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	background-color: ${Theme.colors.dark};
 	color: ${Theme.colors.light};
 	opacity: ${Theme.opacity};
 	box-shadow: ${Theme.shadow.inverted};
-
-	@media (max-width: 768px) {
-		height: 50px;
-		justify-content: space-between;
-		flex-direction: row;
-	}
 `
 
 const FooterIconsWrapper = styled.div`
@@ -48,7 +42,7 @@ const FooterIconsWrapper = styled.div`
 export default function Footer() {
 	return (
 		<BaseFooter>
-			<Text footer>&#169; Bosmans & Beyond, 2020</Text>
+			<Text footer>&#169; Bosmans & Beyond, 2021</Text>
 			<FooterIconsWrapper>
 				<a
 					href={COPY.socialMediaURLs.YouTube}

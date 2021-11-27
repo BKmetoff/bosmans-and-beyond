@@ -3,10 +3,18 @@ import ReactPlayer from 'react-player'
 import styled, { css } from 'styled-components'
 
 import { Theme } from './theme/Theme'
-import { ContentWrapper, MotionWrapper } from './backbone/Wrapper'
+import {
+	ContentWrapper,
+	MotionWrapper,
+	SectionWrapper,
+} from './backbone/Wrapper'
 import { Title } from './backbone/Text'
 
 const _ = require('lodash')
+
+const PageWrapper = styled(SectionWrapper)`
+	margin-top: ${Theme.margin.XXL};
+`
 
 const VideoWrapper = styled.div`
 	align-self: center;
@@ -74,28 +82,30 @@ export default function Video({ videos }) {
 
 	return (
 		<MotionWrapper>
-			<ContentWrapper width={width + 'px'}>
-				{_.map(videos.clips, (clip) => {
-					return (
-						<React.Fragment key={clip.title}>
-							<VideoTitle windowWidth={width}>{clip.title}</VideoTitle>
-							<MusiciansWrapper windowWidth={width}>
-								{_.map(clip.musicians, (musician) => {
-									return <p key={musician}>{musician}</p>
-								})}
-							</MusiciansWrapper>
-							<VideoWrapper windowWidth={width}>
-								<ReactPlayer
-									url={clip.url}
-									controls={true}
-									width={calculatedWidth + 'px'}
-									height={calculatedHeight + 'px'}
-								/>
-							</VideoWrapper>
-						</React.Fragment>
-					)
-				})}
-			</ContentWrapper>
+			<PageWrapper>
+				<ContentWrapper width={width + 'px'}>
+					{_.map(videos.clips, (clip) => {
+						return (
+							<React.Fragment key={clip.title}>
+								<VideoTitle windowWidth={width}>{clip.title}</VideoTitle>
+								<MusiciansWrapper windowWidth={width}>
+									{_.map(clip.musicians, (musician) => {
+										return <p key={musician}>{musician}</p>
+									})}
+								</MusiciansWrapper>
+								<VideoWrapper windowWidth={width}>
+									<ReactPlayer
+										url={clip.url}
+										controls={true}
+										width={calculatedWidth + 'px'}
+										height={calculatedHeight + 'px'}
+									/>
+								</VideoWrapper>
+							</React.Fragment>
+						)
+					})}
+				</ContentWrapper>
+			</PageWrapper>
 		</MotionWrapper>
 	)
 }

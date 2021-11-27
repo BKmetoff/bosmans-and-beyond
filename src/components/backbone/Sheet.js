@@ -10,12 +10,18 @@ const Sheet = styled.div`
 	padding: ${Theme.padding.S};
 	border-radius: 0;
 
+	${({ marginXL }) =>
+		marginXL !== undefined &&
+		css`
+			margin-top: ${Theme.margin.XL};
+		`}
+
 	@media (min-width: 769px) {
 		align-items: flex-start;
 		flex-direction: row;
 
-		${(props) =>
-			props.reversed !== undefined &&
+		${({ reversed }) =>
+			reversed &&
 			css`
 				flex-direction: row-reverse;
 			`}
