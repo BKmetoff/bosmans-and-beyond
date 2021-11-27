@@ -6,17 +6,18 @@ import { SectionWrapper, MotionWrapper } from './backbone/Wrapper'
 import { Title, Text } from './backbone/Text'
 import Sheet from './backbone/Sheet'
 
-const ListContainer = styled.ul``
+const ListContainer = styled.ul`
+	display: flex;
+	flex-direction: column;
+`
 
-const PieceTitle = styled(Title)`
-	font-size: 26px;
-	border: none;
+const TitleWrapper = styled.div`
 	width: 50%;
-	align-self: flex-start;
+	text-align: right;
 
 	@media (max-width: 768px) {
-		font-size: 28px;
-		width: auto;
+		width: 100%;
+		text-align: left;
 	}
 `
 
@@ -27,11 +28,11 @@ const DescriptionContainer = styled.div`
 	}
 `
 
-const PieceDescriptionWrapper = styled.div`
+const DescriptionWrapper = styled.div`
 	margin-bottom: ${Theme.margin.S};
 `
 
-const PieceDescription = styled(Text)`
+const Description = styled(Text)`
 	font-size: 24px;
 	font-weight: 300;
 	padding: ${Theme.padding.XXS};
@@ -55,29 +56,43 @@ const PieceDescription = styled(Text)`
 		`}
 `
 
+function PieceAuthor(author) {
+	return (
+		<TitleWrapper>
+			<Title listTitle>{author}</Title>
+		</TitleWrapper>
+	)
+}
+
+function PieceDescription({ title, type }, index) {
+	return (
+		<DescriptionWrapper key={index}>
+			<Description>{title}</Description>
+			<Description pieceType>{type}</Description>
+		</DescriptionWrapper>
+	)
+}
+
+function PiecesPerAuthor({ author, pieces }, index) {
+	return (
+		<Sheet key={index}>
+			{PieceAuthor(author)}
+			<DescriptionContainer>
+				{pieces.map((piece, index) => {
+					return PieceDescription(piece, index)
+				})}
+			</DescriptionContainer>
+		</Sheet>
+	)
+}
+
 export default function Repertoire({ repertoire }) {
 	return (
 		<MotionWrapper>
 			<SectionWrapper>
 				<ListContainer>
 					{repertoire.map((entry, index) => {
-						return (
-							<Sheet key={index}>
-								<PieceTitle listTitle>{entry.author}</PieceTitle>
-								<DescriptionContainer>
-									{entry.pieces.map((piece, index) => {
-										return (
-											<PieceDescriptionWrapper key={index}>
-												<PieceDescription>{piece.title}</PieceDescription>
-												<PieceDescription pieceType>
-													{piece.type}
-												</PieceDescription>
-											</PieceDescriptionWrapper>
-										)
-									})}
-								</DescriptionContainer>
-							</Sheet>
-						)
+						return PiecesPerAuthor(entry, index)
 					})}
 				</ListContainer>
 			</SectionWrapper>
