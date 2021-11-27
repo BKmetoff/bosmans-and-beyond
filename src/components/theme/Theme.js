@@ -38,9 +38,11 @@ export const Theme = {
 		M: '30px',
 		L: '50px',
 		XL: '70px',
+		XXL: '100px',
 	},
 
 	padding: {
+		none: '0px',
 		XXS: '5px',
 		XS: '10px',
 		S: '15px',
