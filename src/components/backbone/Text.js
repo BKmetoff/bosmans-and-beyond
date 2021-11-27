@@ -6,8 +6,8 @@ export const Text = styled.p`
 	text-align: justify;
 	padding: ${Theme.padding.S};
 
-	${(props) =>
-		props.footer !== undefined &&
+	${({ footer }) =>
+		footer !== undefined &&
 		css`
 			padding: 0;
 			padding-left: ${Theme.padding.XS};
@@ -15,6 +15,21 @@ export const Text = styled.p`
 			@media (max-width: 768px) {
 				font-size: 12px;
 				padding-bottom: 0;
+			}
+		`}
+
+	${({ externalLink }) =>
+		externalLink !== undefined &&
+		css`
+			font-style: italic;
+			font-size: 16px;
+			color: ${Theme.colors.primary};
+			padding-top: ${Theme.padding.none};
+
+			a {
+				:hover {
+					border-bottom: 1px solid ${Theme.colors.accent};
+				}
 			}
 		`}
 `
