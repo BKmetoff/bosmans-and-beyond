@@ -28,6 +28,7 @@ const BaseFooter = styled.div`
 const FooterIconsWrapper = styled.div`
 	margin-right: ${Theme.margin.S};
 	padding-bottom: ${Theme.padding.XXS};
+	padding-top: ${Theme.padding.XXS};
 	display: flex;
 	justify-content: center;
 	a {
@@ -39,32 +40,27 @@ const FooterIconsWrapper = styled.div`
 	}
 `
 
+function FooterLink(url, index) {
+	const src =
+		(index === 0 && FBLogo) ||
+		(index === 1 && InstagramLogo) ||
+		(index === 2 && YouTubeLogo)
+
+	return (
+		<a href={url} target='_blank' rel='noopener noreferrer'>
+			<Image src={src} footerIcon />
+		</a>
+	)
+}
+
 export default function Footer() {
 	return (
 		<BaseFooter>
 			<Text footer>&#169; Bosmans & Beyond, 2021</Text>
 			<FooterIconsWrapper>
-				<a
-					href={COPY.socialMediaURLs.YouTube}
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					<Image src={YouTubeLogo} footerIcon />
-				</a>
-				<a
-					href={COPY.socialMediaURLs.FaceBook}
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					<Image src={FBLogo} footerIcon />
-				</a>
-				<a
-					href={COPY.socialMediaURLs.Instagram}
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					<Image src={InstagramLogo} footerIcon />
-				</a>
+				{COPY.socialMediaURLs.map((url, index) => {
+					return FooterLink(url, index)
+				})}
 			</FooterIconsWrapper>
 		</BaseFooter>
 	)
