@@ -6,13 +6,13 @@ import { AnimatePresence } from 'framer-motion'
 
 import { COPY, VIDEOS, REPERTOIRE } from './components/resources/Resources'
 
-import Home from './components/Home'
-import About from './components/About'
-import Video from './components/Video'
-import NotFound from './components/NotFound'
-import Contact from './components/Contact'
-import Success from './components/Success'
-import Repertoire from './components/Repertoire'
+import Home from './components/Pages/Home'
+import About from './components/Pages/About'
+import Video from './components/Pages/Video'
+import NotFound from './components/Pages/NotFound'
+import Contact from './components/Pages/Contact'
+import Success from './components/Pages/Success'
+import Repertoire from './components/Pages/Repertoire'
 
 import { MainWrapper, ContentWrapper } from './components/backbone/Wrapper'
 
