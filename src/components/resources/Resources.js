@@ -26,22 +26,6 @@ export const COPY = {
 		contact:
 			'We are currently working on finding music in archives, preparing scores and making beautiful programs. If you would like to hire us for a concert, don’t hesitate to contact us!',
 	},
-	quotes: {
-		unbroken: {
-			author: 'Michael Tilson Thomas',
-			quote:
-				'Classical music is an unbroken, living tradition that goes back over 1,000 years, and every one of those years has had something unique and powerful to say to us about what it’s like to be alive.',
-		},
-		wordsFail: {
-			author: 'Hans Christian Andersen',
-			quote: 'Where words fail, music speaks.',
-		},
-	},
-	socialMediaURLs: [
-		'https://www.facebook.com/BosmansBeyond/',
-		'https://www.instagram.com/bosmansbeyond/',
-		'https://www.youtube.com/channel/UCDmtuNR6rWMsMwmSh8kSfHg',
-	],
 }
 
 export const VIDEOS = {
