@@ -1,11 +1,11 @@
 import React from 'react'
 
-import patronImage from '../assets/Patron.png'
+import patronImage from '../../assets/Patron.png'
 
-import { MotionWrapper } from './backbone/Wrapper'
-import Sheet from './backbone/Sheet'
-import { Text, Title } from './backbone/Text'
-import Image from './backbone/Image'
+import { MotionWrapper } from '../backbone/Wrapper'
+import Sheet from '../backbone/Sheet'
+import { Text, Title } from '../backbone/Text'
+import Image from '../backbone/Image'
 
 export default function Mission(props) {
 	return (

@@ -1,10 +1,10 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { Theme } from './theme/Theme'
-import { SectionWrapper, MotionWrapper } from './backbone/Wrapper'
-import { Title, Text } from './backbone/Text'
-import Sheet from './backbone/Sheet'
+import { Theme } from '../theme/Theme'
+import { SectionWrapper, MotionWrapper } from '../backbone/Wrapper'
+import { Title, Text } from '../backbone/Text'
+import Sheet from '../backbone/Sheet'
 
 const ListContainer = styled.ul`
 	display: flex;

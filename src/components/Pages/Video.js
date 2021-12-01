@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react'
 import ReactPlayer from 'react-player'
 import styled, { css } from 'styled-components'
 
-import { Theme } from './theme/Theme'
+import { Theme } from '../theme/Theme'
 import {
 	ContentWrapper,
 	MotionWrapper,
 	SectionWrapper,
-} from './backbone/Wrapper'
-import { Title } from './backbone/Text'
+} from '../backbone/Wrapper'
+
+import { Title } from '../backbone/Text'
+
+import { VIDEO_TITLES, mapTitlesToVideos } from '../../data/Video/Videos'
 
 const _ = require('lodash')
 
@@ -72,6 +75,14 @@ const useWindowDimensions = () => {
 	return windowDimensions
 }
 
+function PiecePerformers(performers) {}
+
+function PieceTitle(title) {}
+
+function VideoClip(video) {}
+
+function VideoClipMapper(videos) {}
+
 export default function Video({ videos }) {
 	// crappy, hail mary solution for a responsive player.
 	// the ReactPlayer docs method doesn't work for some reason.
@@ -79,6 +90,10 @@ export default function Video({ videos }) {
 	const { width } = useWindowDimensions()
 	let calculatedWidth = width * 0.65
 	let calculatedHeight = calculatedWidth * (9 / 16)
+
+	Object.values(VIDEO_TITLES).map((title) => {
+		console.log(mapTitlesToVideos[VIDEO_TITLES[title]])
+	})
 
 	return (
 		<MotionWrapper>

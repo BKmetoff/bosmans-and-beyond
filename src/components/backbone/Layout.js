@@ -4,8 +4,8 @@ import { useHistory } from 'react-router'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, Theme } from '../theme/Theme'
 
-import Footer from '../Footer'
-import Header from '../Header'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
 
 const Layout = (props) => {
 	const [headerIsShown, setHeaderIsShown] = useState(false)
