@@ -4,7 +4,7 @@ import { Switch, Route, useLocation } from 'react-router-dom'
 
 import { AnimatePresence } from 'framer-motion'
 
-import { COPY, REPERTOIRE } from './components/resources/Resources'
+import { COPY } from './components/resources/Resources'
 
 import Home from './components/Pages/Home'
 import About from './components/Pages/About'
@@ -35,7 +35,7 @@ function App() {
 									<Contact contact={COPY.text.contact} />
 								</Route>
 								<Route path='/repertoire'>
-									<Repertoire repertoire={REPERTOIRE} />
+									<Repertoire />
 								</Route>
 								<Route path='/success'>
 									<Success />
