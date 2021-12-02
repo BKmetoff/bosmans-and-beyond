@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import SocialMediaLink from '../backbone/SocialMediaLink'
+import SocialMediaLink from '../backbone/Link/SocialMediaLink'
 import { default as Toggle } from '../backbone/Button'
 import { Theme } from '../theme/Theme'
 import { SOCIAL_MEDIA } from '../../data/Social/Social'

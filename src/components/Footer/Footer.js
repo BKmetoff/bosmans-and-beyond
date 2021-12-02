@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { Theme } from '../theme/Theme'
 import { Text } from '../backbone/Text'
-import SocialMediaLink from '../backbone/SocialMediaLink'
+import SocialMediaLink from '../backbone/Link/SocialMediaLink'
 import { SOCIAL_MEDIA } from '../../data/Social/Social'
 
 const BaseFooter = styled.div`

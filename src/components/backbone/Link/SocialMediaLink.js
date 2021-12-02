@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Theme } from '../theme/Theme'
-import { mapTitleToMedia } from '../../data/Social/Social'
+import { Theme } from '../../theme/Theme'
+import { mapTitleToMedia } from '../../../data/Social/Social'
 
-import Image from './Image'
-import { Text } from './Text'
+import Image from '../Image'
+import { Text } from '../Text'
 
 const StyledLink = styled.a`
 	display: flex;
