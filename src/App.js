@@ -4,15 +4,15 @@ import { Switch, Route, useLocation } from 'react-router-dom'
 
 import { AnimatePresence } from 'framer-motion'
 
-import { COPY, VIDEOS, REPERTOIRE } from './components/resources/Resources'
+import { COPY } from './components/resources/Resources'
 
-import Home from './components/Home'
-import About from './components/About'
-import Video from './components/Video'
-import NotFound from './components/NotFound'
-import Contact from './components/Contact'
-import Success from './components/Success'
-import Repertoire from './components/Repertoire'
+import Home from './components/Pages/Home'
+import About from './components/Pages/About'
+import Video from './components/Pages/Video'
+import NotFound from './components/Pages/NotFound'
+import Contact from './components/Pages/Contact'
+import Success from './components/Pages/Success'
+import Repertoire from './components/Pages/Repertoire'
 
 import { MainWrapper, ContentWrapper } from './components/backbone/Wrapper'
 
@@ -26,16 +26,16 @@ function App() {
 						<AnimatePresence exitBeforeEnter>
 							<Switch location={location} key={location.pathname}>
 								<Route path='/about'>
-									<About people={COPY.people} />
+									<About />
 								</Route>
 								<Route path='/video'>
-									<Video videos={VIDEOS} />
+									<Video />
 								</Route>
 								<Route path='/contact'>
 									<Contact contact={COPY.text.contact} />
 								</Route>
 								<Route path='/repertoire'>
-									<Repertoire repertoire={REPERTOIRE} />
+									<Repertoire />
 								</Route>
 								<Route path='/success'>
 									<Success />

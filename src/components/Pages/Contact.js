@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { SectionWrapper, MotionWrapper } from './backbone/Wrapper'
-import { Text } from './backbone/Text'
-import Form from './backbone/Form'
-import Sheet from './backbone/Sheet'
+import { SectionWrapper, MotionWrapper } from '../backbone/Wrapper'
+import { Text } from '../backbone/Text'
+import Form from '../backbone/Form'
+import Sheet from '../backbone/Sheet'
 
 export default function Contact({ contact }) {
 	return (

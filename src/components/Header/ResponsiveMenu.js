@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 
-import { Theme } from './theme/Theme'
-import Button from './backbone/Button'
+import { Theme } from '../theme/Theme'
+import Button from '../backbone/Button'
+import NavLinks from './NavLinks'
 
 const Modal = styled.div`
 	position: fixed;
@@ -33,9 +34,9 @@ const Overlay = styled.div`
 `
 
 export default function ResponsiveMenu({ open, onClose, headerLinks }) {
-	if (!open) {
-		return null
-	}
+	const dropDown = true
+
+	if (!open) return null
 
 	return ReactDom.createPortal(
 		<React.Fragment>
@@ -46,13 +47,7 @@ export default function ResponsiveMenu({ open, onClose, headerLinks }) {
 					<Link to='/'>Home</Link>
 				</Button>
 
-				{headerLinks.map((link) => {
-					return (
-						<Button key={link} name={link} kind='menuLink' onClick={onClose}>
-							<Link to={`/${link.toLowerCase()}`}>{link}</Link>
-						</Button>
-					)
-				})}
+				{NavLinks(headerLinks, dropDown, onClose)}
 			</Modal>
 		</React.Fragment>,
 		document.getElementById('portal')

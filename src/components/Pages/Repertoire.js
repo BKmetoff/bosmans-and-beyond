@@ -1,10 +1,15 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { Theme } from './theme/Theme'
-import { SectionWrapper, MotionWrapper } from './backbone/Wrapper'
-import { Title, Text } from './backbone/Text'
-import Sheet from './backbone/Sheet'
+import { Theme } from '../theme/Theme'
+import { SectionWrapper, MotionWrapper } from '../backbone/Wrapper'
+import { Title, Text } from '../backbone/Text'
+import Sheet from '../backbone/Sheet'
+
+import {
+	COMPOSERS,
+	mapComposersToPieces,
+} from '../../data/Repertoire/Repertoire'
 
 const ListContainer = styled.ul`
 	display: flex;
@@ -66,17 +71,17 @@ function PieceAuthor(author) {
 
 function PieceDescription({ title, type }, index) {
 	return (
-		<DescriptionWrapper key={index}>
+		<DescriptionWrapper key={`${title}-${index}`}>
 			<Description>{title}</Description>
 			<Description pieceType>{type}</Description>
 		</DescriptionWrapper>
 	)
 }
 
-function PiecesPerAuthor({ author, pieces }, index) {
+function PiecesPerAuthor({ name, pieces }, index) {
 	return (
-		<Sheet key={index}>
-			{PieceAuthor(author)}
+		<Sheet key={`${name}`}>
+			{PieceAuthor(name)}
 			<DescriptionContainer>
 				{pieces.map((piece, index) => {
 					return PieceDescription(piece, index)
@@ -86,13 +91,13 @@ function PiecesPerAuthor({ author, pieces }, index) {
 	)
 }
 
-export default function Repertoire({ repertoire }) {
+export default function Repertoire() {
 	return (
 		<MotionWrapper>
 			<SectionWrapper>
 				<ListContainer>
-					{repertoire.map((entry, index) => {
-						return PiecesPerAuthor(entry, index)
+					{Object.values(COMPOSERS).map((composer, index) => {
+						return PiecesPerAuthor(mapComposersToPieces[composer])
 					})}
 				</ListContainer>
 			</SectionWrapper>

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 
-import { SectionWrapper, MotionWrapper } from './backbone/Wrapper'
-import Button from './backbone/Button'
-import { Title } from './backbone/Text'
+import { SectionWrapper, MotionWrapper } from '../backbone/Wrapper'
+import Button from '../backbone/Button'
+import { Title } from '../backbone/Text'
 
 const NotFoundTitle = styled(Title)`
 	width: fit-content;
