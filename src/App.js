@@ -26,7 +26,7 @@ function App() {
 						<AnimatePresence exitBeforeEnter>
 							<Switch location={location} key={location.pathname}>
 								<Route path='/about'>
-									<About people={COPY.people} />
+									<About />
 								</Route>
 								<Route path='/video'>
 									<Video videos={VIDEOS} />
