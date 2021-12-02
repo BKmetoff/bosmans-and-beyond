@@ -31,9 +31,7 @@ const StyledLink = styled.a`
 `
 
 export default function SocialMediaLink(media, isDropDown) {
-	const socialMediaProfile = mapTitleToMedia[media].profile
-	const src = mapTitleToMedia[media].logo
-	const url = mapTitleToMedia[media].url
+	const { profile, logo, url } = mapTitleToMedia[media]
 
 	return (
 		<StyledLink
@@ -43,8 +41,8 @@ export default function SocialMediaLink(media, isDropDown) {
 			rel='noopener noreferrer'
 			isDropDown={isDropDown}
 		>
-			<Image src={src} footerIcon />
-			{isDropDown && <Text>{socialMediaProfile}</Text>}
+			<Image src={logo} footerIcon />
+			{isDropDown && <Text>{profile}</Text>}
 		</StyledLink>
 	)
 }
