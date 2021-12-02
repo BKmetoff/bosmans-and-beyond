@@ -4,7 +4,7 @@ import { Switch, Route, useLocation } from 'react-router-dom'
 
 import { AnimatePresence } from 'framer-motion'
 
-import { COPY, VIDEOS, REPERTOIRE } from './components/resources/Resources'
+import { COPY, REPERTOIRE } from './components/resources/Resources'
 
 import Home from './components/Pages/Home'
 import About from './components/Pages/About'
@@ -29,7 +29,7 @@ function App() {
 									<About />
 								</Route>
 								<Route path='/video'>
-									<Video videos={VIDEOS} />
+									<Video />
 								</Route>
 								<Route path='/contact'>
 									<Contact contact={COPY.text.contact} />

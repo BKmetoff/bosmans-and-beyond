@@ -44,6 +44,18 @@ export const Title = styled.h1`
 	margin-right: ${Theme.margin.M};
 	border-bottom: 1px solid ${Theme.colors.primary};
 
+	${({ secondary }) =>
+		secondary !== undefined &&
+		css`
+			font-size: 22px;
+			border-bottom: 0;
+			margin-right: ${Theme.margin.S};
+
+			@media (max-width: 768px) {
+				font-size: 20px;
+			}
+		`}
+
 	${({ listTitle }) =>
 		listTitle !== undefined &&
 		css`

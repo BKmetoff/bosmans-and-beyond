@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import ReactPlayer from 'react-player'
 import styled, { css } from 'styled-components'
 
+import useWindowDimensions from '../backbone/_hooks/useWindowDimensions'
+
 import { Theme } from '../theme/Theme'
+import { VIDEO_TITLES, mapTitlesToVideos } from '../../data/Video/Videos'
+import { Title, Text } from '../backbone/Text'
 import {
 	ContentWrapper,
 	MotionWrapper,
 	SectionWrapper,
 } from '../backbone/Wrapper'
-
-import { Title } from '../backbone/Text'
-
-import { VIDEO_TITLES, mapTitlesToVideos } from '../../data/Video/Videos'
-
-const _ = require('lodash')
 
 const PageWrapper = styled(SectionWrapper)`
 	margin-top: ${Theme.margin.XXL};
@@ -26,12 +24,16 @@ const VideoWrapper = styled.div`
 `
 
 const MusiciansWrapper = styled.div`
-	text-align: end;
 	font-weight: 300;
-	font-size: ${({ windowWidth }) => windowWidth < 768 && '13px'};
 	margin-right: ${Theme.margin.S};
-	margin-top: ${Theme.margin.XS};
-	margin-bottom: ${Theme.margin.S};
+	margin-top: ${Theme.margin.S};
+	margin-bottom: ${Theme.margin.M};
+
+	p {
+		font-size: 16px;
+		text-align: end;
+		padding: 0;
+	}
 `
 
 const VideoTitle = styled(Title)`
@@ -50,75 +52,74 @@ const VideoTitle = styled(Title)`
 			  `}
 `
 
-// the method below is from
-// https://codesandbox.io/s/34kr2rw285?file=/src/index.js
-const getWindowDimensions = () => {
-	const { innerWidth: width } = window
-	return { width }
-}
-
-const useWindowDimensions = () => {
-	const [windowDimensions, setWindowDimensions] = useState(
-		getWindowDimensions()
+function PieceTitle(title, author, width) {
+	return (
+		<>
+			<VideoTitle windowWidth={width}>{title}</VideoTitle>
+			<Title windowWidth={width} secondary>
+				{author}
+			</Title>
+		</>
 	)
-
-	useEffect(() => {
-		function handleResize() {
-			setWindowDimensions(getWindowDimensions())
-		}
-
-		window.addEventListener('resize', handleResize)
-
-		return () => window.removeEventListener('resize', handleResize)
-	}, [])
-
-	return windowDimensions
 }
 
-function PiecePerformers(performers) {}
+function PiecePerformers(performers, width) {
+	return (
+		<MusiciansWrapper windowWidth={width}>
+			{performers.map((performer, index) => {
+				const { name, instrument } = performer
+				return (
+					<Text key={`${instrument}-${index}`}>{`${name}, ${instrument}`}</Text>
+				)
+			})}
+		</MusiciansWrapper>
+	)
+}
 
-function PieceTitle(title) {}
-
-function VideoClip(video) {}
-
-function VideoClipMapper(videos) {}
-
-export default function Video({ videos }) {
+function VideoClipPlayer(url, width) {
 	// crappy, hail mary solution for a responsive player.
 	// the ReactPlayer docs method doesn't work for some reason.
 
-	const { width } = useWindowDimensions()
 	let calculatedWidth = width * 0.65
 	let calculatedHeight = calculatedWidth * (9 / 16)
 
-	Object.values(VIDEO_TITLES).map((title) => {
-		console.log(mapTitlesToVideos[VIDEO_TITLES[title]])
+	return (
+		<VideoWrapper windowWidth={width}>
+			<ReactPlayer
+				url={url}
+				controls={true}
+				width={calculatedWidth + 'px'}
+				height={calculatedHeight + 'px'}
+			/>
+		</VideoWrapper>
+	)
+}
+
+function VideoClipContainer(video, width) {
+	const { author, title, url, musicians } = video
+	return (
+		<React.Fragment key={title}>
+			{PieceTitle(title, author, width)}
+			{PiecePerformers(musicians, width)}
+			{VideoClipPlayer(url, width)}
+		</React.Fragment>
+	)
+}
+
+function VideoClipMapper(videos, mapTitlesToVideos, componentWidth) {
+	return Object.values(videos).map((video) => {
+		return VideoClipContainer(mapTitlesToVideos[video], componentWidth)
 	})
+}
+
+export default function Video() {
+	const { width } = useWindowDimensions()
 
 	return (
 		<MotionWrapper>
 			<PageWrapper>
 				<ContentWrapper width={width + 'px'}>
-					{_.map(videos.clips, (clip) => {
-						return (
-							<React.Fragment key={clip.title}>
-								<VideoTitle windowWidth={width}>{clip.title}</VideoTitle>
-								<MusiciansWrapper windowWidth={width}>
-									{_.map(clip.musicians, (musician) => {
-										return <p key={musician}>{musician}</p>
-									})}
-								</MusiciansWrapper>
-								<VideoWrapper windowWidth={width}>
-									<ReactPlayer
-										url={clip.url}
-										controls={true}
-										width={calculatedWidth + 'px'}
-										height={calculatedHeight + 'px'}
-									/>
-								</VideoWrapper>
-							</React.Fragment>
-						)
-					})}
+					{VideoClipMapper(VIDEO_TITLES, mapTitlesToVideos, width)}
 				</ContentWrapper>
 			</PageWrapper>
 		</MotionWrapper>
