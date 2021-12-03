@@ -3,10 +3,14 @@ import { Theme } from '../../theme/Theme'
 
 import Button from '../Button'
 
+// inherits styles
+// from Header.js
+
 export const HeaderLink = styled(Button)`
+	transition: inherit;
 	height: 100%;
-	color: ${Theme.colors.light};
-	background-color: ${Theme.colors.dark};
+	color: inherit;
+	background-color: inherit;
 	font-size: 18px;
 	padding-left: ${Theme.margin.XS};
 	padding-right: ${Theme.margin.XS};
@@ -22,7 +26,11 @@ export const HeaderLink = styled(Button)`
 	${({ headerIsTransparent }) =>
 		headerIsTransparent &&
 		css`
-			color: ${Theme.colors.dark};
+			transition: inherit;
+			color: inherit;
 			background-color: inherit;
+			:hover {
+				box-shadow: none;
+			}
 		`}
 `
