@@ -3,7 +3,6 @@ import { Theme } from '../theme/Theme'
 
 const Textarea = styled.textarea`
 	height: 200px;
-	width: 200px;
 	border: none;
 	border-radius: ${Theme.borderRadiusM};
 	resize: none;
