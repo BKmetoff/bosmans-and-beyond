@@ -10,7 +10,6 @@ export const Text = styled.p`
 		footer !== undefined &&
 		css`
 			padding: 0;
-			padding-left: ${Theme.padding.M};
 			font-size: 14px;
 			@media (max-width: 768px) {
 				font-size: 12px;
