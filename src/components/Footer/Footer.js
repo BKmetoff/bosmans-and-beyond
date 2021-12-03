@@ -7,28 +7,38 @@ import SocialMediaLink from '../backbone/Link/SocialMediaLink'
 import { SOCIAL_MEDIA } from '../../data/Social/Social'
 
 const BaseFooter = styled.div`
-	bottom: 0px;
-	position: fixed;
 	width: 100%;
 	height: 35px;
-	display: flex;
-	flex-direction: row;
+	display: inline-block;
 	align-items: center;
-	justify-content: space-between;
-	background-color: ${Theme.colors.dark};
-	color: ${Theme.colors.light};
-	opacity: ${Theme.opacity};
-	box-shadow: ${Theme.shadow.inverted};
+	background-color: inherit;
+	color: ${Theme.colors.dark};
+
+	p {
+		width: fit-content;
+		margin-top: 8px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	::before {
+		content: '';
+		background-color: ${Theme.colors.primary};
+		height: 1px;
+		width: 80%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 `
 
 const FooterIconsWrapper = styled.div`
-	margin-right: ${Theme.margin.S};
-	padding-bottom: ${Theme.padding.XXS};
-	padding-top: ${Theme.padding.XXS};
 	display: flex;
 	justify-content: center;
 	a {
 		display: flex;
+		padding: 0;
+		margin-top: 0;
 	}
 
 	@media (max-width: 768px) {
