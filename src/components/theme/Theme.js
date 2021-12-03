@@ -9,7 +9,6 @@ export const Theme = {
 	opacity: 0.95,
 	borderRadius: '3px',
 	borderRadiusM: '5px',
-	hoverScale: 'scale(1.05)',
 	shadow: {
 		S: '0 1px 10px rgba(0, 0, 0, 0.2)',
 		M: '0 4px 20px rgba(0, 0, 0, 0.2)',

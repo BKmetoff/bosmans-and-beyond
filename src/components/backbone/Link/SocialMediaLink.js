@@ -14,14 +14,13 @@ const StyledLink = styled.a`
 	margin-left: ${Theme.margin.S};
 	margin-top: ${Theme.margin.XS};
 	margin-bottom: ${Theme.margin.XS};
+	color: inherit;
 
 	p {
-		width: 100%;
 		padding: 0px;
-		color: ${Theme.colors.light};
 		font-size: 14px;
 		:hover {
-			border-bottom: 1px solid ${Theme.colors.accent};
+			border-bottom: 2px solid ${Theme.colors.accent};
 		}
 	}
 

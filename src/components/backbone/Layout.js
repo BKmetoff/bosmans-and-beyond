@@ -8,27 +8,29 @@ import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 
 const Layout = ({ children }) => {
-	const [headerIsShown, setHeaderIsShown] = useState(false)
+	const [headerIsTransparent, setHeaderIsTransparent] = useState(true)
 	let currentPage = useHistory().location.pathname
 
-	const setDisplayHeader = () => {
+	const setHeaderTransparency = () => {
 		if (currentPage !== '/') {
-			setHeaderIsShown(true)
+			setHeaderIsTransparent(false)
 			return
 		}
 
-		window.scrollY > 170 ? setHeaderIsShown(true) : setHeaderIsShown(false)
+		window.scrollY > 50
+			? setHeaderIsTransparent(false)
+			: setHeaderIsTransparent(true)
 	}
 
 	useEffect(() => {
-		setDisplayHeader()
+		setHeaderTransparency()
 	})
 
-	document.addEventListener('scroll', setDisplayHeader)
+	document.addEventListener('scroll', setHeaderTransparency)
 	return (
 		<ThemeProvider theme={Theme}>
 			<GlobalStyle />
-			<Header headerIsShown={headerIsShown} />
+			<Header headerIsTransparent={headerIsTransparent} />
 			{children}
 			<Footer />
 		</ThemeProvider>

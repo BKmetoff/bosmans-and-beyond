@@ -3,26 +3,30 @@ import { Theme } from '../../theme/Theme'
 
 import Button from '../Button'
 
+// inherits styles
+// from Header.js
+
 export const HeaderLink = styled(Button)`
+	transition: inherit;
 	height: 100%;
-	color: ${Theme.colors.light};
-	background-color: ${Theme.colors.dark};
+	color: inherit;
+	background-color: inherit;
 	font-size: 18px;
 	padding-left: ${Theme.margin.XS};
 	padding-right: ${Theme.margin.XS};
 	margin-right: ${Theme.margin.S};
+	box-sizing: border-box;
+
 	:hover {
-		transform: ${Theme.hoverScale};
-		border-bottom: 2px solid ${Theme.colors.accent};
-		box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
-		-webkit-box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
-		-moz-box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
+		padding-top: 3px;
+		border-bottom: 3px solid ${Theme.colors.accent};
 	}
 
 	${({ headerIsTransparent }) =>
 		headerIsTransparent &&
 		css`
-			color: ${Theme.colors.dark};
+			transition: inherit;
+			color: inherit;
 			background-color: inherit;
 		`}
 `

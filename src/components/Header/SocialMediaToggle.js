@@ -1,25 +1,42 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import SocialMediaLink from '../backbone/Link/SocialMediaLink'
-import { default as Toggle } from '../backbone/Button'
+import { HeaderLink } from '../backbone/Button/HeaderLink'
 import { Theme } from '../theme/Theme'
 import { SOCIAL_MEDIA } from '../../data/Social/Social'
 
 const DropDownContainer = styled.ul`
+	transition: ease, 0.5s;
 	display: flex;
 	flex-direction: column;
 	width: 197px;
-	top: 70px;
+	top: 60px;
 	right: 0px;
 	position: absolute;
 	background: ${Theme.colors.dark};
+	border-bottom-left-radius: 5px;
+	box-shadow: ${Theme.shadow.M};
+	${({ headerIsTransparent }) =>
+		headerIsTransparent &&
+		css`
+			box-shadow: none;
+			background-color: inherit;
+		`};
 `
 
-function SocialMediaDropDownMenu(handleEnter, handleLeave) {
+function SocialMediaDropDownMenu(
+	handleEnter,
+	handleLeave,
+	headerIsTransparent
+) {
 	const isDropDown = true
 	return (
-		<DropDownContainer onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+		<DropDownContainer
+			onMouseEnter={handleEnter}
+			onMouseLeave={handleLeave}
+			headerIsTransparent={headerIsTransparent}
+		>
 			{Object.values(SOCIAL_MEDIA).map((media) => {
 				return SocialMediaLink(media, isDropDown)
 			})}
@@ -27,7 +44,7 @@ function SocialMediaDropDownMenu(handleEnter, handleLeave) {
 	)
 }
 
-export default function SocialMediaToggle() {
+export default function SocialMediaToggle(headerIsTransparent) {
 	const [openSocialDropDown, setOpenSocialDropDown] = useState()
 
 	const handleEnter = () => setOpenSocialDropDown(true)
@@ -35,15 +52,11 @@ export default function SocialMediaToggle() {
 
 	return (
 		<>
-			{openSocialDropDown && SocialMediaDropDownMenu(handleEnter, handleLeave)}
-
-			<Toggle
-				kind='headerLink'
-				onMouseEnter={handleEnter}
-				onMouseLeave={handleLeave}
-			>
+			{openSocialDropDown &&
+				SocialMediaDropDownMenu(handleEnter, handleLeave, headerIsTransparent)}
+			<HeaderLink onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
 				Social
-			</Toggle>
+			</HeaderLink>
 		</>
 	)
 }

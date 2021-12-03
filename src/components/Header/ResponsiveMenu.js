@@ -19,7 +19,6 @@ const Modal = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	color: ${Theme.colors.light};
-	opacity: ${Theme.opacity};
 	background-color: ${Theme.colors.dark};
 `
 

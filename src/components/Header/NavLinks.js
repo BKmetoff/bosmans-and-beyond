@@ -12,13 +12,19 @@ const HeaderLinksWrapper = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
+	margin-left: ${({ headerIsTransparent }) => headerIsTransparent && 'auto'};
 
 	@media (max-width: 768px) {
 		display: none;
 	}
 `
 
-export default function NavLinks(headerLinks, dropDown, onClose) {
+export default function NavLinks(
+	headerLinks,
+	headerIsTransparent,
+	dropDown,
+	onClose
+) {
 	if (dropDown) {
 		return headerLinks.map((link) => {
 			return (
@@ -30,16 +36,20 @@ export default function NavLinks(headerLinks, dropDown, onClose) {
 	}
 
 	return (
-		<HeaderLinksWrapper>
+		<HeaderLinksWrapper headerIsTransparent={headerIsTransparent}>
 			{headerLinks.map((link) => {
 				return (
-					<HeaderLink key={link} name={link}>
+					<HeaderLink
+						key={link}
+						name={link}
+						headerIsTransparent={headerIsTransparent}
+					>
 						<Link to={`/${link.toLowerCase()}`}>{link}</Link>
 					</HeaderLink>
 				)
 			})}
 
-			{SocialMediaToggle()}
+			{SocialMediaToggle(headerIsTransparent)}
 		</HeaderLinksWrapper>
 	)
 }
