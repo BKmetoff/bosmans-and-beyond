@@ -24,7 +24,8 @@ const BaseHeader = styled.div`
 	background-color: ${Theme.colors.dark};
 	box-shadow: ${Theme.shadow.S};
 	opacity: ${Theme.opacity};
-	display: ${({ headerIsShown }) => (headerIsShown ? 'flex' : 'none')};
+	/* display: ${({ headerIsShown }) => (headerIsShown ? 'flex' : 'none')}; */
+	display: flex;
 
 	@media (max-width: 768px) {
 		height: 50px;
