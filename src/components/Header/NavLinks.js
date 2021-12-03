@@ -49,7 +49,7 @@ export default function NavLinks(
 				)
 			})}
 
-			{SocialMediaToggle()}
+			{SocialMediaToggle(headerIsTransparent)}
 		</HeaderLinksWrapper>
 	)
 }

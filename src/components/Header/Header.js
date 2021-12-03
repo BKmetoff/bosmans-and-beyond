@@ -66,11 +66,9 @@ const ChevronContainer = styled.div`
 	display: flex;
 `
 
-function HeaderLogos(headerIsTransparent) {
-	if (headerIsTransparent) return null
-
+function HeaderLogos() {
 	return (
-		<HeaderLogosWrapper headerIsTransparent={headerIsTransparent} to='/'>
+		<HeaderLogosWrapper to='/'>
 			<Image headerRound src={HeaderRound} height='75%' width='fit-content' />
 			<Image headerTitle src={HeaderTitle} height='30%' width='fit-content' />
 		</HeaderLogosWrapper>
@@ -102,7 +100,7 @@ export default function Header({ headerIsTransparent }) {
 
 	return (
 		<BaseHeader headerIsTransparent={headerIsTransparent}>
-			{HeaderLogos(headerIsTransparent)}
+			{!headerIsTransparent && HeaderLogos()}
 			{HeaderLinks(headerLinksTitles, headerIsTransparent)}
 			{ResponsiveDropDownMenu(
 				handleClick,
