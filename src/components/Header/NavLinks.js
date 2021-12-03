@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import Button from '../backbone/Button'
 import SocialMediaToggle from './SocialMediaToggle'
+
+import { HeaderLink } from '../backbone/Button/HeaderLink'
+import { DropDownMenuLink } from '../backbone/Button/DropDownMenuLink'
 
 const HeaderLinksWrapper = styled.div`
 	display: flex;
@@ -16,32 +18,25 @@ const HeaderLinksWrapper = styled.div`
 	}
 `
 
-function HeaderButton(link, dropDown, onClose) {
-	const kind = dropDown ? 'menuLink' : 'headerLink'
-	const closeDropDown = onClose ? onClose : null
-
-	return (
-		<Button key={link} name={link} kind={kind} onClick={closeDropDown}>
-			<Link to={`/${link.toLowerCase()}`}>{link}</Link>
-		</Button>
-	)
-}
-
 export default function NavLinks(headerLinks, dropDown, onClose) {
 	if (dropDown) {
-		return (
-			<>
-				{headerLinks.map((link) => {
-					return HeaderButton(link, dropDown, onClose)
-				})}
-			</>
-		)
+		return headerLinks.map((link) => {
+			return (
+				<DropDownMenuLink key={link} name={link} onClick={onClose}>
+					<Link to={`/${link.toLowerCase()}`}>{link}</Link>
+				</DropDownMenuLink>
+			)
+		})
 	}
 
 	return (
 		<HeaderLinksWrapper>
 			{headerLinks.map((link) => {
-				return HeaderButton(link)
+				return (
+					<HeaderLink key={link} name={link}>
+						<Link to={`/${link.toLowerCase()}`}>{link}</Link>
+					</HeaderLink>
+				)
 			})}
 
 			{SocialMediaToggle()}

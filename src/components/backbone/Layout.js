@@ -7,7 +7,7 @@ import { GlobalStyle, Theme } from '../theme/Theme'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 
-const Layout = (props) => {
+const Layout = ({ children }) => {
 	const [headerIsShown, setHeaderIsShown] = useState(false)
 	let currentPage = useHistory().location.pathname
 
@@ -28,8 +28,8 @@ const Layout = (props) => {
 	return (
 		<ThemeProvider theme={Theme}>
 			<GlobalStyle />
-			<Header headerLinks={props.headerLinks} headerIsShown={headerIsShown} />
-			{props.children}
+			<Header headerIsShown={headerIsShown} />
+			{children}
 			<Footer />
 		</ThemeProvider>
 	)
