@@ -9,23 +9,33 @@ import Textarea from './Textarea'
 const BaseForm = styled.form`
 	display: flex;
 	flex-direction: column;
-	margin-left: ${Theme.margin.M};
 	margin-right: ${Theme.margin.S};
+	margin-left: ${Theme.margin.M};
+
+	@media (max-width: 769px) {
+		width: 100%;
+		margin-left: ${Theme.margin.S};
+	}
 `
 
 const SubmitButton = styled(Button)`
-	align-self: auto;
+	align-self: stretch;
 	font-family: inherit;
 	margin-left: ${Theme.margin.XS};
-	margin-right: ${Theme.margin.XS};
+
+	@media (max-width: 769px) {
+		margin-right: ${Theme.margin.XS};
+	}
 `
 
 const NameEmailWrapper = styled.div`
 	margin-top: ${Theme.margin.S};
 	display: flex;
 	flex-direction: column;
+
 	@media (min-width: 769px) {
 		flex-direction: row;
+		width: inherit;
 	}
 `
 
