@@ -20,7 +20,7 @@ function App() {
 	const location = useLocation()
 	return (
 		<div className='App'>
-			<Layout headerLinks={COPY.headerLinks}>
+			<Layout>
 				<MainWrapper>
 					<ContentWrapper>
 						<AnimatePresence exitBeforeEnter>

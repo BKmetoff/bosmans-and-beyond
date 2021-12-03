@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 
-import { Theme } from '../theme/Theme'
 import ResponsiveMenu from './ResponsiveMenu'
+import { headerLinksTitles } from '../../data/Header/HeaderLinksTitles'
+import { Theme } from '../theme/Theme'
 import { default as HeaderLinks } from './NavLinks'
-import Image from '../backbone/Image'
 
+import Image from '../backbone/Image'
 import HeaderRound from '../../assets/logo/HeaderRound.png'
 import HeaderTitle from '../../assets/logo/HeaderTitle.png'
 import Chevron from '../../assets/icons/Chevron.png'
@@ -80,7 +81,7 @@ function ResponsiveDropDownMenu(handleClick, headerLinks, setIsOpen, isOpen) {
 	)
 }
 
-export default function Header({ headerLinks, headerIsShown }) {
+export default function Header({ headerIsShown }) {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const handleClick = () => {
@@ -90,8 +91,13 @@ export default function Header({ headerLinks, headerIsShown }) {
 	return (
 		<BaseHeader headerIsShown={headerIsShown}>
 			{HeaderLogos()}
-			{HeaderLinks(headerLinks)}
-			{ResponsiveDropDownMenu(handleClick, headerLinks, setIsOpen, isOpen)}
+			{HeaderLinks(headerLinksTitles)}
+			{ResponsiveDropDownMenu(
+				handleClick,
+				headerLinksTitles,
+				setIsOpen,
+				isOpen
+			)}
 		</BaseHeader>
 	)
 }
