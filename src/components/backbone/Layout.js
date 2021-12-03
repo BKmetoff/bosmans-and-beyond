@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
 			return
 		}
 
-		window.scrollY > 170
+		window.scrollY > 50
 			? setHeaderIsTransparent(false)
 			: setHeaderIsTransparent(true)
 	}
