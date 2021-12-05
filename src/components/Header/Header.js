@@ -67,7 +67,12 @@ export default function Header({ headerIsTransparent }) {
 	return (
 		<BaseHeader headerIsTransparent={headerIsTransparent}>
 			{!headerIsTransparent && HeaderLogos()}
-			{HeaderLinks(headerLinksTitles, headerIsTransparent)}
+			{HeaderLinks({
+				headerLinks: headerLinksTitles,
+				onClose: null,
+				dropDown: null,
+				headerIsTransparent: headerIsTransparent,
+			})}
 			{ResponsiveMenuDropDownToggle(
 				handleClick,
 				headerLinksTitles,

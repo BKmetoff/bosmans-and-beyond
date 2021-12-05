@@ -19,12 +19,13 @@ const HeaderLinksWrapper = styled.div`
 	}
 `
 
-export default function NavLinks(
+export default function NavLinks({
 	headerLinks,
 	onClose,
 	dropDown,
-	headerIsTransparent
-) {
+	headerIsTransparent,
+}) {
+	console.log(headerLinks)
 	if (dropDown) {
 		return headerLinks.map((link) => {
 			return (
