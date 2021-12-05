@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import styled, { css } from 'styled-components'
 
-import ResponsiveMenu from './ResponsiveMenu'
+import ResponsiveMenuDropDownToggle from './ResponsiveMenuDropDownToggle'
 import { headerLinksTitles } from '../../data/Header/HeaderLinksTitles'
 import { Theme } from '../theme/Theme'
 import { default as HeaderLinks } from './NavLinks'
@@ -11,7 +11,6 @@ import { default as HeaderLinks } from './NavLinks'
 import Image from '../backbone/Image'
 import HeaderRound from '../../assets/logo/HeaderRound.png'
 import HeaderTitle from '../../assets/logo/HeaderTitle.png'
-import Chevron from '../../assets/icons/Chevron.png'
 
 const BaseHeader = styled.div`
 	transition: ease 0.5s;
@@ -49,23 +48,6 @@ const HeaderLogosWrapper = styled(Link)`
 	margin-left: ${Theme.margin.XS};
 `
 
-const ResponsiveMenuWrapper = styled.div`
-	display: none;
-	@media (max-width: 768px) {
-		display: block;
-		margin-left: auto;
-		margin-right: ${Theme.margin.M};
-	}
-`
-
-const ChevronContainer = styled.div`
-	transform: rotate(0deg);
-	transition: all 0.3s ease-out;
-	overflow: hidden;
-	transform: ${({ menuOpen }) => (menuOpen ? `rotate(180deg)` : '')};
-	display: flex;
-`
-
 function HeaderLogos() {
 	return (
 		<HeaderLogosWrapper to='/'>
@@ -75,39 +57,18 @@ function HeaderLogos() {
 	)
 }
 
-function ResponsiveDropDownMenu(handleClick, headerLinks, setIsOpen, isOpen) {
-	return (
-		<ResponsiveMenuWrapper>
-			<ChevronContainer menuOpen={isOpen} onClick={handleClick}>
-				<Image height='20px' width='20px' src={Chevron} />
-			</ChevronContainer>
-
-			<ResponsiveMenu
-				open={isOpen}
-				onClose={() => setIsOpen(false)}
-				headerLinks={headerLinks}
-			/>
-		</ResponsiveMenuWrapper>
-	)
-}
-
 export default function Header({ headerIsTransparent }) {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const handleClick = () => {
-		setIsOpen((prevState) => ({ isOpen: !prevState.isOpen }))
+		setIsOpen((prevState) => !isOpen)
 	}
 
 	return (
 		<BaseHeader headerIsTransparent={headerIsTransparent}>
 			{!headerIsTransparent && HeaderLogos()}
 			{HeaderLinks(headerLinksTitles, headerIsTransparent)}
-			{ResponsiveDropDownMenu(
-				handleClick,
-				headerLinksTitles,
-				setIsOpen,
-				isOpen
-			)}
+			{ResponsiveMenuDropDownToggle(handleClick, headerLinksTitles, isOpen)}
 		</BaseHeader>
 	)
 }

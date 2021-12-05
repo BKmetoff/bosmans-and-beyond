@@ -32,10 +32,10 @@ const Overlay = styled.div`
 	z-index: 1000;
 `
 
-export default function ResponsiveMenu({ open, onClose, headerLinks }) {
+export default function ResponsiveMenu({ isOpen, onClose, headerLinks }) {
 	const dropDown = true
 
-	if (!open) return null
+	if (!isOpen) return null
 
 	return ReactDom.createPortal(
 		<React.Fragment>
@@ -46,7 +46,7 @@ export default function ResponsiveMenu({ open, onClose, headerLinks }) {
 					<Link to='/'>Home</Link>
 				</DropDownMenuLink>
 
-				{NavLinks(headerLinks, dropDown, onClose)}
+				{NavLinks(headerLinks, onClose, dropDown)}
 			</Modal>
 		</React.Fragment>,
 		document.getElementById('portal')

@@ -21,10 +21,12 @@ const HeaderLinksWrapper = styled.div`
 
 export default function NavLinks(
 	headerLinks,
-	headerIsTransparent,
+	onClose,
 	dropDown,
-	onClose
+	headerIsTransparent
 ) {
+	console.log(dropDown)
+
 	if (dropDown) {
 		return headerLinks.map((link) => {
 			return (
