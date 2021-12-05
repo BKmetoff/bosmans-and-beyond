@@ -68,7 +68,12 @@ export default function Header({ headerIsTransparent }) {
 		<BaseHeader headerIsTransparent={headerIsTransparent}>
 			{!headerIsTransparent && HeaderLogos()}
 			{HeaderLinks(headerLinksTitles, headerIsTransparent)}
-			{ResponsiveMenuDropDownToggle(handleClick, headerLinksTitles, isOpen)}
+			{ResponsiveMenuDropDownToggle(
+				handleClick,
+				headerLinksTitles,
+				isOpen,
+				headerIsTransparent
+			)}
 		</BaseHeader>
 	)
 }

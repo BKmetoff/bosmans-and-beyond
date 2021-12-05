@@ -1,10 +1,8 @@
 import React from 'react'
-
 import styled from 'styled-components'
+import { Squash as Hamburger } from 'hamburger-react'
 
 import { Theme } from '../theme/Theme'
-import Image from '../backbone/Image'
-import Chevron from '../../assets/icons/Chevron.png'
 
 import ResponsiveMenu from './ResponsiveMenu'
 
@@ -17,24 +15,29 @@ const ResponsiveMenuWrapper = styled.div`
 	}
 `
 
-const ChevronContainer = styled.div`
-	transform: rotate(0deg);
-	transition: all 0.3s ease-out;
-	overflow: hidden;
-	transform: ${({ menuOpen }) => (menuOpen ? `rotate(180deg)` : '')};
-	display: flex;
-`
+const setHamburgerColor = (headerIsOpen, headerIsTransparent) => {
+	if (headerIsOpen) {
+		return `${Theme.colors.light}`
+	} else if (!headerIsTransparent) {
+		return `${Theme.colors.light}`
+	}
+}
 
 export default function ResponsiveMenuDropDownToggle(
 	handleClick,
 	headerLinks,
-	isOpen
+	isOpen,
+	headerIsTransparent
 ) {
 	return (
 		<ResponsiveMenuWrapper>
-			<ChevronContainer menuOpen={isOpen} onClick={handleClick}>
-				<Image height='20px' width='20px' src={Chevron} />
-			</ChevronContainer>
+			<Hamburger
+				toggled={isOpen}
+				toggle={handleClick}
+				label='Toggle menu'
+				color={setHamburgerColor(isOpen, headerIsTransparent)}
+				rounded
+			/>
 
 			<ResponsiveMenu
 				isOpen={isOpen}
