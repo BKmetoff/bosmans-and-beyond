@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { Theme } from '../../theme/Theme'
 
-import Button from '../Button'
+import BaseButton from './BaseButton'
 
-export const DropDownMenuLink = styled(Button)`
+export const DropDownMenuLink = styled(BaseButton)`
 	width: 25%;
 	height: 45px;
 	text-align: right;

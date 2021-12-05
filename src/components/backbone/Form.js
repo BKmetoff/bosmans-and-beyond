@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Theme } from '../theme/Theme'
-import Button from './Button'
 import Input from './Input'
 import Textarea from './Textarea'
+import { StandaloneButton } from './Button/Standalone'
 
 const BaseForm = styled.form`
 	display: flex;
@@ -18,7 +18,7 @@ const BaseForm = styled.form`
 	}
 `
 
-const SubmitButton = styled(Button)`
+const SubmitButton = styled(StandaloneButton)`
 	align-self: stretch;
 	font-family: inherit;
 	margin-left: ${Theme.margin.XS};
@@ -66,9 +66,7 @@ export default function Form() {
 				label='message'
 				required
 			/>
-			<SubmitButton type='submit' kind='primary'>
-				Submit
-			</SubmitButton>
+			<SubmitButton type='submit'>Submit</SubmitButton>
 		</BaseForm>
 	)
 }

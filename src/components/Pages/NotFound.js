@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { SectionWrapper, MotionWrapper } from '../backbone/Wrapper'
-import Button from '../backbone/Button'
+import { StandaloneButton } from '../backbone/Button/Standalone'
 import { Title } from '../backbone/Text'
 
 const NotFoundTitle = styled(Title)`
 	width: fit-content;
 	border: none;
-	margin: 0;
+	margin: 20px 0px 0px 0px;
 	display: flex;
-	text-align: center;
+	align-self: center;
 `
 
 export default function NotFound() {
@@ -22,9 +22,9 @@ export default function NotFound() {
 				<NotFoundTitle>
 					Oops, we couldn't find what you were looking for!
 				</NotFoundTitle>
-				<Button kind='primary'>
+				<StandaloneButton>
 					<Link to='/'>Go home </Link>
-				</Button>
+				</StandaloneButton>
 			</SectionWrapper>
 		</MotionWrapper>
 	)

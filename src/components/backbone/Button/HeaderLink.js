@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components'
 import { Theme } from '../../theme/Theme'
 
-import Button from '../Button'
+import BaseButton from './BaseButton'
 
 // inherits styles
 // from Header.js
 
-export const HeaderLink = styled(Button)`
+export const HeaderLink = styled(BaseButton)`
 	transition: inherit;
 	height: 100%;
 	color: inherit;

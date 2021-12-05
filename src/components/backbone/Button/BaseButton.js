@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export default BaseButton = styled.button`
+const BaseButton = styled.button`
 	font-size: 16px;
 	font-family: sans-serif;
 	min-width: 80px;
@@ -18,3 +18,4 @@ export default BaseButton = styled.button`
 		background-color: inherit;
 	}
 `
+export default BaseButton

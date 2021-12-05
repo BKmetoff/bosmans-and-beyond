@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { Theme } from '../theme/Theme'
-import Button from '../backbone/Button'
+import { DropDownMenuLink } from '../backbone/Button/DropDownMenuLink'
 import NavLinks from './NavLinks'
 
 const Modal = styled.div`
@@ -42,9 +42,9 @@ export default function ResponsiveMenu({ open, onClose, headerLinks }) {
 			<Overlay onClick={onClose} />
 
 			<Modal>
-				<Button onClick={onClose} name='Home' kind='menuLink'>
+				<DropDownMenuLink onClick={onClose} name='Home'>
 					<Link to='/'>Home</Link>
-				</Button>
+				</DropDownMenuLink>
 
 				{NavLinks(headerLinks, dropDown, onClose)}
 			</Modal>
