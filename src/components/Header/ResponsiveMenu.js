@@ -46,7 +46,12 @@ export default function ResponsiveMenu({ isOpen, onClose, headerLinks }) {
 					<Link to='/'>Home</Link>
 				</DropDownMenuLink>
 
-				{NavLinks(headerLinks, onClose, dropDown)}
+				{NavLinks({
+					headerLinks: headerLinks,
+					onClose: onClose,
+					dropDown: dropDown,
+					headerIsTransparent: null,
+				})}
 			</Modal>
 		</React.Fragment>,
 		document.getElementById('portal')
