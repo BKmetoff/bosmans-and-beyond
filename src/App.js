@@ -14,6 +14,16 @@ import Repertoire from './components/Pages/Repertoire'
 
 import { MainWrapper, ContentWrapper } from './components/backbone/Wrapper'
 
+const routesMap = [
+	{ component: Home, exact: true, path: '/' },
+	{ component: About, path: '/about' },
+	{ component: Video, path: '/video' },
+	{ component: Contact, path: '/contact' },
+	{ component: Success, path: '/success' },
+	{ component: Repertoire, path: '/repertoire' },
+	{ component: NotFound, path: '' },
+]
+
 function App() {
 	const location = useLocation()
 	return (
@@ -23,25 +33,9 @@ function App() {
 					<ContentWrapper>
 						<AnimatePresence exitBeforeEnter>
 							<Switch location={location} key={location.pathname}>
-								<Route path='/about'>
-									<About />
-								</Route>
-								<Route path='/video'>
-									<Video />
-								</Route>
-								<Route path='/contact'>
-									<Contact />
-								</Route>
-								<Route path='/repertoire'>
-									<Repertoire />
-								</Route>
-								<Route path='/success'>
-									<Success />
-								</Route>
-								<Route path='/' exact>
-									<Home />
-								</Route>
-								<Route component={NotFound}></Route>
+								{routesMap.map((props) => {
+									return <Route key={props.path} {...props} />
+								})}
 							</Switch>
 						</AnimatePresence>
 					</ContentWrapper>
