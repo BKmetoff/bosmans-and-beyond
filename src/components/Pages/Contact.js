@@ -5,12 +5,14 @@ import { Text } from '../backbone/Text'
 import Form from '../backbone/Form'
 import Sheet from '../backbone/Sheet'
 
-export default function Contact({ contact }) {
+import CONTACT from '../../data/Contact/Contact'
+
+export default function Contact() {
 	return (
 		<MotionWrapper>
 			<SectionWrapper>
 				<Sheet reversed marginXL>
-					<Text>{contact}</Text>
+					<Text>{CONTACT}</Text>
 					<Form />
 				</Sheet>
 			</SectionWrapper>

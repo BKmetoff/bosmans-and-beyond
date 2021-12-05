@@ -17,6 +17,8 @@ import HomePhotoMobile from '../../assets/photos/HomeMobile2.jpeg'
 import HomeLogo from '../../assets/logo/MainText.png'
 import patronImage from '../../assets/Patron.png'
 
+import HOMEPAGE_COPY from '../../data/Home/Home'
+
 const HomeImageWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -67,7 +69,7 @@ const MobilePhoto = styled(Image)`
 	}
 `
 
-export default function Home({ mission, patron }) {
+export default function Home() {
 	return (
 		<MotionWrapper>
 			<HomeImageWrapper>
@@ -81,7 +83,7 @@ export default function Home({ mission, patron }) {
 				<SectionWrapper>
 					<Title>Our Mission</Title>
 					<Sheet>
-						<Text>{mission}</Text>
+						<Text>{HOMEPAGE_COPY['MISSION']}</Text>
 					</Sheet>
 				</SectionWrapper>
 
@@ -97,7 +99,7 @@ export default function Home({ mission, patron }) {
 							width='300px'
 							height='300px'
 						/>
-						<Text>{patron}</Text>
+						<Text>{HOMEPAGE_COPY['PATRON']}</Text>
 					</Sheet>
 				</SectionWrapper>
 			</ContentWrapper>
