@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from './components/backbone/Layout'
 import { Switch, Route, useLocation } from 'react-router-dom'
 
-import { AnimatePresence } from 'framer-motion'
+// import { AnimatePresence } from 'framer-motion'
 
 import Home from './components/Pages/Home'
 import About from './components/Pages/About'
@@ -31,13 +31,13 @@ function App() {
 			<Layout>
 				<MainWrapper>
 					<ContentWrapper>
-						<AnimatePresence exitBeforeEnter>
-							<Switch location={location} key={location.pathname}>
-								{routesMap.map((props) => {
-									return <Route key={props.path} {...props} />
-								})}
-							</Switch>
-						</AnimatePresence>
+						{/* <AnimatePresence exitBeforeEnter> */}
+						<Switch location={location} key={location.pathname}>
+							{routesMap.map((props) => {
+								return <Route key={props.path} {...props} />
+							})}
+						</Switch>
+						{/* </AnimatePresence> */}
 					</ContentWrapper>
 				</MainWrapper>
 			</Layout>
