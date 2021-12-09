@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components'
-import { Theme } from '../theme/Theme'
+import { PADDING, MARGIN, COLORS } from '../theme/Theme'
 
 export const Text = styled.p`
 	font-size: 18px;
 	text-align: justify;
-	padding: ${Theme.padding.S};
+	padding: ${PADDING.S};
 
 	${({ footer }) =>
 		footer !== undefined &&
@@ -22,12 +22,12 @@ export const Text = styled.p`
 		css`
 			font-style: italic;
 			font-size: 16px;
-			color: ${Theme.colors.primary};
-			padding-top: ${Theme.padding.none};
+			color: ${COLORS.primary};
+			padding-top: ${PADDING.none};
 
 			a {
 				:hover {
-					border-bottom: 1px solid ${Theme.colors.accent};
+					border-bottom: 1px solid ${COLORS.accent};
 				}
 			}
 		`}
@@ -40,15 +40,15 @@ export const Title = styled.h1`
 	width: 200px;
 	text-align: end;
 	align-self: flex-end;
-	margin-right: ${Theme.margin.M};
-	border-bottom: 1px solid ${Theme.colors.primary};
+	margin-right: ${MARGIN.M};
+	border-bottom: 1px solid ${COLORS.primary};
 
 	${({ secondary }) =>
 		secondary !== undefined &&
 		css`
 			font-size: 22px;
 			border-bottom: 0;
-			margin-right: ${Theme.margin.S};
+			margin-right: ${MARGIN.S};
 
 			@media (max-width: 768px) {
 				font-size: 20px;
@@ -60,7 +60,7 @@ export const Title = styled.h1`
 		css`
 			font-size: 26px;
 			width: 300px;
-			margin-left: ${Theme.margin.auto};
+			margin-left: ${MARGIN.auto};
 
 			@media (max-width: 768px) {
 				font-size: 28px;

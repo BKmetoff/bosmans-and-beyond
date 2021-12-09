@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Theme } from '../../theme/Theme'
+import { COLORS, MARGIN } from '../../theme/Theme'
 
 import BaseButton from './BaseButton'
 
@@ -12,14 +12,14 @@ export const HeaderLink = styled(BaseButton)`
 	color: inherit;
 	background-color: inherit;
 	font-size: 18px;
-	padding-left: ${Theme.margin.XS};
-	padding-right: ${Theme.margin.XS};
-	margin-right: ${Theme.margin.S};
+	padding-left: ${MARGIN.XS};
+	padding-right: ${MARGIN.XS};
+	margin-right: ${MARGIN.S};
 	box-sizing: border-box;
 
 	:hover {
 		padding-top: 3px;
-		border-bottom: 3px solid ${Theme.colors.accent};
+		border-bottom: 3px solid ${COLORS.accent};
 	}
 
 	${({ headerIsTransparent }) =>

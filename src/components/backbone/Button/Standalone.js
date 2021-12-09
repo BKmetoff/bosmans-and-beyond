@@ -1,19 +1,18 @@
 import styled from 'styled-components'
 import BaseButton from './BaseButton'
-import { Theme } from '../../theme/Theme'
+import { COLORS, MARGIN, SHADOW, BORDER_RADIUS } from '../../theme/Theme'
 
 export const StandaloneButton = styled(BaseButton)`
 	align-self: center;
-	color: ${Theme.colors.dark};
-	background-color: ${Theme.colors.background};
-	border-radius: ${Theme.borderRadiusM};
-	border: 1px solid ${Theme.colors.background};
-	margin-top: ${Theme.margin.S};
-	box-shadow: ${Theme.shadow.button};
-	padding: ${Theme.margin.XS} ${Theme.margin.S} ${Theme.margin.XS}
-		${Theme.margin.S};
+	color: ${COLORS.dark};
+	background-color: ${COLORS.background};
+	border-radius: ${BORDER_RADIUS.M};
+	border: 1px solid ${COLORS.background};
+	margin-top: ${MARGIN.S};
+	box-shadow: ${SHADOW.button};
+	padding: ${MARGIN.XS} ${MARGIN.S} ${MARGIN.XS} ${MARGIN.S};
 	:hover {
-		background-color: ${Theme.colors.accent};
-		box-shadow: ${Theme.shadow.M};
+		background-color: ${COLORS.accent};
+		box-shadow: ${SHADOW.M};
 	}
 `

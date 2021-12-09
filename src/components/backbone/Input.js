@@ -1,16 +1,16 @@
 import styled from 'styled-components'
-import { Theme } from '../theme/Theme'
+import { PADDING, BORDER_RADIUS, MARGIN, SHADOW } from '../theme/Theme'
 
 const Input = styled.input`
 	height: 40px;
-	padding-left: ${Theme.padding.S};
-	padding-right: ${Theme.padding.S};
+	padding-left: ${PADDING.S};
+	padding-right: ${PADDING.S};
 	border: none;
-	border-radius: ${Theme.borderRadiusM};
-	margin-bottom: ${Theme.margin.XS};
-	margin-top: ${Theme.margin.S};
-	margin-left: ${Theme.margin.XS};
-	margin-right: ${Theme.margin.XS};
-	box-shadow: ${Theme.shadow.S};
+	border-radius: ${BORDER_RADIUS.M};
+	margin-bottom: ${MARGIN.XS};
+	margin-top: ${MARGIN.S};
+	margin-left: ${MARGIN.XS};
+	margin-right: ${MARGIN.XS};
+	box-shadow: ${SHADOW.S};
 `
 export default Input

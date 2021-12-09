@@ -1,16 +1,14 @@
 import styled from 'styled-components'
-import { Theme } from '../theme/Theme'
+import { MARGIN, PADDING, BORDER_RADIUS, SHADOW } from '../theme/Theme'
 
 const Textarea = styled.textarea`
 	height: 200px;
 	border: none;
-	border-radius: ${Theme.borderRadiusM};
+	border-radius: ${BORDER_RADIUS.M};
 	resize: none;
-	padding: ${Theme.padding.XS} ${Theme.padding.S} ${Theme.padding.XS}
-		${Theme.padding.S};
-	margin: ${Theme.margin.S} ${Theme.margin.XS} ${Theme.margin.S}
-		${Theme.margin.XS};
-	box-shadow: ${Theme.shadow.S};
+	padding: ${PADDING.XS} ${PADDING.S} ${PADDING.XS} ${PADDING.S};
+	margin: ${MARGIN.S} ${MARGIN.XS} ${MARGIN.S} ${MARGIN.XS};
+	box-shadow: ${SHADOW.S};
 
 	@media (min-width: 769px) {
 		width: 90%;

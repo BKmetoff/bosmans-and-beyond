@@ -3,8 +3,9 @@ import styled, { css } from 'styled-components'
 
 import SocialMediaLink from '../backbone/Link/SocialMediaLink'
 import { HeaderLink } from '../backbone/Button/HeaderLink'
-import { Theme } from '../theme/Theme'
 import { SOCIAL_MEDIA } from '../../data/Social/Social'
+
+import { COLORS, SHADOW } from '../theme/Theme'
 
 const DropDownContainer = styled.ul`
 	transition: ease, 0.5s;
@@ -14,9 +15,9 @@ const DropDownContainer = styled.ul`
 	top: 60px;
 	right: 0px;
 	position: absolute;
-	background: ${Theme.colors.dark};
+	background: ${COLORS.dark};
 	border-bottom-left-radius: 5px;
-	box-shadow: ${Theme.shadow.M};
+	box-shadow: ${SHADOW.M};
 	${({ headerIsTransparent }) =>
 		headerIsTransparent &&
 		css`

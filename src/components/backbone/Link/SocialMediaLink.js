@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Theme } from '../../theme/Theme'
+import { MARGIN, COLORS } from '../../theme/Theme'
 import { mapTitleToMedia } from '../../../data/Social/Social'
 
 import Image from '../Image'
@@ -11,16 +11,16 @@ const StyledLink = styled.a`
 	display: flex;
 	flex-direction: row;
 	height: 30px;
-	margin-left: ${Theme.margin.S};
-	margin-top: ${Theme.margin.XS};
-	margin-bottom: ${Theme.margin.XS};
+	margin-left: ${MARGIN.S};
+	margin-top: ${MARGIN.XS};
+	margin-bottom: ${MARGIN.XS};
 	color: inherit;
 
 	p {
 		padding: 0px;
 		font-size: 14px;
 		:hover {
-			border-bottom: 2px solid ${Theme.colors.accent};
+			border-bottom: 2px solid ${COLORS.accent};
 		}
 	}
 

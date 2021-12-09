@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Theme } from '../theme/Theme'
+import { COLORS } from '../theme/Theme'
 import { Text } from '../backbone/Text'
 import SocialMediaLink from '../backbone/Link/SocialMediaLink'
 import { SOCIAL_MEDIA } from '../../data/Social/Social'
@@ -12,7 +12,7 @@ const BaseFooter = styled.div`
 	display: inline-block;
 	align-items: center;
 	background-color: inherit;
-	color: ${Theme.colors.dark};
+	color: ${COLORS.dark};
 
 	p {
 		width: fit-content;
@@ -23,7 +23,7 @@ const BaseFooter = styled.div`
 
 	::before {
 		content: '';
-		background-color: ${Theme.colors.primary};
+		background-color: ${COLORS.primary};
 		height: 1px;
 		width: 80%;
 		display: block;

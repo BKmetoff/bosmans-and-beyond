@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 import styled, { css } from 'styled-components'
-import { Theme } from '../theme/Theme'
+import { MARGIN, PAGE_TRANSITIONS } from '../theme/Theme'
 
 export const MainWrapper = styled.div`
 	overflow-x: hidden;
@@ -16,7 +16,7 @@ export const ContentWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-bottom: ${Theme.margin.L};
+	margin-bottom: ${MARGIN.L};
 
 	@media (min-width: 1024px) {
 		width: 1024px;
@@ -31,33 +31,33 @@ export const ContentWrapper = styled.div`
 		`}
 
 	@media (max-width: 769px) {
-		margin-top: ${Theme.margin.M};
+		margin-top: ${MARGIN.M};
 	}
 `
 
 export const SectionWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-top: ${Theme.margin.XL};
-	margin-bottom: ${Theme.margin.M};
+	margin-top: ${MARGIN.XL};
+	margin-bottom: ${MARGIN.M};
 
 	${({ extraMargin }) =>
 		extraMargin !== undefined &&
 		css`
-			margin-top: ${Theme.margin.XL};
+			margin-top: ${MARGIN.XL};
 		`}
 `
 
-export const MotionWrapper = (props) => {
+export const MotionWrapper = ({ children }) => {
 	return (
 		<motion.div
 			initial='initial'
 			animate='in'
 			exit='out'
-			variants={Theme.pageTransitions.variants}
-			transition={Theme.pageTransitions.transitions}
+			variants={PAGE_TRANSITIONS.variants}
+			transition={PAGE_TRANSITIONS.transitions}
 		>
-			{props.children}
+			{children}
 		</motion.div>
 	)
 }

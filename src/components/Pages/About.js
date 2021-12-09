@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Theme } from '../theme/Theme'
+import { MARGIN, BIO_IMAGE_SIZE } from '../theme/Theme'
 
 import { SectionWrapper, MotionWrapper } from '../backbone/Wrapper'
 import Sheet from '../backbone/Sheet'
@@ -13,7 +13,7 @@ import Image from '../backbone/Image'
 import { PEOPLE, mapNamesToBio } from '../../data/About/People'
 
 const PageWrapper = styled(SectionWrapper)`
-	margin-top: ${Theme.margin.XXL};
+	margin-top: ${MARGIN.XXL};
 `
 
 const TextWrapper = styled.div`
@@ -26,8 +26,8 @@ function BioImage(src) {
 		<Image
 			round
 			shadow
-			width={Theme.bioImageSize}
-			height={Theme.bioImageSize}
+			width={BIO_IMAGE_SIZE}
+			height={BIO_IMAGE_SIZE}
 			src={src}
 		/>
 	)
