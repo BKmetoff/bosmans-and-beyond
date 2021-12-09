@@ -1,8 +1,8 @@
 import React from 'react'
-// import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 import styled, { css } from 'styled-components'
-import { MARGIN } from '../theme/Theme'
+import { MARGIN, PAGE_TRANSITIONS } from '../theme/Theme'
 
 export const MainWrapper = styled.div`
 	overflow-x: hidden;
@@ -50,15 +50,14 @@ export const SectionWrapper = styled.div`
 
 export const MotionWrapper = ({ children }) => {
 	return (
-		<>{children}</>
-		// <motion.div
-		// 	initial='initial'
-		// 	animate='in'
-		// 	exit='out'
-		// 	variants={PAGE_TRANSITIONS.variants}
-		// 	transition={PAGE_TRANSITIONS.transitions}
-		// >
-		// 	{children}
-		// </motion.div>
+		<motion.div
+			initial='initial'
+			animate='in'
+			exit='out'
+			variants={PAGE_TRANSITIONS.variants}
+			transition={PAGE_TRANSITIONS.transitions}
+		>
+			{children}
+		</motion.div>
 	)
 }
