@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Theme } from '../theme/Theme'
+import { MARGIN, PADDING, COLORS, SHADOW } from '../theme/Theme'
 
 const Image = styled.img.attrs((props) => ({
 	src: props.src,
@@ -20,17 +20,17 @@ const Image = styled.img.attrs((props) => ({
 		round !== undefined &&
 		css`
 			border-radius: 50%;
-			margin: ${Theme.padding.S};
+			margin: ${PADDING.S};
 			flex-shrink: 0;
 		`}
 
 	${({ headerTitle }) =>
 		headerTitle !== undefined &&
 		css`
-			margin-left: ${Theme.padding.S};
-			padding-top: ${Theme.padding.XXS};
-			padding-bottom: ${Theme.padding.XXS};
-			border-bottom: 1px solid ${Theme.colors.accent};
+			margin-left: ${PADDING.S};
+			padding-top: ${PADDING.XXS};
+			padding-bottom: ${PADDING.XXS};
+			border-bottom: 1px solid ${COLORS.accent};
 
 			@media (max-width: 768px) {
 				display: none;
@@ -42,7 +42,7 @@ const Image = styled.img.attrs((props) => ({
 		css`
 			padding: 0;
 			border: none;
-			margin-left: ${Theme.padding.S};
+			margin-left: ${PADDING.S};
 		`}
 
 	
@@ -59,8 +59,7 @@ const Image = styled.img.attrs((props) => ({
 	${({ shadow }) =>
 		shadow !== undefined &&
 		css`
-			/* box-shadow: ${Theme.shadow.L}; */
-			box-shadow: ${Theme.shadow.mPrimary};
+			box-shadow: ${SHADOW.mPrimary};
 		`}
 
 	${({ footerIcon }) =>
@@ -68,7 +67,7 @@ const Image = styled.img.attrs((props) => ({
 		css`
 			height: 22px;
 			width: 22px;
-			margin-right: ${Theme.margin.S};
+			margin-right: ${MARGIN.S};
 		`}
 `
 

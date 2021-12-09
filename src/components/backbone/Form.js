@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Theme } from '../theme/Theme'
+import { MARGIN } from '../theme/Theme'
 import Input from './Input'
 import Textarea from './Textarea'
 import { StandaloneButton } from './Button/Standalone'
@@ -9,27 +9,27 @@ import { StandaloneButton } from './Button/Standalone'
 const BaseForm = styled.form`
 	display: flex;
 	flex-direction: column;
-	margin-right: ${Theme.margin.S};
-	margin-left: ${Theme.margin.M};
+	margin-right: ${MARGIN.S};
+	margin-left: ${MARGIN.M};
 
 	@media (max-width: 769px) {
 		width: 100%;
-		margin-left: ${Theme.margin.S};
+		margin-left: ${MARGIN.S};
 	}
 `
 
 const SubmitButton = styled(StandaloneButton)`
 	align-self: stretch;
 	font-family: inherit;
-	margin-left: ${Theme.margin.XS};
+	margin-left: ${MARGIN.XS};
 
 	@media (max-width: 769px) {
-		margin-right: ${Theme.margin.XS};
+		margin-right: ${MARGIN.XS};
 	}
 `
 
 const NameEmailWrapper = styled.div`
-	margin-top: ${Theme.margin.S};
+	margin-top: ${MARGIN.S};
 	display: flex;
 	flex-direction: column;
 

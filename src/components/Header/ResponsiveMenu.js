@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 
-import { Theme } from '../theme/Theme'
+import { COLORS } from '../theme/Theme'
 import { DropDownMenuLink } from '../backbone/Button/DropDownMenuLink'
 import NavLinks from './NavLinks'
 
@@ -18,8 +18,8 @@ const Modal = styled.div`
 	align-items: flex-end;
 	justify-content: center;
 	flex-direction: column;
-	color: ${Theme.colors.light};
-	background-color: ${Theme.colors.dark};
+	color: ${COLORS.light};
+	background-color: ${COLORS.dark};
 `
 
 const Overlay = styled.div`
@@ -28,7 +28,7 @@ const Overlay = styled.div`
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: ${Theme.colors.transparent};
+	background-color: ${COLORS.transparent};
 	z-index: 1000;
 `
 

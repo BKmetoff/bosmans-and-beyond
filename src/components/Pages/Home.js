@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Theme } from '../theme/Theme'
+import { MARGIN, COLORS, PADDING } from '../theme/Theme'
+
 import Image from '../backbone/Image'
 import Sheet from '../backbone/Sheet'
 import { Text, Title } from '../backbone/Text'
@@ -27,7 +28,7 @@ const HomeImageWrapper = styled.div`
 
 const DesktopPhoto = styled(Image)`
 	width: 100vw;
-	margin-bottom: ${Theme.margin.L};
+	margin-bottom: ${MARGIN.L};
 	@media (max-width: 768px) {
 		display: none;
 	}
@@ -39,7 +40,7 @@ const DesktopLogo = styled(Image)`
 	top: 60px;
 	left: -30px;
 	z-index: 100;
-	margin-left: ${Theme.margin.L};
+	margin-left: ${MARGIN.L};
 
 	@media (max-width: 769px) {
 		display: none;
@@ -47,12 +48,12 @@ const DesktopLogo = styled(Image)`
 `
 const MobileLogo = styled(Image)`
 	width: 70vw;
-	margin-top: ${Theme.margin.XL};
-	margin-bottom: ${Theme.margin.S};
-	border-bottom: 1px solid ${Theme.colors.accentBorder};
-	padding-left: ${Theme.padding.XS};
-	padding-right: ${Theme.padding.SX};
-	padding-bottom: ${Theme.padding.S};
+	margin-top: ${MARGIN.XL};
+	margin-bottom: ${MARGIN.S};
+	border-bottom: 1px solid ${COLORS.accentBorder};
+	padding-left: ${PADDING.XS};
+	padding-right: ${PADDING.SX};
+	padding-bottom: ${PADDING.S};
 
 	@media (min-width: 769px) {
 		display: none;
@@ -61,8 +62,8 @@ const MobileLogo = styled(Image)`
 
 const MobilePhoto = styled(Image)`
 	width: 100vw;
-	margin-top: ${Theme.margin.M};
-	margin-bottom: ${Theme.margin.S};
+	margin-top: ${MARGIN.M};
+	margin-bottom: ${MARGIN.S};
 
 	@media (min-width: 769px) {
 		display: none;

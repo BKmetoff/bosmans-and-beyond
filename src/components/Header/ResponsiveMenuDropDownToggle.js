@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Squash as Hamburger } from 'hamburger-react'
 
-import { Theme } from '../theme/Theme'
+import { COLORS, MARGIN } from '../theme/Theme'
 
 import ResponsiveMenu from './ResponsiveMenu'
 
@@ -11,15 +11,15 @@ const ResponsiveMenuWrapper = styled.div`
 	@media (max-width: 768px) {
 		display: block;
 		margin-left: auto;
-		margin-right: ${Theme.margin.M};
+		margin-right: ${MARGIN.M};
 	}
 `
 
 const setHamburgerColor = (headerIsOpen, headerIsTransparent) => {
 	if (headerIsOpen) {
-		return `${Theme.colors.light}`
+		return `${COLORS.light}`
 	} else if (!headerIsTransparent) {
-		return `${Theme.colors.light}`
+		return `${COLORS.light}`
 	}
 }
 

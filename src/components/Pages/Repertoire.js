@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { Theme } from '../theme/Theme'
+import { MARGIN, PADDING } from '../theme/Theme'
 import { SectionWrapper, MotionWrapper } from '../backbone/Wrapper'
 import { Title, Text } from '../backbone/Text'
 import Sheet from '../backbone/Sheet'
@@ -34,14 +34,14 @@ const DescriptionContainer = styled.div`
 `
 
 const DescriptionWrapper = styled.div`
-	margin-bottom: ${Theme.margin.S};
+	margin-bottom: ${MARGIN.S};
 `
 
 const Description = styled(Text)`
 	font-size: 24px;
 	font-weight: 300;
-	padding: ${Theme.padding.XXS};
-	padding-bottom: ${Theme.padding.none};
+	padding: ${PADDING.XXS};
+	padding-bottom: ${PADDING.none};
 	text-align: left;
 
 	@media (max-width: 768px) {
@@ -53,7 +53,7 @@ const Description = styled(Text)`
 		css`
 			font-style: italic;
 			font-size: 18px;
-			padding-top: ${Theme.padding.none};
+			padding-top: ${PADDING.none};
 
 			@media (max-width: 768px) {
 				font-size: 18px;

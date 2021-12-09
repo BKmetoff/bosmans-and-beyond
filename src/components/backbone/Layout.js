@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router'
 
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyle, Theme } from '../theme/Theme'
+import GlobalStyle from '../theme/GlobalStyle'
 
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
@@ -28,12 +27,12 @@ const Layout = ({ children }) => {
 
 	document.addEventListener('scroll', setHeaderTransparency)
 	return (
-		<ThemeProvider theme={Theme}>
+		<>
 			<GlobalStyle />
 			<Header headerIsTransparent={headerIsTransparent} />
 			{children}
 			<Footer />
-		</ThemeProvider>
+		</>
 	)
 }
 

@@ -4,7 +4,8 @@ import styled, { css } from 'styled-components'
 
 import useWindowDimensions from '../backbone/_hooks/useWindowDimensions'
 
-import { Theme } from '../theme/Theme'
+import { MARGIN, SHADOW } from '../theme/Theme'
+
 import { VIDEO_TITLES, mapTitlesToVideos } from '../../data/Video/Videos'
 import { Title, Text } from '../backbone/Text'
 import {
@@ -14,20 +15,20 @@ import {
 } from '../backbone/Wrapper'
 
 const PageWrapper = styled(SectionWrapper)`
-	margin-top: ${Theme.margin.XXL};
+	margin-top: ${MARGIN.XXL};
 `
 
 const VideoWrapper = styled.div`
 	align-self: center;
-	margin-bottom: ${Theme.margin.M};
-	box-shadow: ${Theme.shadow.L};
+	margin-bottom: ${MARGIN.M};
+	box-shadow: ${SHADOW.L};
 `
 
 const MusiciansWrapper = styled.div`
 	font-weight: 300;
-	margin-right: ${Theme.margin.S};
-	margin-top: ${Theme.margin.S};
-	margin-bottom: ${Theme.margin.M};
+	margin-right: ${MARGIN.S};
+	margin-top: ${MARGIN.S};
+	margin-bottom: ${MARGIN.M};
 
 	p {
 		font-size: 16px;
@@ -37,8 +38,8 @@ const MusiciansWrapper = styled.div`
 `
 
 const VideoTitle = styled(Title)`
-	margin-top: ${Theme.margin.M};
-	margin-right: ${Theme.margin.S};
+	margin-top: ${MARGIN.M};
+	margin-right: ${MARGIN.S};
 
 	${({ windowWidth }) =>
 		windowWidth < 768

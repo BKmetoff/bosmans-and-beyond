@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 
 import styled, { css } from 'styled-components'
 
+import { COLORS, MARGIN, SHADOW } from '../theme/Theme'
+
 import ResponsiveMenuDropDownToggle from './ResponsiveMenuDropDownToggle'
 import { headerLinksTitles } from '../../data/Header/HeaderLinksTitles'
-import { Theme } from '../theme/Theme'
 import { default as HeaderLinks } from './NavLinks'
 
 import Image from '../backbone/Image'
@@ -21,9 +22,9 @@ const BaseHeader = styled.div`
 	height: 60px;
 	justify-content: space-between;
 	align-items: center;
-	background-color: ${Theme.colors.dark};
-	color: ${Theme.colors.light};
-	box-shadow: ${Theme.shadow.S};
+	background-color: ${COLORS.dark};
+	color: ${COLORS.light};
+	box-shadow: ${SHADOW.S};
 	display: flex;
 
 	${({ headerIsTransparent }) =>
@@ -32,7 +33,7 @@ const BaseHeader = styled.div`
 			transition: ease 0.5s;
 			box-shadow: none;
 			background-color: #363b3e00;
-			color: ${Theme.colors.dark};
+			color: ${COLORS.dark};
 		`}
 
 	@media (max-width: 768px) {
@@ -45,7 +46,7 @@ const HeaderLogosWrapper = styled(Link)`
 	display: flex;
 	align-items: center;
 	height: 100%;
-	margin-left: ${Theme.margin.XS};
+	margin-left: ${MARGIN.XS};
 `
 
 function HeaderLogos() {
