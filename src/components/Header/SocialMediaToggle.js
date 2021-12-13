@@ -5,30 +5,53 @@ import SocialMediaLink from '../backbone/Link/SocialMediaLink'
 import { HeaderLink } from '../backbone/Button/HeaderLink'
 import { SOCIAL_MEDIA } from '../../data/Social/Social'
 
-import { COLORS, SHADOW } from '../theme/Theme'
+import { COLORS, MARGIN, TRANSITION } from '../theme/Theme'
 
 const DropDownContainer = styled.ul`
-	transition: ease, 0.5s;
+	transition: ${TRANSITION};
+	pointer-events: none;
 	display: flex;
-	flex-direction: column;
-	width: 197px;
-	top: 60px;
+	justify-content: end;
+	align-items: center;
 	right: 0px;
+	left: 0px;
+	top: 60px;
 	position: absolute;
-	background: ${COLORS.dark};
-	border-bottom-left-radius: 5px;
-	box-shadow: ${SHADOW.M};
-	${({ headerIsTransparent }) =>
-		headerIsTransparent &&
+	opacity: 0;
+
+	a:last-child {
+		margin-right: ${MARGIN.S};
+	}
+
+	${({ openSocialDropDown }) =>
+		openSocialDropDown &&
 		css`
-			box-shadow: none;
-			background-color: inherit;
-		`};
+			pointer-events: all;
+			animation: reveal 0.5s ease forwards;
+		`}
+
+	@keyframes reveal {
+		100% {
+			opacity: 1;
+		}
+	}
+
+	${({ headerIsTransparent }) =>
+		headerIsTransparent
+			? css`
+					color: ${COLORS.dark};
+					background: ${COLORS.opaque};
+			  `
+			: css`
+					color: ${COLORS.light};
+					background: ${COLORS.transparent};
+			  `}
 `
 
 function SocialMediaDropDownMenu(
 	handleEnter,
 	handleLeave,
+	openSocialDropDown,
 	headerIsTransparent
 ) {
 	const isDropDown = true
@@ -36,6 +59,7 @@ function SocialMediaDropDownMenu(
 		<DropDownContainer
 			onMouseEnter={handleEnter}
 			onMouseLeave={handleLeave}
+			openSocialDropDown={openSocialDropDown}
 			headerIsTransparent={headerIsTransparent}
 		>
 			{Object.values(SOCIAL_MEDIA).map((media) => {
@@ -53,8 +77,12 @@ export default function SocialMediaToggle(headerIsTransparent) {
 
 	return (
 		<>
-			{openSocialDropDown &&
-				SocialMediaDropDownMenu(handleEnter, handleLeave, headerIsTransparent)}
+			{SocialMediaDropDownMenu(
+				handleEnter,
+				handleLeave,
+				openSocialDropDown,
+				headerIsTransparent
+			)}
 			<HeaderLink onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
 				Social
 			</HeaderLink>
