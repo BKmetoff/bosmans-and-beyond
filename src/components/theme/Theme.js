@@ -1,3 +1,7 @@
+export const BIO_IMAGE_SIZE = '300px'
+
+export const TRANSITION = 'ease 0.5s'
+
 export const MARGIN = Object.freeze({
 	auto: 'auto',
 	XS: '8px',
@@ -32,12 +36,12 @@ export const COLORS = Object.freeze({
 	accent: '#fcd088',
 	accentBorder: '#fcd0884f',
 	light: '#e2e2e2',
-	lightTest: '#f2f2f4',
 	dark: '#363b3e',
 	backgroundFrom: '#dce0df',
 	backgroundTo: '#e0e4e3',
 	background: '#fff1a930',
-	transparent: '#000000b3',
+	transparent: '#000000cf',
+	opaque: '#ffffff00',
 })
 
 export const BORDER_RADIUS = Object.freeze({
@@ -57,5 +61,3 @@ export const PAGE_TRANSITIONS = Object.freeze({
 		duration: 0.25,
 	},
 })
-
-export const BIO_IMAGE_SIZE = '300px'

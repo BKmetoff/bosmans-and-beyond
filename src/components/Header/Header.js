@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import styled, { css } from 'styled-components'
 
-import { COLORS, MARGIN, SHADOW } from '../theme/Theme'
+import { COLORS, MARGIN, SHADOW, TRANSITION } from '../theme/Theme'
 
 import ResponsiveMenuDropDownToggle from './ResponsiveMenuDropDownToggle'
 import { headerLinksTitles } from '../../data/Header/HeaderLinksTitles'
@@ -14,7 +14,7 @@ import HeaderRound from '../../assets/logo/HeaderRound.png'
 import HeaderTitle from '../../assets/logo/HeaderTitle.png'
 
 const BaseHeader = styled.div`
-	transition: ease 0.5s;
+	transition: ${TRANSITION};
 	top: 0px;
 	position: fixed;
 	z-index: 1100;
@@ -22,15 +22,15 @@ const BaseHeader = styled.div`
 	height: 60px;
 	justify-content: space-between;
 	align-items: center;
-	background-color: ${COLORS.dark};
+	background-color: ${COLORS.transparent};
 	color: ${COLORS.light};
-	box-shadow: ${SHADOW.S};
+	/* box-shadow: ${SHADOW.M}; */
 	display: flex;
 
 	${({ headerIsTransparent }) =>
 		headerIsTransparent &&
 		css`
-			transition: ease 0.5s;
+			transition: ${TRANSITION};
 			box-shadow: none;
 			background-color: #363b3e00;
 			color: ${COLORS.dark};

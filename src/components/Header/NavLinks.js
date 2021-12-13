@@ -25,7 +25,6 @@ export default function NavLinks({
 	dropDown,
 	headerIsTransparent,
 }) {
-	console.log(headerLinks)
 	if (dropDown) {
 		return headerLinks.map((link) => {
 			return (
