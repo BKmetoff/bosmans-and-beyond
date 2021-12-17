@@ -31,10 +31,6 @@ const Image = styled.img.attrs((props) => ({
 			padding-top: ${PADDING.XXS};
 			padding-bottom: ${PADDING.XXS};
 			border-bottom: 1px solid ${COLORS.accent};
-
-			@media (max-width: 768px) {
-				display: none;
-			}
 		`}
 
 	${({ headerRound }) =>
