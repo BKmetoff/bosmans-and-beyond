@@ -15,9 +15,9 @@ const GlobalStyle = createGlobalStyle`
     url(${OpenSans2}), format('woff2');
     font-weight: 400;
   }
-  
+
   body {
-  background: ${COLORS.background};
+  background: ${COLORS.body};
   margin: 0;
   font-family: 'Open Sans', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

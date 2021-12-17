@@ -39,7 +39,8 @@ export const COLORS = Object.freeze({
 	dark: '#363b3e',
 	backgroundFrom: '#dce0df',
 	backgroundTo: '#e0e4e3',
-	background: '#fff1a930',
+	background: '#fff6c963',
+	body: '#fff6c98f',
 	transparent: '#000000cf',
 	opaque: '#ffffff00',
 })
