@@ -10,26 +10,28 @@ import NavLinks from './NavLinks'
 
 const Modal = styled.div`
 	position: fixed;
-	top: 50px;
+	top: 0px;
+	bottom: 0;
+	left: -100%;
 	right: 0;
 	z-index: 1000;
 	width: 100%;
+	height: 100%;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
 	flex-direction: column;
 	color: ${COLORS.light};
-	background-color: ${COLORS.dark};
-`
-
-const Overlay = styled.div`
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	background-color: ${COLORS.transparent};
-	z-index: 1000;
+
+	animation: open 0.5s ease forwards;
+	/* animation: close  0.5s ease forwards; */
+
+	@keyframes open {
+		100% {
+			left: 0;
+		}
+	}
 `
 
 export default function ResponsiveMenu({ isOpen, onClose, headerLinks }) {
@@ -39,9 +41,7 @@ export default function ResponsiveMenu({ isOpen, onClose, headerLinks }) {
 
 	return ReactDom.createPortal(
 		<React.Fragment>
-			<Overlay onClick={onClose} />
-
-			<Modal>
+			<Modal onClick={onClose}>
 				<DropDownMenuLink onClick={onClose} name='Home'>
 					<Link to='/'>Home</Link>
 				</DropDownMenuLink>
