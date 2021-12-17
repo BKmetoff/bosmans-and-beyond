@@ -20,10 +20,10 @@ const BaseHeader = styled.div`
 	z-index: 1100;
 	width: 100%;
 	height: 60px;
+	display: flex;
 	justify-content: center;
 	background-color: ${COLORS.transparent};
 	color: ${COLORS.light};
-	display: flex;
 
 	${({ headerIsTransparent }) =>
 		headerIsTransparent &&
@@ -49,8 +49,12 @@ const HeaderContentWrapper = styled.div`
 const HeaderLogosWrapper = styled(Link)`
 	display: flex;
 	align-items: center;
-	height: 100%;
+	height: 60px;
 	margin-left: ${MARGIN.XS};
+
+	@media (max-width: 768px) {
+		height: 50px;
+	}
 `
 
 function HeaderLogos() {
@@ -79,13 +83,13 @@ export default function Header({ headerIsTransparent }) {
 					dropDown: null,
 					headerIsTransparent: headerIsTransparent,
 				})}
-				{ResponsiveMenuDropDownToggle(
-					handleClick,
-					headerLinksTitles,
-					isOpen,
-					headerIsTransparent
-				)}
 			</HeaderContentWrapper>
+			{ResponsiveMenuDropDownToggle(
+				handleClick,
+				headerLinksTitles,
+				isOpen,
+				headerIsTransparent
+			)}
 		</BaseHeader>
 	)
 }
