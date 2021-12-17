@@ -6,6 +6,7 @@ import { COLORS, MARGIN, PAGE_TRANSITIONS, BORDER_RADIUS } from '../theme/Theme'
 
 export const MainWrapper = styled.div`
 	max-width: 1024px;
+
 	height: 100%;
 	margin-left: ${MARGIN.auto};
 	margin-right: ${MARGIN.auto};
@@ -41,6 +42,11 @@ export const SectionWrapper = styled.div`
 	margin-bottom: ${MARGIN.M};
 	margin-left: ${MARGIN.L};
 	margin-right: ${MARGIN.L};
+
+	@media (max-width: 769px) {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
 
 	${({ extraMargin }) =>
 		extraMargin !== undefined &&

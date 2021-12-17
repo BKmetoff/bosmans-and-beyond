@@ -6,6 +6,10 @@ export const Text = styled.p`
 	text-align: justify;
 	padding: ${PADDING.S};
 
+	@media (max-width: 768px) {
+		font-size: 20px;
+	}
+
 	${({ footer }) =>
 		footer !== undefined &&
 		css`

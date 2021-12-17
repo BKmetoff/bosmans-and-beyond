@@ -16,6 +16,10 @@ const BaseFooter = styled.div`
 	background-color: inherit;
 	color: ${COLORS.dark};
 
+	@media (max-width: 768px) {
+		width: auto;
+	}
+
 	p {
 		width: fit-content;
 		margin-top: 8px;
