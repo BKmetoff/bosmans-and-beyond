@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import styled, { css } from 'styled-components'
 
-import { COLORS, MARGIN, SHADOW, TRANSITION } from '../theme/Theme'
+import { COLORS, MARGIN, TRANSITION } from '../theme/Theme'
 
 import ResponsiveMenuDropDownToggle from './ResponsiveMenuDropDownToggle'
 import { headerLinksTitles } from '../../data/Header/HeaderLinksTitles'
@@ -20,11 +20,9 @@ const BaseHeader = styled.div`
 	z-index: 1100;
 	width: 100%;
 	height: 60px;
-	justify-content: space-between;
-	align-items: center;
+	justify-content: center;
 	background-color: ${COLORS.transparent};
 	color: ${COLORS.light};
-	/* box-shadow: ${SHADOW.M}; */
 	display: flex;
 
 	${({ headerIsTransparent }) =>
@@ -40,6 +38,12 @@ const BaseHeader = styled.div`
 		height: 50px;
 		display: flex;
 	}
+`
+
+const HeaderContentWrapper = styled.div`
+	width: 1024px;
+	display: flex;
+	justify-content: space-between;
 `
 
 const HeaderLogosWrapper = styled(Link)`
@@ -67,19 +71,21 @@ export default function Header({ headerIsTransparent }) {
 
 	return (
 		<BaseHeader headerIsTransparent={headerIsTransparent}>
-			{!headerIsTransparent && HeaderLogos()}
-			{HeaderLinks({
-				headerLinks: headerLinksTitles,
-				onClose: null,
-				dropDown: null,
-				headerIsTransparent: headerIsTransparent,
-			})}
-			{ResponsiveMenuDropDownToggle(
-				handleClick,
-				headerLinksTitles,
-				isOpen,
-				headerIsTransparent
-			)}
+			<HeaderContentWrapper>
+				{!headerIsTransparent && HeaderLogos()}
+				{HeaderLinks({
+					headerLinks: headerLinksTitles,
+					onClose: null,
+					dropDown: null,
+					headerIsTransparent: headerIsTransparent,
+				})}
+				{ResponsiveMenuDropDownToggle(
+					handleClick,
+					headerLinksTitles,
+					isOpen,
+					headerIsTransparent
+				)}
+			</HeaderContentWrapper>
 		</BaseHeader>
 	)
 }
