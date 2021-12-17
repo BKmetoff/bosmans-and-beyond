@@ -7,13 +7,13 @@ const Image = styled.img.attrs((props) => ({
 	${({ height }) =>
 		height !== undefined &&
 		css`
-			height: props.height;
+			height: height;
 		`}
 
 	${({ width }) =>
 		width !== undefined &&
 		css`
-			width: props.width;
+			width: width;
 		`}
 
 	${({ round }) =>
@@ -54,6 +54,7 @@ const Image = styled.img.attrs((props) => ({
 			-o-background-size: cover;
 			background-size: cover;
 			background-attachment: fixed;
+			max-width: 100%;
 		`}
 
 	${({ shadow }) =>

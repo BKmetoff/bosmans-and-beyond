@@ -10,7 +10,7 @@ import CONTACT from '../../data/Contact/Contact'
 export default function Contact() {
 	return (
 		<MotionWrapper>
-			<SectionWrapper>
+			<SectionWrapper extraMargin>
 				<Sheet reversed marginXL>
 					<Text>{CONTACT}</Text>
 					<Form />

@@ -36,9 +36,9 @@ const DesktopPhoto = styled(Image)`
 
 const DesktopLogo = styled(Image)`
 	position: absolute;
-	max-width: 40%;
+	max-width: 35%;
 	top: 60px;
-	left: -30px;
+	left: 0px;
 	z-index: 100;
 	margin-left: ${MARGIN.L};
 
@@ -88,7 +88,7 @@ export default function Home() {
 					</Sheet>
 				</SectionWrapper>
 
-				<MobilePhoto main shadow src={HomePhotoMobile2} />
+				<MobilePhoto main src={HomePhotoMobile2} />
 
 				<SectionWrapper>
 					<Title>Our Patron</Title>

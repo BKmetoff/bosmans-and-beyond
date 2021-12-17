@@ -7,12 +7,18 @@ import SocialMediaLink from '../backbone/Link/SocialMediaLink'
 import { SOCIAL_MEDIA } from '../../data/Social/Social'
 
 const BaseFooter = styled.div`
-	width: 100%;
-	height: 35px;
-	display: inline-block;
+	width: 1024px;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
 	align-items: center;
 	background-color: inherit;
 	color: ${COLORS.dark};
+
+	@media (max-width: 768px) {
+		width: auto;
+	}
 
 	p {
 		width: fit-content;
@@ -20,20 +26,11 @@ const BaseFooter = styled.div`
 		margin-left: auto;
 		margin-right: auto;
 	}
-
-	::before {
-		content: '';
-		background-color: ${COLORS.primary};
-		height: 1px;
-		width: 80%;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
 `
 
 const FooterIconsWrapper = styled.div`
 	display: flex;
+	background: inherit;
 	justify-content: center;
 	a {
 		display: flex;

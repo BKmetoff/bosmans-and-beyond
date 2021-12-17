@@ -94,7 +94,7 @@ function PiecesPerAuthor({ name, pieces }, index) {
 export default function Repertoire() {
 	return (
 		<MotionWrapper>
-			<SectionWrapper>
+			<SectionWrapper extraMargin>
 				<ListContainer>
 					{Object.values(COMPOSERS).map((composer, index) => {
 						return PiecesPerAuthor(mapComposersToPieces[composer])
