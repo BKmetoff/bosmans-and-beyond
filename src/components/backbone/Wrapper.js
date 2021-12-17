@@ -2,28 +2,28 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 import styled, { css } from 'styled-components'
-import { MARGIN, PAGE_TRANSITIONS } from '../theme/Theme'
+import { COLORS, MARGIN, PAGE_TRANSITIONS, BORDER_RADIUS } from '../theme/Theme'
 
 export const MainWrapper = styled.div`
-	overflow-x: hidden;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	max-width: 1024px;
+	height: 100%;
+	margin-left: ${MARGIN.auto};
+	margin-right: ${MARGIN.auto};
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+	border-bottom-left-radius: ${BORDER_RADIUS.M};
+	border-bottom-right-radius: ${BORDER_RADIUS.M};
 `
 
 export const ContentWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-bottom: ${MARGIN.L};
+	background-color: ${COLORS.background};
+	border-bottom-left-radius: ${BORDER_RADIUS.M};
+	border-bottom-right-radius: ${BORDER_RADIUS.M};
 
-	@media (min-width: 1024px) {
-		width: 1024px;
-	}
-
-	${({ width }) =>
-		width !== undefined &&
+	${({ videoWidth }) =>
+		videoWidth !== undefined &&
 		css`
 			width: 65vw !important;
 			margin-left: auto;
@@ -38,8 +38,9 @@ export const ContentWrapper = styled.div`
 export const SectionWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-top: ${MARGIN.XL};
 	margin-bottom: ${MARGIN.M};
+	margin-left: ${MARGIN.L};
+	margin-right: ${MARGIN.L};
 
 	${({ extraMargin }) =>
 		extraMargin !== undefined &&
