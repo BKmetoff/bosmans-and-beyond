@@ -7,7 +7,7 @@ import SocialMediaLink from '../backbone/Link/SocialMediaLink'
 import { SOCIAL_MEDIA } from '../../data/Social/Social'
 
 const BaseFooter = styled.div`
-	width: 1024px;
+	max-width: 1024px;
 	display: flex;
 	flex-direction: column;
 	margin-left: auto;
