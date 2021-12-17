@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Squash as Hamburger } from 'hamburger-react'
+import Hamburger from 'hamburger-react'
 
 import { COLORS, MARGIN } from '../theme/Theme'
 
@@ -10,8 +10,8 @@ const ResponsiveMenuWrapper = styled.div`
 	display: none;
 	@media (max-width: 768px) {
 		display: block;
-		margin-left: auto;
-		margin-right: ${MARGIN.M};
+		margin-right: auto;
+		margin-left: ${MARGIN.S};
 	}
 `
 
@@ -36,6 +36,7 @@ export default function ResponsiveMenuDropDownToggle(
 				toggle={handleClick}
 				label='Toggle menu'
 				color={setHamburgerColor(isOpen, headerIsTransparent)}
+				size={35}
 				rounded
 			/>
 

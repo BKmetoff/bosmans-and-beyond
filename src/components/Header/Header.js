@@ -53,7 +53,7 @@ const HeaderLogosWrapper = styled(Link)`
 	margin-left: ${MARGIN.XS};
 
 	@media (max-width: 768px) {
-		height: 50px;
+		display: none;
 	}
 `
 
@@ -75,6 +75,12 @@ export default function Header({ headerIsTransparent }) {
 
 	return (
 		<BaseHeader headerIsTransparent={headerIsTransparent}>
+			{ResponsiveMenuDropDownToggle(
+				handleClick,
+				headerLinksTitles,
+				isOpen,
+				headerIsTransparent
+			)}
 			<HeaderContentWrapper>
 				{!headerIsTransparent && HeaderLogos()}
 				{HeaderLinks({
@@ -84,12 +90,6 @@ export default function Header({ headerIsTransparent }) {
 					headerIsTransparent: headerIsTransparent,
 				})}
 			</HeaderContentWrapper>
-			{ResponsiveMenuDropDownToggle(
-				handleClick,
-				headerLinksTitles,
-				isOpen,
-				headerIsTransparent
-			)}
 		</BaseHeader>
 	)
 }
