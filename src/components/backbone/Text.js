@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { PADDING, MARGIN, COLORS } from '../theme/Theme'
 
 export const Text = styled.p`
-	font-size: 18px;
+	font-size: 16px;
 	text-align: justify;
 	padding: ${PADDING.S};
 

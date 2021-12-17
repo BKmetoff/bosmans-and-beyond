@@ -119,7 +119,7 @@ export default function Video() {
 	return (
 		<MotionWrapper>
 			<PageWrapper>
-				<ContentWrapper width={width + 'px'}>
+				<ContentWrapper videoWidth={width + 'px'}>
 					{VideoClipMapper(VIDEO_TITLES, mapTitlesToVideos, width)}
 				</ContentWrapper>
 			</PageWrapper>
