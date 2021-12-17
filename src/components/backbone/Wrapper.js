@@ -30,10 +30,6 @@ export const ContentWrapper = styled.div`
 			margin-left: auto;
 			margin-right: auto;
 		`}
-
-	@media (max-width: 769px) {
-		margin-top: ${MARGIN.M};
-	}
 `
 
 export const SectionWrapper = styled.div`
