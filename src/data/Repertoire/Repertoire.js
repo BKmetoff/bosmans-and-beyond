@@ -39,10 +39,6 @@ export const mapComposersToPieces = Object.freeze({
 	},
 	[COMPOSERS.Bosmans]: {
 		name: 'Henriëtte Bosmans',
-		pieces: [{ title: 'Les Berceaux', type: 'violin & piano' }],
-	},
-	[COMPOSERS.Fauré]: {
-		name: 'Gabriel Fauré',
 		pieces: [
 			{ title: 'Concertstuk', type: 'violin & piano' },
 			{ title: '6 Preludes', type: 'piano solo' },
@@ -50,6 +46,10 @@ export const mapComposersToPieces = Object.freeze({
 			{ title: 'Le diable court dans la nuit', type: 'soprano & piano' },
 			{ title: 'Lead, kindly light', type: 'soprano & piano' },
 		],
+	},
+	[COMPOSERS.Fauré]: {
+		name: 'Gabriel Fauré',
+		pieces: [{ title: 'Les Berceaux', type: 'violin & piano' }],
 	},
 	[COMPOSERS.Grieg]: {
 		name: 'Edvard Grieg',
